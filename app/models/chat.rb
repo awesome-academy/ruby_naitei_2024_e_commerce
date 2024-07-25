@@ -1,4 +1,4 @@
 class Chat < ApplicationRecord
-  belongs_to :sender, classname: User.name
-  belongs_to :receiver, classname: User.name
+  belongs_to :sender, class_name: User.name
+  belongs_to :receiver, class_name: User.name
 end
