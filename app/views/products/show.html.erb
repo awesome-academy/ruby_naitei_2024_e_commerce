@@ -15,6 +15,7 @@
           <span class="fa fa-star"></span>
         <% end %>
       <% end %>
+      <p class="addinfo_info__starnote"><%= t("product.sales_count", sales_count: @product.sales_count) %></p>
       <p class="addinfo_info__starnote"><%= t("product.comment", comments: comment_users(@comments).size) %></p>
       <p class="addinfo_info__gia"><%= t("product.price", price: @product.price) %></p>
       <p class="addinfo_info__info"><%= @product.description %></p>
@@ -25,9 +26,9 @@
           <button id="addinfo_buy__amount--increase"><i class="fa-solid fa-plus"></i></button>
         </div>
         <div class="addinfo_buy__addtocart">
-          <button>
-            <%= t "cart.add_to_cart" %><i class="fa-solid fa-bag-shopping"></i>
-          </button>
+          <%= button_to checkout_create_path(id: @product.id), data: { turbo: false } do %>
+            Buy <i class="fa-solid fa-bag-shopping"></i>
+          <% end %>
         </div>
         <div class="addinfo_buy__wishlist">
           <button><i class="fa-regular fa-heart"></i></button>

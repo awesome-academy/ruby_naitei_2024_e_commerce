@@ -4,6 +4,7 @@ class CreateBillDetails < ActiveRecord::Migration[7.0]
       t.integer :bill_id
       t.integer :product_id
       t.integer :quantity
+      t.decimal :total, precision: 10, default: 0
       t.timestamps
     end
     add_index :bill_details, :bill_id

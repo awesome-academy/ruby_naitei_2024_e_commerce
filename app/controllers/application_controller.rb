@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   include CategoriesHelper
   include SessionsHelper
 
+  private
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
@@ -13,10 +15,11 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
-  def admin_user
-    return if current_user.admin?
+  def logged_in_user
+    return if logged_in?
 
-    flash[:danger] = t "flash.not_admin"
-    redirect_to root_path
+    flash[:danger] = t "please_log_in"
+    store_location
+    redirect_to login_path
   end
 end

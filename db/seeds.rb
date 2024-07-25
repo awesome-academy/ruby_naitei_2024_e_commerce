@@ -240,3 +240,9 @@ Wishlist.create!(user_id: 4,
 
 Wishlist.create!(user_id: 4,
                  product_id: 4)
+
+
+Cart.create!(user_id: 2)
+
+CartDetail.create!(cart_id: 1, product_id: 1, quantity: 1)
+CartDetail.create!(cart_id: 1, product_id: 120, quantity: 2)

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :webhooks, only: :create
   scope "(:locale)", locale: /en|vi/ do
     get "sessions/new"
     get "sessions/create"
@@ -8,13 +9,15 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     root "static_pages#home"
+    post "checkout/create", to: "checkout#create"
     resources :products
+    resources :checkout, only: :create
     resources :users
+    resources :bills
     resources :account_activations, only: :edit
     namespace :admin do
       resources :categories
       resources :home
-      resources :products
     end
   end
 end

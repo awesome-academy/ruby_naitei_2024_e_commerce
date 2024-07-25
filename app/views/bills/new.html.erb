@@ -1,0 +1,37 @@
+<div class="check-out">
+  <%= form_with model: @bill, url: checkout_create_path, class: "check-out__body", data: {turbo: false} do |form| %>
+    <div class="check-out__body-left">
+      <h2><%= t "order.title" %></h2>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+      <%= form.hidden_field :status, value: :wait_for_pay %>
+      <div class="check-out__body-left__row">
+        <div class="check-out__body-left__item">
+          <p><%= t "order.address" %></p>
+          <%= form.text_field :address, placeholder: t("order.your_address"), required: true %>
+        </div>
+      </div>
+      <div class="check-out__body-left__row">
+        <div class="check-out__body-left__item">
+          <p><%= t "order.phone" %></p>
+          <%= form.text_field :phone_number, placeholder: t("order.your_phone"), required: true %>
+        </div>
+      </div>
+      <div class="line"></div>
+      <h2><%= t "order.more_info" %></h2>
+      <div class="check-out__body-left__row">
+        <div class="check-out__body-left__item">
+          <p><%= t "order.note" %></p>
+          <%= form.text_area :note_content, cols: 30, rows: 10, placeholder: t("order.your_note") %>
+        </div>
+      </div>
+    </div>
+    <div class="check-out__body-right">
+      <h3><%= t "order.name" %></h3>
+      <div class="check-out__body-right__products">
+        <%= render partial: "bills/bill_detail", collection: @cart_details, as: :cart_detail %>
+      </div>
+      <div class="line"></div>
+      <%= form.submit t("order.buy"), class: "btn-buy" %>
+    </div>
+  <% end %>
+</div>

@@ -28,6 +28,7 @@ vi:
   product:
     price: ! "Giá: %{price} đ"
     comment: ! "%{comments} đánh giá"
+    sales_count: ! "%{sales_count} lượt mua"
   cart:
     add_to_cart: "Thêm vào giỏ hàng"
   category:
@@ -200,3 +201,14 @@ vi:
     welcome: "Chào mừng đến với Shop Đa Dạng"
     heading: "Chúng tôi cung cấp những sản phẩm rẻ và chất lượng"
     shopping_now: "Mua sắm ngay!"
+  order:
+    buy: "Mua hàng"
+    title: "Thông tin đơn hàng"
+    address: "Địa chỉ"
+    phone: "Số điện thoại"
+    more_info: "Thông tin thêm"
+    note: "Ghi chú"
+    name: "Tóm tắt đơn hàng"
+    your_address: "Địa chỉ của bạn"
+    your_phone: "Số điện thoại của bạn"
+    your_note: "Ghi chú thêm cho người bán về đơn hàng"

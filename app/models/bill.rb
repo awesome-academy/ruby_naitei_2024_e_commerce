@@ -1,4 +1,7 @@
 class Bill < ApplicationRecord
+  PERMITTED_ATTRIBUTES = %i(user_id address phone_number note_content
+                                                              status).freeze
+
   enum status: {
     wait_for_pay: 0,
     wait_for_prepare: 1,

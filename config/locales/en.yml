@@ -25,6 +25,7 @@ en:
   product:
     price: ! "Price: %{price} đ"
     comment: ! "%{comments} rate"
+    sales_count: ! "%{sales_count} purchases"
   cart:
     add_to_cart: "Add to cart"
   category:
@@ -197,3 +198,14 @@ en:
     welcome: "Welcome to Shop Da Dang"
     heading: "We provide cheap and quality products"
     shopping_now: "Go shopping now!"
+  order:
+    buy: "Buy"
+    title: "Order information"
+    address: "Address"
+    phone: "Phone number"
+    more_info: "More information"
+    note: "Note"
+    name: "Order summary"
+    your_address: "Your address"
+    your_phone: "Your phone number"
+    your_note: "Additional note to seller about order"
