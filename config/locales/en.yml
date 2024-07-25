@@ -1,6 +1,15 @@
 en:
+  category: "Category"
+  comment: "Comment"
+  description: "Description"
   product:
     price: ! "Price: %{price} đ"
+    comment: ! "%{comments} rate"
+  cart:
+    add_to_cart: "Add to cart"
+  errors:
+    product:
+      not_found: "Product doesn't exist"
   app_name: "Shop da dang"
   hello: "Hello"
   base_title: "Ecommerce"

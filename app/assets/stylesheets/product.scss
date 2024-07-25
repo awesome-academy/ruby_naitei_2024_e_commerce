@@ -1,0 +1,158 @@
+@import 'var_shop';
+/*body cho thông tin sản phẩm*/
+.product-detail_body{
+  padding:0 160px 0 160px;
+}
+/*Thông tin sản phẩm*/
+.addinfo{
+  display: flex;
+  width: 1200px;
+  height: 456px;
+  margin-top: 50px;
+}
+.addinfo_img, .addinfo_info{
+  margin-right: 25px;
+}
+.addinfo_info{
+  width:623px;
+}
+.addinfo_info h1{
+  margin-bottom:15px;
+}
+.addinfo_info span{
+  font-size: 14px;
+}
+.addinfo_info__starnote{
+  display: inline;
+  color:$gray-color;
+  margin-left:3px;
+}
+.addinfo_info__brand button:hover{
+  color: $green-color;
+}
+.addinfo_buy{
+  display: flex;
+  width: 400px;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.addinfo_buy button{
+  border:none;
+  cursor: pointer;
+}
+.addinfo_buy__amount{
+  border: solid 1px $buy_amout-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height:36px;
+  border-radius: 18px;
+  padding: 5px;
+  margin-left:0;
+}
+#addinfo_buy__amount--number{
+  padding: 0 10px 0 10px;
+}
+.addinfo_buy__amount button{
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.addinfo_buy__wishlist{
+  margin-right: 0;
+}
+.addinfo_buy__wishlist button{
+  width:36px;
+  height:36px;
+  border-radius: 50%;
+  background-color: $background-wishlist-color;
+  color: $wishlist-color;
+}
+.addinfo_buy__amount button:hover, .addinfo_buy__wishlist button:hover{
+  background-color: $wishlist-color;
+  color: $white-color;
+}
+.addinfo_buy__addtocart{
+  width: 250px;
+}
+.addinfo_buy__addtocart button{
+  background-color: $wishlist-color;
+  color:  $white-color;
+  width: 250px;
+  height: 36px;
+  border-radius: 18px;
+}
+.addinfo_info__tag, .addinfo_info__gia, .addinfo_info__info{
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+.addinfo_info__info, .addinfo_info__tag--grey  {
+  color: $gray-color;
+}
+.addinfo_img, .addinfo_img img{
+  width: 453px;
+}
+.selected{
+  border: solid 3px $wishlist-color;
+}
+/*Nút mô tả + nút comment*/
+.about_button{
+  width: fit-content;
+  margin: 30px auto 30px auto;
+}
+.about_button button{
+  cursor: pointer;
+  background-color:  $white-color;
+  border:none;
+  font-size: 17px;
+  margin-right: 25px;
+}
+/*Mô tả sản phẩm + comment*/
+#zero{
+  height: 550px;
+  position: relative;
+}
+.description, .comments{
+  display: none;
+}
+.description.active{
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  background-color: $white-color;
+}
+.description__text p, .description__text li{
+  margin-bottom: 20px;
+  color: $gray-color;
+}
+.comments.active{
+  display: block;
+  width: 1200px;
+  position: relative;
+  background-color:  $white-color;
+  overflow: auto;
+  height: 600px;
+}
+.comment{
+  width: 550px;
+  margin-bottom: 30px;
+  border-bottom: solid 1px $comment-border-color;
+  padding-bottom: 10px;
+}
+.comment__profileimage{
+  width: 8%;
+  float: left;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+.comment__username{
+  font-weight: bold;
+  font-size: 14px;
+}
+.comment span{
+  font-size: 10px;
+}
+.comment__content{
+  color:$gray-color;
+}

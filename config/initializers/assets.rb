@@ -2,6 +2,8 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = "1.0"
+Rails.application.config.assets.precompile += %w( custom/toggle_comment.js custom/toggle_description.js product.css )
+Rails.application.config.assets.precompile += %w( custom.css controllers/hello_controller.js controllers/index.js)
 
 Rails.application.config.assets.precompile += %w( custom.css controllers/hello_controller.js controllers/index.js)
 
