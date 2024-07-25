@@ -7,13 +7,18 @@ vi:
       [nil, Tháng 1, Tháng 2, Tháng 3, Tháng 4, Tháng 5, Tháng 6, Tháng 7, Tháng 8, Tháng 9, Tháng 10, Tháng 11, Tháng 12]
   comment: "Bình luận"
   description: "Mô tả"
+  edit: "Sửa"
   created_at: ! "Created at %{date}"
   updated_at: ! "Updated at %{date}"
   create_time: "Thời gian tạo"
   update_time: "Thời gian cập nhật"
+  action: "Thao tác"
   flash:
     create_successfully: "Tạo thành công"
     create_unsuccessfully: "Tạo không thành công"
+    update_successfully: "Cập nhật thành công"
+    update_unsuccessfully: "Cập nhật không thành công"
+    not_found: ! "Không tìm thấy %{model}"
   product:
     price: ! "Giá: %{price} đ"
     comment: ! "%{comments} đánh giá"
@@ -22,7 +27,9 @@ vi:
   category:
     title: "Phân loại"
     new_category: "Thêm danh mục sản phẩm mới"
+    update_category: "Cập nhật danh mục sản phẩm"
     add: "Thêm danh mục sản phẩm"
+    update: "Cập nhật"
     name: "Danh mục sản phẩm"
     parent_category: "Thuộc về danh mục"
   errors:
