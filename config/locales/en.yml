@@ -1,0 +1,3 @@
+en:
+  product:
+    price: ! "Price: %{price} đ"

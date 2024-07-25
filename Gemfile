@@ -23,6 +23,10 @@ gem "stimulus-rails"
 
 gem "bcrypt", "3.1.18"
 
+gem "sprockets", "3.7.2"
+
+gem "font-awesome-rails"
+
 gem "sass-rails"
 
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)

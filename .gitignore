@@ -53,3 +53,7 @@ build-iPhoneSimulator/
 /test/*
 /config/credentials.yml.enc
 .gitattributes
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

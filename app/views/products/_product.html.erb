@@ -1,0 +1,19 @@
+<div class="collage-pic">
+  <%= link_to product, class: "collage-info" do %>
+    <% if product.image.persisted? %>
+      <%= image_tag product.image, class: "collage-pic" %>
+      <p class= "center"><%= product.name %></p>
+      <p><%= t "product.price", price: product.price %></p>
+      <div class="collage-pic__star">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+      </div>
+      <button class="collage-pic__heart--hidden collage-pic__heart--visible"><i class="fa-solid fa-heart"></i></button>
+      <button class="collage-pic__preview--hidden collage-pic__preview--visible"><i class="fa-solid fa-eye"></i></button>
+      <button class="collage-pic__bag"><i class="fa-solid fa-bag-shopping"></i></button>
+    <% end %>
+  <% end %>
+</div>
