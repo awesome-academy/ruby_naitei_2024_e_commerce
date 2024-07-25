@@ -1,0 +1,5 @@
+<div class="collage-pic">
+  <%= link_to gravatar_for(product), product, class: "collage-pic" %>
+  <p><%= link_to product.name, product %></p>
+  <p><%= t("product.price", price: product.price) %></p>
+</div>

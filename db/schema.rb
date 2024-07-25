@@ -83,6 +83,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_24_073122) do
 
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
+    t.integer "parent_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -122,7 +123,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_24_073122) do
     t.string "email"
     t.string "name"
     t.integer "gender"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
