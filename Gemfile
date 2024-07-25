@@ -5,6 +5,8 @@ gem "config"
 
 gem "rails", "~> 7.0.5"
 
+gem "rails-i18n"
+
 gem "sprockets-rails"
 
 gem "mysql2", "~> 0.5"

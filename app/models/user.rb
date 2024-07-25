@@ -31,9 +31,11 @@ class User < ApplicationRecord
   has_many :wishlist_products, through: :wishlists, source: :product
 
   has_many :sender_relationship, class_name: Chat.name,
-                                 foreign_key: :sender_id, dependent: :destroy
+                                 foreign_key: :sender_id,
+                                 dependent: :destroy
   has_many :receiver_relationship, class_name: Chat.name,
-                                   foreign_key: :receiver_id, dependent: :destroy
+                                   foreign_key: :receiver_id,
+                                   dependent: :destroy
   has_many :senders, through: :sender_relationship, source: :sender
   has_many :receivers, through: :receiver_relationship, source: :receiver
 

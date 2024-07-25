@@ -3,14 +3,14 @@ admin = User.create!(email: "admin@ecommerce.org",
                      name: "Admin",
                      gender: 1,
                      admin: true,
-                     password: "admin123",
-                     password_confirmation: "admin123")
+                     password: "admin1234",
+                     password_confirmation: "admin1234")
 admin.avatar.attach(io: File.open(Rails.root.join("./app/assets/images", "admin.png")), filename: "admin.png")
 
 30.times do |n|
   name = Faker::Name.name
   email = "example-#{n+1}@ecommerce.org"
-  password = "password"
+  password = "password123"
   gender = Random.rand(0..2)
   user = User.create!(email: email,
                       name: name,
@@ -138,3 +138,19 @@ BillDetail.create!(bill_id: 2,
 BillDetail.create!(bill_id: 2,
                    product_id: 4,
                    quantity: 1)
+
+#Seed wishlist
+Wishlist.create!(user_id: 3,
+                 product_id: 1)
+
+Wishlist.create!(user_id: 3,
+                 product_id: 2)
+
+Wishlist.create!(user_id: 4,
+                 product_id: 2)
+
+Wishlist.create!(user_id: 4,
+                 product_id: 3)
+
+Wishlist.create!(user_id: 4,
+                 product_id: 4)
