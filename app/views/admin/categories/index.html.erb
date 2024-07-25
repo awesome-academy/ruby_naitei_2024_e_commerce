@@ -1,0 +1,18 @@
+<div class="admin_container">
+  <%= link_to t("category.new_category"), new_admin_category_path, class: "btn btn-primary" %>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th class="table-header"><%= t "category.name" %></th>
+        <th class="table-header"><%= t "create_time" %></th>
+        <th class="table-header"><%= t "update_time" %></th>
+      </tr>
+    </thead>
+    <tbody id="categories_list">
+      <%= render @categories %>
+    </tbody>
+  </table>
+  <div class="pagy--center">
+    <%== pagy_bootstrap_nav @pagy %>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<%= form_with(model: @category, url: admin_categories_path) do |form| %>
+  <%= render "shared/error_messages", object: form.object %>
+  <%= form.label :name, t("category.name") %>
+  <%= form.text_field :name, class: "create-form_component" %>
+  <%= form.label :parent_id, t("category.parent_category"), class: "create-form_component" %>
+  <%= form.collection_select :parent_category_id,
+                              category_select_options[:collection], :last, :first,
+                              category_select_options.slice(:include_blank),
+                              { class: "category-select create-form_component" } %>
+  <%= form.submit yield(:button_text), class: "btn btn-primary btn-form" %>
+<% end %>

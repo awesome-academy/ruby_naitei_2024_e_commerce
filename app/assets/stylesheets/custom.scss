@@ -317,7 +317,7 @@
 .collage-pic__bag {
   position: absolute;
   border: solid 1px $collage-pic-border;
-  top: 305px;
+  top: 260px;
   right: 20px;
   height: 35px;
   width: 35px;
@@ -327,7 +327,7 @@
 }
 
 .collage-pic__heart--visible:hover, .collage-pic__bag:hover{
-  background-color: #00B207;
+  background-color: $wishlist-color;
   color: $white;
 }
 
