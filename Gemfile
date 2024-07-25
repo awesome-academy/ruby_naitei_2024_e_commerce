@@ -55,6 +55,8 @@ gem "hotwire-rails"
 
 gem "bootstrap-sass", "3.4.1"
 
+gem "paranoia"
+
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "pry-rails"
