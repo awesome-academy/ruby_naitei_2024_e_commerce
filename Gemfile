@@ -11,6 +11,8 @@ gem "mysql2", "~> 0.5"
 
 gem "jbuilder"
 
+gem "font-awesome-sass", "~> 4.2.0"
+
 gem "puma", "~> 5.0"
 
 gem "importmap-rails"
