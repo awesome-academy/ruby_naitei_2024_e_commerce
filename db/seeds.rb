@@ -87,3 +87,54 @@ end
                   parent_comment_id: User.find(n+1).id,
                   star: nil)
 end
+
+#Seed vouchers
+day_now = DateTime.now
+voucher1 = Voucher.create!(condition: 100000,
+                           discount: 0.1,
+                           started_at: day_now,
+                           ended_at: day_now + 1.month)
+
+voucher2 = Voucher.create!(condition: 200000,
+                           discount: 0.2,
+                           started_at: day_now,
+                           ended_at: day_now + 1.month)
+
+voucher3 = Voucher.create!(condition: 500000,
+                           discount: 0.3,
+                           started_at: day_now,
+                           ended_at: day_now + 1.month)
+
+#Seed bills
+bill1 = Bill.create!(user_id: 2,
+                     address: "TP.HCM",
+                     phone_number: "0123456789",
+                     voucher_id: 3,
+                     status: 3,
+                     note_content: "abc",
+                     total: 30000000,
+                     total_after_discount: 21000000,
+                     expired_at: nil)
+
+bill2 = Bill.create!(user_id: 2,
+                     address: "TP.HCM",
+                     phone_number: "0123456789",
+                     voucher_id: 1,
+                     status: 3,
+                     note_content: "abc",
+                     total: 3020000,
+                     total_after_discount: 2718000,
+                     expired_at: nil)
+
+#Seed bill details
+BillDetail.create!(bill_id: 1,
+                   product_id: 1,
+                   quantity: 1)
+
+BillDetail.create!(bill_id: 2,
+                   product_id: 3,
+                   quantity: 1)
+
+BillDetail.create!(bill_id: 2,
+                   product_id: 4,
+                   quantity: 1)
