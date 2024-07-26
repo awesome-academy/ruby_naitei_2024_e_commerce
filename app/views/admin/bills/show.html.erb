@@ -1,0 +1,56 @@
+<div class="bill-details-wrapper">
+  <% provide :title, t("admin.view.bill_details.title", id: @bill.id) %>
+  <h1><%= t "admin.view.bill_details.title", id: @bill.id %></h1>
+  <table class="bill-details">
+    <tr>
+      <th><%= t "admin.view.user" %></th>
+      <td><%= @bill.user.name %></td>
+    </tr>
+    <tr>
+      <th><%= t "admin.view.address" %></th>
+      <td><%= @bill.address %></td>
+    </tr>
+    <tr>
+      <th><%= t "admin.view.phone_number" %></th>
+      <td><%= @bill.phone_number %></td>
+    </tr>
+    <tr>
+      <th><%= t "admin.view.voucher" %></th>
+      <td><%= display_voucher_discount(@bill.voucher) %></td>
+    </tr>
+    <tr>
+      <th><%= t "admin.view.status" %></th>
+      <td><%= @bill.status %></td>
+    </tr>
+    <tr>
+      <th><%= t "admin.view.total" %></th>
+      <td><%= format_currency(@bill.total) %></td>
+    </tr>
+    <tr>
+      <th><%= t "admin.view.total_after_discount" %></th>
+      <td><%= format_currency(@bill.total_after_discount) %></td>
+    </tr>
+    <tr>
+      <th><%= t "admin.view.created_at" %></th>
+      <td><%= l @bill.created_at, format: :long %></td>
+    </tr>
+    <tr>
+      <th><%= t "admin.view.updated_at" %></th>
+      <td><%= l @bill.updated_at, format: :long %></td>
+    </tr>
+  </table>
+  <h2><%= t "admin.view.bill_details.bill_items" %></h2>
+  <table class="bill-items">
+    <thead>
+      <tr>
+        <th><%= t "admin.view.product_name" %></th>
+        <th><%= t "admin.view.quantity" %></th>
+        <th><%= t "admin.view.price" %></th>
+        <th><%= t "admin.view.total" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "bill_detail", collection: @bill.bill_details, as: :detail %>
+    </tbody>
+  </table>
+</div>
