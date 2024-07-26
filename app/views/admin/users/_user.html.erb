@@ -1,0 +1,10 @@
+<tr>
+  <td><%= user_counter + Settings.counter_index %></td>
+  <td><%= user.email %></td>
+  <td><%= user.name %></td>
+  <td><%= user.gender %></td>
+  <td><%= boolean_to_human user.admin? %></td>
+  <td><%= boolean_to_human user.activated? %></td>
+  <td><%= l user.created_at %></td>
+  <td><%= l user.updated_at %></td>
+</tr>

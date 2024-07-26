@@ -24,8 +24,9 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :categories
       resources :products
-      resources :bills, only: [:index, :show]
       resources :cart_details
+      resources :home
+      resources :users, only: :index
       resources :bills, only: [:index, :show, :update] do
         member do
           patch :update_status

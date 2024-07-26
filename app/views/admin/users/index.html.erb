@@ -1,0 +1,22 @@
+<% provide :title, t("admin.view.users.title") %>
+<div class="admin-users">
+  <h1><%= t "admin.view.users.title" %></h1>
+  <table>
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th><%= t "admin.view.users.email" %></th>
+        <th><%= t "admin.view.users.name" %></th>
+        <th><%= t "admin.view.users.gender" %></th>
+        <th><%= t "admin.view.users.admin" %></th>
+        <th><%= t "admin.view.users.activated" %></th>
+        <th><%= t "admin.view.users.created_at" %></th>
+        <th><%= t "admin.view.users.updated_at" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @users %>
+    </tbody>
+  </table>
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

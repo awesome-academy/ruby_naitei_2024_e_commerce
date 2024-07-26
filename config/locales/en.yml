@@ -229,6 +229,17 @@ en:
         wait_for_delivery: "Waiting for Delivery"
         completed: "Completed"
         cancelled: "Cancelled"
+      users:
+        title: "User List"
+        email: "Email"
+        name: "Name"
+        gender: "Gender"
+        admin: "Admin"
+        activated: "Activated"
+        created_at: "Created At"
+        updated_at: "Updated At"
+        yes: "Yes"
+        no: "No"
     voucher:
       index:
         title: "Voucher List"
