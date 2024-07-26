@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       resources :products
       resources :bills, only: [:index, :show]
       resources :cart_details
+      resources :vouchers
     end
   end
 end

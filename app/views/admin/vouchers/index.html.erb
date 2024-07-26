@@ -1,0 +1,17 @@
+<% provide :title, t("admin.voucher.index.title") %>
+<h1><%= t "admin.voucher.index.title" %></h1>
+<table class="voucher-table">
+  <thead>
+    <tr>
+      <th><%= t "admin.voucher.index.id" %></th>
+      <th><%= t "admin.voucher.index.condition" %></th>
+      <th><%= t "admin.voucher.index.discount" %></th>
+      <th><%= t "admin.voucher.index.started_at" %></th>
+      <th><%= t "admin.voucher.index.ended_at" %></th>
+      <th><%= t "admin.voucher.index.created_at" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @vouchers %>
+  </tbody>
+</table>
