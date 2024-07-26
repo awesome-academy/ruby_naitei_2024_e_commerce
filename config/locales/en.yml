@@ -200,6 +200,7 @@ en:
       quantity: "Quantity"
       price: "Price"
       actions: "Actions"
+      update: "Update"
       id: "ID"
       bill_details:
         title: "Bill Details #%{id}"
@@ -220,6 +221,12 @@ en:
         updated_at: "Updated At"
         actions: "Actions"
         not_found: "Bill not found"
+      statuses:
+        wait_for_pay: "Waiting for Payment"
+        wait_for_prepare: "Waiting for Preparation"
+        wait_for_delivery: "Waiting for Delivery"
+        completed: "Completed"
+        cancelled: "Cancelled"
     voucher:
       index:
         title: "Voucher List"

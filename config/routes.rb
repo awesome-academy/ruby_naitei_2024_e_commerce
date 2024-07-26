@@ -26,6 +26,11 @@ Rails.application.routes.draw do
       resources :products
       resources :bills, only: [:index, :show]
       resources :cart_details
+      resources :bills, only: [:index, :show, :update] do
+        member do
+          patch :update_status
+        end
+      end
       resources :vouchers
     end
   end

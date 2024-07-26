@@ -225,6 +225,16 @@ vi:
         updated_at: "Ngày Cập Nhật"
         actions: "Hành Động"
         not_found: "Không tìm thấy hóa đơn"
+      update: "Cập nhật"
+      bill_details:
+        title: "Chi tiết hóa đơn #%{id}"
+        bill_items: "Các mục trong hóa đơn"
+      statuses:
+        wait_for_pay: "Đang Chờ Thanh Toán"
+        wait_for_prepare: "Đang Chuẩn Bị"
+        wait_for_delivery: "Đang Giao Hàng"
+        completed: "Hoàn Thành"
+        cancelled: "Đã Hủy"
     voucher:
       index:
         title: "Danh sách Voucher"
