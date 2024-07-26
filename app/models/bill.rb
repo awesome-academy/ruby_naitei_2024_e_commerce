@@ -13,4 +13,6 @@ class Bill < ApplicationRecord
   belongs_to :voucher, optional: true
   has_many :bill_details, dependent: :destroy
   has_many :products, through: :bill_details
+  delegate :name, to: :user, prefix: true
+  delegate :discount, to: :voucher, prefix: true, allow_nil: true
 end

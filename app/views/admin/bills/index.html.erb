@@ -1,0 +1,26 @@
+<div class="bill-list-wrapper">
+  <% provide :title, t("admin.view.bills.title") %>
+  <h1><%= t "admin.view.bills.title" %></h1>
+  <table class="bill-list">
+    <thead>
+      <tr>
+        <th><%= t "admin.view.id" %></th>
+        <th><%= t "admin.view.user" %></th>
+        <th><%= t "admin.view.address" %></th>
+        <th><%= t "admin.view.phone_number" %></th>
+        <th><%= t "admin.view.voucher" %></th>
+        <th><%= t "admin.view.status" %></th>
+        <th><%= t "admin.view.total" %></th>
+        <th><%= t "admin.view.total_after_discount" %></th>
+        <th><%= t "admin.view.expired_at" %></th>
+        <th><%= t "admin.view.created_at" %></th>
+        <th><%= t "admin.view.updated_at" %></th>
+        <th><%= t "admin.view.actions" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "bill", collection: @bills, as: :bill %>
+    </tbody>
+  </table>
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>
