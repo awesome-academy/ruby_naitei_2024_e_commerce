@@ -29,3 +29,13 @@ en:
     message: "Welcome to the Shop da dang! Click on the link below to activate your account:"
     success: "Success"
     invalid: "Invalid email/password combination"
+  sessions:
+    login: "Login"
+    new:
+      title: "Log in"
+      email: "Email"
+      password: "Password"
+      login: "Log in"
+      remember_me: "Remember me on this computer"
+    create:
+      invalid: "Invalid email/password combination"
