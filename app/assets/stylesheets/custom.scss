@@ -3,11 +3,9 @@
 @import "variable";
 
 .signup-page {
-  .background {
-    background-image: $background-image-signup;
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
+  background-image: $background-image-signup;
+  background-repeat: no-repeat;
+  background-size: 100%;
 
   header {
     background-color: #f8f9fa;
@@ -16,19 +14,6 @@
     justify-content: flex-end;
     align-items: center;
     border-bottom: 1px solid #e3e3e3;
-  }
-
-  header a {
-    text-decoration: none;
-    color: $primary-color;
-    margin: 0 10px;
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  header a:hover {
-    color: $secondary-color;
-    text-decoration: underline;
   }
 
   .signup-logo {
