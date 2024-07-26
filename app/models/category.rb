@@ -13,4 +13,6 @@ class Category < ApplicationRecord
                        resize_to_limit: [Settings.digit_160, Settings.digit_160]
   end
   scope :oldest, ->{order(parent_category_id: :asc, created_at: :asc)}
+  has_one_attached :image
+  scope :all_categories, ->{all}
 end

@@ -5,4 +5,8 @@ module CategoriesHelper
       include_blank: "None"
     }
   end
+
+  def category_options
+    Category.all_categories.pluck(:name, :id)
+  end
 end
