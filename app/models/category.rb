@@ -18,4 +18,5 @@ class Category < ApplicationRecord
     joins(products: :comments)
       .group("categories.id")
   end)
+  has_one_attached :image
 end
