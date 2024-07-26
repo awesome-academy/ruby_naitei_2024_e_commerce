@@ -1,283 +1,294 @@
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
-@import 'variable';
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "variable";
 
-body{
+.signup-page {
   background-image: $background-image-signup;
   background-repeat: no-repeat;
   background-size: 100%;
+
+  header {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid #e3e3e3;
+  }
+
+  .signup-logo {
+    padding-bottom: 50px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .signup-logo a {
+    text-decoration: none;
+  }
+
+  .signup-logo span {
+    font-size: 30px;
+    color: white;
+  }
+
+  .body-signup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .logo__img {
+    height: 36px;
+  }
+
+  .formdk {
+    width: 500px;
+    border: solid 2px $border-color;
+    margin: 0 auto;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px 40px;
+  }
+
+  .tieude-form {
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+  }
+
+  input {
+    width: 100%;
+    display: block;
+    margin: 0 auto 30px auto;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    padding: 16px 10px;
+  }
+
+  a.signup-button {
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    margin: 0 auto 10px auto;
+    padding: 16px 0;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: $background-color-signup;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  p {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .login a {
+    color: $primary-color;
+  }
+
+  .formdk__lienlac,
+  .formdk__inputhoten,
+  .formdk__taikhoan,
+  .formdk__gioitinh {
+    width: 100%;
+    display: block;
+    margin: 0 auto 30px auto;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    padding: 16px 10px;
+  }
+
+  .formdk__gioitinh {
+    margin-bottom: 30px;
+  }
 }
 
-header {
-  background-color: #f8f9fa;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  border-bottom: 1px solid #e3e3e3;
+/* CSS cho trang đăng nhập */
+.login-page {
+  .body-login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: $background-image-login;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .signup-logo {
+    padding-bottom: 60px;
+    text-align: center;
+  }
+
+  .signup-logo a {
+    text-decoration: none;
+  }
+
+  .signup-logo span {
+    font-size: 30px;
+    color: $text-color-signup;
+    font-weight: bold;
+  }
+
+  .logo__img {
+    height: 36px;
+  }
+
+  .formdn {
+    border: solid 2px $border-color;
+    margin: 0 auto;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px 40px;
+  }
+
+  .formdn__tieude--fontto {
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+  }
+
+  .formdn__nhotoi {
+    display: inline-block;
+    align-items: center;
+  }
+
+  .formdn__nhotoi span {
+    margin-left: 5px;
+  }
+
+  .formdn__quenmk {
+    display: inline-block;
+    float: right;
+  }
+
+  .formdn__email,
+  .formdn__mk {
+    width: 100%;
+    display: block;
+    margin: 0 auto 20px auto;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    padding: 16px 10px;
+  }
+
+  .formdk__gioitinh {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .formdk__gioitinh:focus {
+    border-color: $border-focus-color;
+    outline: none;
+    box-shadow: 0 0 8px $shadow-color;
+  }
+
+  .formdn__div3 {
+    height: 40px;
+  }
+
+  a {
+    color: $primary-color;
+    font-weight: 500;
+  }
+
+  .login-button {
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    margin: 0 auto 10px auto;
+    padding: 16px 0;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: $background-color-signup;
+    cursor: pointer;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+
+  p {
+    text-align: center;
+    padding: 20px 20px 10px 20px;
+  }
+
+  .login {
+    font-weight: bold;
+  }
 }
 
-header a {
-  text-decoration: none;
-  color: $primary-color;
-  margin: 0 10px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-header a:hover {
-  color: $secondary-color;
-  text-decoration: underline;
-}
-
-.signup-logo {
-  padding-bottom: 50px;
-  width: 100%;
-  text-align: center;
-}
-
-.signup-logo a {
-  text-decoration: none;
-}
-
-.signup-logo span {
-  font-size: 30px;
-  color: white;
-}
-
-.body-signup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.logo__img {
-  height: 36px;
-}
-
-.formdk {
-  width: 500px;
-  border: solid 2px $border-color;
-  margin: 0 auto;
-  font-size: 14px;
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px 40px;
-}
-
-.tieude-form {
-  display: block;
-  font-size: 30px;
-  text-align: center;
-  padding: 20px;
-  font-weight: bold;
-}
-
-input {
-  width: 100%;
-  display: block;
-  margin: 0 auto 30px auto;
-  border: 1px solid $border-color;
-  border-radius: 5px;
-  padding: 16px 10px;
-}
-
-a.signup-button {
-  text-align: center;
-  font-size: 16px;
-  text-decoration: none;
-  width: 100%;
-  display: block;
-  margin: 0 auto 10px auto;
-  padding: 16px 0;
-  border: none;
-  color: white;
-  font-weight: bold;
-  border-radius: 20px;
-  background-color: $background-color-signup;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
-
-p {
-  text-align: center;
-  padding: 10px 0;
-}
-
-.login a {
-  color: $primary-color;
-}
-
-/* CSS cho form đăng nhập */
-.body-login {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-image: $background-image-login;
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-
-.signup-logo {
-  padding-bottom: 60px;
-  text-align: center;
-}
-
-.signup-logo a {
-  text-decoration: none;
-}
-
-.signup-logo span {
-  font-size: 30px;
-  color: $text-color-signup;
-  font-weight: bold;
-}
-
-.logo__img {
-  height: 36px;
-}
-
-.formdn {
-  border: solid 2px $border-color;
-  margin: 0 auto;
-  font-size: 14px;
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px 40px;
-}
-
-.formdn__tieude--fontto {
-  display: block;
-  font-size: 30px;
-  text-align: center;
-  padding: 20px;
-  font-weight: bold;
-}
-
-.formdn__nhotoi {
-  display: inline-block;
-}
-
-.formdn__quenmk {
-  display: inline-block;
-  float: right;
-}
-
-.formdn__email,
-.formdn__mk {
-  width: 100%;
-  display: block;
-  margin: 0 auto 20px auto;
-  border: 1px solid $border-color;
-  border-radius: 5px;
-  padding: 16px 10px;
-}
-
-.formdk__gioitinh {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  color: #333;
-  background-color: #fff;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.formdk__gioitinh:focus {
-  border-color: $border-focus-color;
-  outline: none;
-  box-shadow: 0 0 8px $shadow-color;
-}
-
-.formdn__div3 {
-  height: 40px;
-}
-
-a {
-  color: $primary-color;
-  font-weight: 500;
-}
-
-.login-button {
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  display: block;
-  width: 100%;
-  margin: 0 auto 10px auto;
-  padding: 16px 0;
-  border: none;
-  color: white;
-  font-weight: bold;
-  border-radius: 20px;
-  background-color: $background-color-signup;
-  cursor: pointer;
-}
-
-input {
-  margin-bottom: 10px;
-}
-
-p {
-  text-align: center;
-  padding: 20px 20px 10px 20px;
-}
-
-.login {
-  font-weight: bold;
-}
-
-.collage{
+.collage {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 10px;
   padding: 20px 160px 20px 160px;
 }
-.collage-pic{
+
+.collage-pic {
   width: 230px;
   position: relative;
-  border:solid 1px $collage-pic-border;
+  border: solid 1px $collage-pic-border;
   margin-bottom: 10px;
   border-radius: 5px;
   box-sizing: content-box;
   margin: 20px;
   background-color: $background-color;
 }
-.collage-pic_image{
-  margin: 0;
-}
-.collage-info {
-  text-decoration: none;
-  color: inherit;
-}
-.collage-pic__img{
+
+.collage-pic__img {
   width: 230px;
 }
-.center{
+
+.center {
   text-align: center;
 }
-.collage-pic__preview--hidden, .collage-pic__heart--hidden{
+
+.collage-pic__preview--hidden,
+.collage-pic__heart--hidden {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
-.collage-pic:hover .collage-pic__preview--hidden, .collage-pic:hover .collage-pic__heart--hidden {
+
+.collage-pic:hover .collage-pic__preview--hidden,
+.collage-pic:hover .collage-pic__heart--hidden {
   opacity: 1;
   pointer-events: auto;
 }
+
 .collage-pic__heart--visible {
   position: absolute;
-  top:20px;
-  right:20px;
+  top: 20px;
+  right: 20px;
   height: 35px;
   width: 35px;
   border: none;
@@ -285,10 +296,11 @@ p {
   font-size: 15px;
   cursor: pointer;
 }
+
 .collage-pic__preview--visible {
   position: absolute;
-  top:60px;
-  right:20px;
+  top: 60px;
+  right: 20px;
   height: 35px;
   width: 35px;
   border: none;
@@ -296,41 +308,49 @@ p {
   font-size: 15px;
   cursor: pointer;
 }
+
 .collage-pic__bag {
   position: absolute;
-  border: solid 1px #dbdbdb;
+  border: solid 1px $collage-pic-border;
   top: 305px;
-  right:20px;
+  right: 20px;
   height: 35px;
   width: 35px;
   border-radius: 50%;
   font-size: 15px;
   cursor: pointer;
 }
-.collage-pic__preview--visible:hover, .collage-pic__heart--visible:hover, .collage-pic__bag:hover{
-  background-color: #00B207;
+
+.collage-pic__preview--visible:hover,
+.collage-pic__heart--visible:hover,
+.collage-pic__bag:hover {
+  background-color: #00b207;
   color: white;
 }
 
-.collage-pic__name, .collage-pic p {
+.collage-pic__name,
+.collage-pic p {
   margin: 10px 10px 0 10px;
 }
 
-.collage-pic__name{
+.collage-pic__name {
   text-decoration: none;
-  color:#4d4d4d;
+  color: $text-color;
   overflow: hidden;
   margin: 10px 0;
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
-.collage-pic:hover .collage-pic__name{
-  color: #00B207;
+
+.collage-pic:hover .collage-pic__name {
+  color: $highlight-color;
 }
-.collage-pic__star{
+
+.collage-pic__star {
   margin: 10px;
   font-size: 10px;
 }
+
 .checked {
   color: orange;
 }
