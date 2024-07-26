@@ -120,6 +120,8 @@ en:
   error:
     user_not_correct: "User not correct"
     user_not_admin: "You are not admin"
+  flash:
+    not_admin: "You are not admin"
   admin:
     dashboard: "Admin Dashboard"
     sidebar:
@@ -129,6 +131,21 @@ en:
       order: "Order list"
       statistic: "Statistic"
       comment: "Comments"
+    view:
+      title: "Product List"
+      id: "ID"
+      name: "Name"
+      description: "Description"
+      price: "Price"
+      remain_quantity: "Remaining Quantity"
+      created_at: "Created At"
+      updated_at: "Updated At"
+      actions: "Actions"
+      show: "Show"
+      edit: "Edit"
+      delete: "Delete"
+      confirm_delete: "Are you sure you want to delete?"
+      new_product: "Add New Product"
   image:
     title: "Image"
     image_invalid_format: "Wrong file format"

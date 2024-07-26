@@ -1,0 +1,23 @@
+<div class="product-list-wrapper">
+  <% provide :title, t("admin.view.title") %>
+  <h1><%= t "admin.view.title" %></h1>
+  <table class="product-list">
+    <%= link_to t("admin.view.new_product"), new_admin_product_path, class: "new-product-link btn btn-primary", role: "button" %>
+    <thead>
+      <tr>
+        <th><%= t "admin.view.id" %></th>
+        <th><%= t "admin.view.name" %></th>
+        <th><%= t "admin.view.description" %></th>
+        <th><%= t "admin.view.price" %></th>
+        <th><%= t "admin.view.remain_quantity" %></th>
+        <th><%= t "admin.view.created_at" %></th>
+        <th><%= t "admin.view.updated_at" %></th>
+        <th><%= t "admin.view.actions" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "product", collection: @products, as: :product %>
+    </tbody>
+  </table>
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

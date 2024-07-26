@@ -49,7 +49,7 @@
 }
 
 header {
-  background-color: $white;
+  background-color: white;
 }
 
 .header__top {
@@ -144,7 +144,7 @@ header {
   outline: none;
   padding: 12px 24px;
   background-color: $primary-color;
-  color: $white;
+  color: white;
 }
 
 .search-box__btn:hover {
@@ -243,7 +243,7 @@ header {
 }
 
 .footer__top .logo {
-  color: $white;
+  color: white;
   font-size: 22px;
   line-height: 33px;
   margin-top: 16px;
@@ -275,7 +275,7 @@ header {
 
 .box__header {
   font-size: 16px;
-  color: $white;
+  color: white;
   font-weight: 500;
   margin-bottom: 20px;
 }
@@ -301,7 +301,7 @@ header {
 .appstore {
   display: flex;
   text-decoration: none;
-  color: $white;
+  color: white;
   justify-content: center;
   align-items: center;
   background-color: $header-top-background;
@@ -313,7 +313,7 @@ header {
 
 .ggplay:hover,
 .appstore:hover {
-  color: $white;
+  color: white;
   text-decoration: none;
 }
 
