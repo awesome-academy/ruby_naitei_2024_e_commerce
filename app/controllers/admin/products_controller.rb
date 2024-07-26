@@ -1,5 +1,7 @@
 class Admin::ProductsController < AdminController
+  before_action :set_product, only: %i(edit update)
   include Pagy::Backend
+
   def index
     @pagy, @products = pagy(Product.newest, items: Settings.page_size)
   end
@@ -9,7 +11,7 @@ class Admin::ProductsController < AdminController
   end
 
   def create
-    @product = Product.new product_params
+    @product = Product.new(product_params)
     @product.image.attach(params.dig(:product, :image))
 
     if @product.save
@@ -21,7 +23,23 @@ class Admin::ProductsController < AdminController
     end
   end
 
+  def edit; end
+
+  def update
+    if @product.update product_params
+      flash[:success] = t("admin.products.edit.success")
+      redirect_to admin_products_path
+    else
+      flash.now[:danger] = t("admin.products.edit.fail")
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
   def product_params
     params.require(:product).permit(Product::PERMITTED_ATTRIBUTES)

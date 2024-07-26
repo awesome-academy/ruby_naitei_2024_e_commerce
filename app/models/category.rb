@@ -19,4 +19,5 @@ class Category < ApplicationRecord
       .group("categories.id")
   end)
   has_one_attached :image
+  scope :all_categories, ->{all}
 end

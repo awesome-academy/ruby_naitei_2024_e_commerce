@@ -6,6 +6,7 @@ admin = User.create!(email: "admin@ecommerce.org",
                      activated: true,
                      password: "admin1234",
                      password_confirmation: "admin1234",
+                     activated: true,
                      activated_at: Time.zone.now)
 admin.avatar.attach(io: File.open(Rails.root.join("./app/assets/images", "admin.png")), filename: "admin.png")
 
@@ -20,6 +21,7 @@ admin.avatar.attach(io: File.open(Rails.root.join("./app/assets/images", "admin.
                       gender: gender,
                       password: password,
                       password_confirmation: password,
+                      activated: true,
                       activated_at: Time.zone.now)
   user.avatar.attach(io: File.open(Rails.root.join("./app/assets/images", "user.png")), filename: "user.png")
 end

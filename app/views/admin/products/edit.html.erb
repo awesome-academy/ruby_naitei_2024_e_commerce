@@ -1,0 +1,6 @@
+<% provide :title, t("admin.products.edit.title") %>
+<h1><%= t("admin.products.edit.title") %></h1>
+<div class="form-container">
+  <%= render "form" %>
+  <%= link_to t("admin.products.back"), admin_products_path, class: "link-back" %>
+</div>
