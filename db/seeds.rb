@@ -32,6 +32,7 @@ end
 
 10.times do |n|
   child_cate = Category.create!(name: "Child category", parent_category_id: Category.find(n+1).id)
+  child_cate.image.attach(io: File.open(Rails.root.join("./app/assets/images", "child-cate.jpeg")), filename: "child-cate.jpeg")
 end
 
 # Seed products
@@ -169,7 +170,7 @@ end
 5.times do |n|
   Comment.create!(user_id: 1,
                   product_id: 1,
-                  content: "Thank you!",
+                  content: "Thank you",
                   parent_comment_id: User.find(n+1).id,
                   star: nil)
 end

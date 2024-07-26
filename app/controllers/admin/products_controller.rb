@@ -1,5 +1,5 @@
 class Admin::ProductsController < AdminController
-  before_action :find_product, only: %i(edit update)
+  before_action :find_product, only: %i(edit update destroy)
   include Pagy::Backend
 
   def index
@@ -33,6 +33,15 @@ class Admin::ProductsController < AdminController
       flash.now[:danger] = t "admin.products.edit.fail"
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    if @product.destroy
+      flash[:success] = t "admin.products.destroy.success"
+    else
+      flash.now[:danger] = t "admin.products.destroy.fail"
+    end
+    redirect_to admin_products_path
   end
 
   private

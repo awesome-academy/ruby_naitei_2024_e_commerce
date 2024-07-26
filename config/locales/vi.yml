@@ -146,17 +146,6 @@ vi:
   error:
     user_not_correct: "Người dùng không chính xác"
     user_not_admin: "Bạn không có quyền truy cập trang này."
-  flash:
-    not_admin: "Bạn không phải quản trị viên"
-  admin:
-    dashboard: "Trang quản trị của admin"
-    sidebar:
-      user: "Danh sách người dùng"
-      product: "Sản phẩm"
-      category: "Danh mục sản phẩm"
-      order: "Đơn đặt hàng"
-      statistic: "Thống kê"
-      comment: "Bình luận"
   admin:
     view:
       title: "Danh sách sản phẩm"
@@ -173,6 +162,14 @@ vi:
       delete: "Xóa"
       confirm_delete: "Bạn có chắc chắn muốn xóa không?"
       new_product: "Thêm sản phẩm mới"
+    dashboard: "Trang quản trị của admin"
+    sidebar:
+      user: "Danh sách người dùng"
+      product: "Sản phẩm"
+      category: "Danh mục sản phẩm"
+      order: "Đơn đặt hàng"
+      statistic: "Thống kê"
+      comment: "Bình luận"
     products:
       new:
         title: "Thêm sản phẩm mới"
@@ -186,12 +183,13 @@ vi:
         remain_quantity: "Số lượng còn lại"
         image: "Hình ảnh"
         submit: "Tạo sản phẩm"
-      back: "Quay lại danh sách sản phẩm"
-      resource: "sản phẩm"
       edit:
         title: "Chỉnh sửa Sản phẩm"
         success: "Cập nhật sản phẩm thành công."
         fail: "Cập nhật sản phẩm không thành công."
+      destroy:
+        fail: "Không thể xóa sản phẩm."
+        success: "Sản phẩm đã được xóa thành công."
       back: "Quay lại danh sách sản phẩm"
       resource: "sản phẩm"
   image:

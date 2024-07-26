@@ -143,18 +143,8 @@ en:
   error:
     user_not_correct: "User not correct"
     user_not_admin: "You are not admin"
-  flash:
-    not_admin: "You are not admin"
   admin:
     dashboard: "Admin Dashboard"
-    sidebar:
-      user: "Users"
-      product: "Products"
-      category: "Categories"
-      order: "Order list"
-      statistic: "Statistic"
-      comment: "Comments"
-  admin:
     view:
       title: "Product List"
       id: "ID"
@@ -170,6 +160,13 @@ en:
       delete: "Delete"
       confirm_delete: "Are you sure you want to delete?"
       new_product: "Add New Product"
+    sidebar:
+      user: "Users"
+      product: "Products"
+      category: "Categories"
+      order: "Order list"
+      statistic: "Statistic"
+      comment: "Comments"
     products:
       new:
         title: "Add New Product"
@@ -183,14 +180,15 @@ en:
         remain_quantity: "Remaining Quantity"
         image: "Image"
         submit: "Create Product"
-      back: "Back to Product List"
-      resource: "product"
       edit:
         title: "Edit Product"
         success: "Product updated successfully."
         fail: "Failed to update the product."
       back: "Back to Product List"
       resource: "product"
+      destroy:
+        fail: "Failed to destroy the product."
+        success: "Product destroyed successfully."
   image:
     title: "Image"
     image_invalid_format: "Wrong file format"
