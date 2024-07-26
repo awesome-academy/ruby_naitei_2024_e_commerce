@@ -1,0 +1,98 @@
+@import 'bootstrap';
+@import 'var_shop';
+/*Feed trưng bày sản phẩm*/
+.collage{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding: 20px 160px 20px 160px;
+}
+.collage-pic{
+  width:230px;
+  position:relative;
+  border:solid 1px $collage-pic-border;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-sizing: content-box;
+  background-color: $background-color;
+}
+.collage-info {
+  text-decoration: none;
+  color: inherit;
+}
+.collage-pic__img{
+  width:100%;
+}
+.center{
+  text-align: center;
+}
+.collage-pic__preview--hidden, .collage-pic__heart--hidden{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.collage-pic:hover .collage-pic__preview--hidden, .collage-pic:hover .collage-pic__heart--hidden {
+  opacity: 1;
+  pointer-events: auto;
+}
+.collage-pic__heart--visible {
+  position: absolute;
+  top:20px;
+  right:20px;
+  height: 35px;
+  width: 35px;
+  border: none;
+  border-radius: 50%;
+  font-size: 15px;
+  cursor: pointer;
+}
+.collage-pic__preview--visible {
+  position: absolute;
+  top:60px;
+  right:20px;
+  height: 35px;
+  width: 35px;
+  border: none;
+  border-radius: 50%;
+  font-size: 15px;
+  cursor: pointer;
+}
+.collage-pic__bag {
+  position: absolute;
+  border: solid 1px #dbdbdb;
+  top: 305px;
+  right:20px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  font-size: 15px;
+  cursor: pointer;
+}
+.collage-pic__preview--visible:hover, .collage-pic__heart--visible:hover, .collage-pic__bag:hover{
+  background-color: #00B207;
+  color: white;
+}
+
+.collage-pic__name, .collage-pic p {
+  margin: 10px 10px 0 10px;
+}
+
+.collage-pic__name{
+  text-decoration: none;
+  color:#4d4d4d;
+  overflow: hidden;
+  margin: 10px 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.collage-pic:hover .collage-pic__name{
+  color: #00B207;
+}
+.collage-pic__star{
+  margin: 10px;
+  font-size: 10px;
+}
+.checked {
+  color: orange;
+}
