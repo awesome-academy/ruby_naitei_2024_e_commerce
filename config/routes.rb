@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     root "static_pages#home"
     resources :products
-    resources :users, only: %i(new create show)
+    resources :users
     resources :account_activations, only: :edit
     namespace :admin do
       resources :categories

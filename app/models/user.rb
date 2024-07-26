@@ -21,7 +21,8 @@ class User < ApplicationRecord
                     format: {with: Regexp.new(Settings.email_regex)}
 
   validates :password, presence: true,
-                       length: {minimum: Settings.min_password_length}
+                       length: {minimum: Settings.min_password_length},
+                       allow_nil: true
 
   before_save{self.email = email.downcase}
 

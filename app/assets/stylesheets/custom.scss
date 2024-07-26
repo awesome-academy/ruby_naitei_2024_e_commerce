@@ -328,7 +328,7 @@
 }
 
 .collage-pic__heart--visible:hover, .collage-pic__bag:hover{
-  background-color: $wishlist-color;
+  background-color: $background-color;
   color: $white;
 }
 
@@ -357,4 +357,236 @@
 
 .checked {
   color: orange;
+}
+
+.edit-page {
+  .body {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    height: fit-content;
+  }
+
+  h1 {
+    margin-left: 370px;
+  }
+
+  .nav-link {
+    margin-left: 370px;
+  }
+
+  .body__menu {
+    width: 200px;
+    height: fit-content;
+    border: 2px solid $border-color;
+    border-radius: 4px;
+  }
+
+  .title {
+    font-size: 17px;
+    font-weight: bold;
+    text-indent: 10px;
+    padding: 10px 0;
+    left: 30%;
+  }
+
+  .list__item {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .list__item a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .list__icon {
+    margin: 0 10px;
+  }
+
+  .list div:hover {
+    background-color: $hover-background-color;
+    cursor: pointer;
+  }
+
+  .selected_item {
+    background-color: $hover-background-color;
+    border-left: 3px solid $primary-color;
+    font-weight: bold;
+  }
+
+  .formedit {
+    width: 960px;
+    height: fit-content;
+    border: solid 1px $border-color;
+    border-radius: 8px;
+    padding-bottom: 20px;
+  }
+
+  .body label,
+  .body input,
+  .body textarea {
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    outline: none;
+  }
+
+  .body textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid $border-color;
+  }
+
+  .formedit__title {
+    background-color: $title-background-color;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-left: 0px !important;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+  }
+  #hoten,
+  #email,
+  #sdt {
+    padding: 10px;
+    border: 1px solid $border-color;
+    width: 367px;
+    border-radius: 6px;
+  }
+  #submit {
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: solid 1px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    background-color: $primary-color;
+  }
+
+  .body__order-history {
+    width: 960px;
+    height: fit-content;
+    border: 2px solid $border-color;
+    margin: 10px;
+  }
+
+  .body__order-history .title {
+    padding: 20px 0;
+    border-bottom: 2px solid $border-color;
+    border-left: 3px solid $primary-color;
+  }
+
+  .title__icon {
+    color: $primary-color;
+    font-size: 20px;
+    padding: 0 10px;
+  }
+
+  .content__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.3fr 1fr 0.7fr;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .content .header {
+    background-color: $border-color;
+    padding: 5px;
+  }
+
+  .content__item div {
+    margin: 5px 20px;
+  }
+
+  .content__item div a {
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  .content__next-page {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content__next-page a {
+    text-decoration: none;
+    padding: 7px 11px;
+    font-size: 10px;
+    margin: 3px;
+    border-radius: 50%;
+  }
+
+  .content__next-page .disable {
+    background-color: $border-color;
+    border: 1px solid $border-color;
+    color: gray;
+  }
+
+  .content__next-page .enable {
+    background-color: white;
+    border: 1px solid $border-color;
+    color: black;
+  }
+
+  .content__next-page .numpage {
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+  }
+
+  .content__next-page .selected_numpage {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    color: white;
+  }
+
+  .content__next-page .numpage:hover,
+  .content__next-page .enable:hover {
+    background-color: $hover-background-color;
+    border: 1px solid $hover-background-color;
+    color: black;
+  }
+
+  .form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .formdk__lienlac,
+  .formdk__inputhoten,
+  .formdk__taikhoan,
+  .formdk__gioitinh {
+    width: 95%;
+    display: block;
+    margin: 0 auto 30px auto;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    padding: 16px 10px;
+  }
+
+  .formdk__gioitinh {
+    margin-bottom: 30px;
+  }
+
+  a.signup-button {
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    margin: 0 auto 10px auto;
+    padding: 16px 0;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: $background-color-signup;
+    cursor: pointer;
+  }
 }

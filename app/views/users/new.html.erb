@@ -1,22 +1,12 @@
 <% provide :title, t("sign_up.title") %>
 <head>
-  <title><%= t("sign_up.title") %></title>
+  <title><%= t "sign_up.title" %></title>
 </head>
 <body class="background">
   <div class="signup-page">
     <div class="body-signup">
       <div class="formdk">
-        <%= form_for @user, url: signup_path do |f| %>
-          <label for="" class="tieude-form"><%= t("sign_up.title") %></label>
-          <%= render "shared/error_messages" %>
-          <div class="email-name">
-            <%= f.email_field :email, placeholder: t("sign_up.email"), class: "formdk__lienlac" %>
-            <%= f.text_field :name, placeholder: t("sign_up.name"), class: "formdk__inputhoten" %>
-          </div>
-          <%= password_fields(f) %>
-          <%= gender_field(f) %>
-          <%= f.submit t("sign_up.sign_up_bt"), class: "signup-button" %>
-        <% end %>
+        <%= render "form" %>
       </div>
     </div>
   </div>
