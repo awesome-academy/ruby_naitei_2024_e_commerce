@@ -34,8 +34,9 @@ vi:
     new:
       title: "Đăng nhập"
       email: "Thư điện tử"
+      username: "Tên đăng nhập"
       password: "Mật khẩu"
       login: "Đăng nhập"
-      remember_me: "Ghi nhớ tôi trên máy tính này"
+      remember_me: "Ghi nhớ tôi"
     create:
       invalid: "Tài khoản/mật khẩu không hợp lệ"

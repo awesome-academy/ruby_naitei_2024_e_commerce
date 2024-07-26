@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :products
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
   scope "(:locale)", locale: /en|vi/ do
+    get 'sessions/new'
+    get 'sessions/create'
+    get 'sessions/destroy'
     get "/signup", to: "users#new"
     post "/signup", to: "users#create"
     get "/login", to: "sessions#new"

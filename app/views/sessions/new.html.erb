@@ -1,14 +1,11 @@
-<% provide :title, t("sign_in.title") %>
+<% provide :title, t("sessions.new.title") %>
 <head>
-  <title><%= t("sign_in.title") %></title>
+  <title><%= t("sessions.new.title") %></title>
 </head>
-<body class="body-login">
+<body class="body-login login-page">
   <div class="formdn">
     <%= form_for :session, url: login_path, class: 'js-LoginModal' do |f| %>
       <label for="" class="formdn__tieude--fontto"><%= t("sessions.new.title") %></label>
-      <div class="auth-form__group">
-        <%= f.text_field :username, id: 'loginUsername', placeholder: t("sessions.new.username"), class: 'formdn__email' %>
-      </div>
       <div class="auth-form__group">
         <%= f.email_field :email, id: 'loginEmail', placeholder: t("sessions.new.email"), class: 'formdn__email' %>
       </div>
@@ -22,7 +19,7 @@
         </div>
       </div>
       <%= f.submit t("sessions.new.login"), class: "login-button" %>
-      <p><%= t ".new_user" %><%= link_to t("sessions.new.sign_up_now"), signup_path %></p>
+    <p><%= t ".new_user" %><%= link_to t("sessions.new.sign_up_now"), signup_path %></p>
     <% end %>
   </div>
 </body>

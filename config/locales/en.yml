@@ -34,8 +34,9 @@ en:
     new:
       title: "Log in"
       email: "Email"
+      username: "Username"
       password: "Password"
       login: "Log in"
-      remember_me: "Remember me on this computer"
+      remember_me: "Remember me"
     create:
       invalid: "Invalid email/password combination"
