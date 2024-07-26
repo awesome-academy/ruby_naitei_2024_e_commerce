@@ -1,8 +1,8 @@
 <tr>
   <td><%= voucher_counter + Settings.counter_index %></td>
-  <td><%= format_currency(voucher.condition) %></td>
-  <td><%= discount_to_percentage(voucher.discount) %></td>
-  <td><%= voucher.started_at %></td>
+  <td><%= format_currency voucher.condition %></td>
+  <td><%= discount_to_percentage voucher.discount %></td>
+  <td class="table-data"><%= l voucher.started_at %></td>
   <td class="table-data"><%= l voucher.ended_at %></td>
   <td class="table-data"><%= l voucher.created_at %></td>
 </tr>
