@@ -1,0 +1,29 @@
+<% provide :title, t("sign_up.title") %>
+<head>
+  <title><%= t("sign_up.title") %></title>
+</head>
+<div class="body-signup">
+  <div class="formdk">
+    <%= form_for @user, url: signup_path, class: "js-RegisterModal" do |f| %>
+      <label for="" class="tieude-form"><%= t("sign_up.title") %></label>
+      <%= render "shared/error_messages" %>
+      <div class="auth-form__group">
+        <%= f.email_field :email, placeholder: t("sign_up.email"), class: "formdk__lienlac" %>
+      </div>
+      <div class="hoten-container auth-form__group">
+        <%= f.text_field :name, placeholder: t("sign_up.name"), class: "formdk__inputhoten" %>
+      </div>
+      <div class="auth-form__group">
+        <%= f.password_field :password, placeholder: t("sign_up.password"), class: "formdk__taikhoan" %>
+      </div>
+      <div class="auth-form__group">
+        <%= f.password_field :password_confirmation, placeholder: t("sign_up.password_confirmation"), class: "formdk__taikhoan" %>
+      </div>
+       <div class="auth-form__group">
+        <%= f.label :gender, t("sign_up.gender") %>
+        <%= f.select :gender, User.genders.keys.map { |gender| [t("sign_up.genders.#{gender}"), gender] }, {}, class: "formdk__gioitinh" %>
+      </div>
+      <%= f.submit t("sign_up.sign_up_bt"), class: "signup-button" %>
+    <% end %>
+  </div>
+</div>

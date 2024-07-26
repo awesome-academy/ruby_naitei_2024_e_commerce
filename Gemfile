@@ -31,8 +31,6 @@ gem "sass-rails"
 
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
 
-gem "bootstrap"
-
 gem "bootsnap", require: false
 
 gem "faker", "2.21.0"
@@ -48,6 +46,10 @@ gem "mini_racer", platforms: :ruby
 gem "active_storage_validations"
 
 gem "i18n-js", "3.8.0"
+
+gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+
+gem "bootstrap-sass", "3.4.1"
 
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)

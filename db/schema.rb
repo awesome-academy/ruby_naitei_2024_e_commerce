@@ -124,10 +124,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_25_101942) do
     t.string "email"
     t.string "name"
     t.integer "gender"
-    t.boolean "admin", default: false
+    t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.string "activation_digest"
+    t.boolean "activated"
+    t.datetime "activated_at"
   end
 
   create_table "vouchers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

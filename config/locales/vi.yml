@@ -1,3 +1,31 @@
 vi:
   product:
     price: ! "Giá: %{price} đ"
+  app_name: "Shop đa dạng"
+  hello: "Xin chào"
+  base_title: "Thương mại điện tử"
+  user_creation_failed: "Tạo người dùng thất bại"
+  language:
+    english: "Tiếng Anh"
+    vietnamese: "Tiếng Việt"
+  sign_up:
+    title: "Đăng ký"
+    name: "Họ và Tên"
+    email: "Email"
+    password: "Mật khẩu"
+    password_confirmation: "Nhập lại mật khẩu"
+    gender: "Giới tính"
+    genders:
+      male: "Nam"
+      female: "Nữ"
+      other: "Khác"
+    sign_up_bt: "Đăng ký"
+    the_form_contains: "Biển mẫu bao gồm"
+    error: "Lỗi"
+    notification_mail: "Một thông báo với liên kết xác nhận đã được gửi đến địa chỉ email của bạn. Vui lòng làm theo liên kết để kích hoạt tài khoản của bạn."
+  user_mailer:
+    title: "Kích hoạt tài khoản"
+    account_activation: "Kích hoạt tài khoản"
+    message: "Chào mừng bạn đến với Shop da dang! Click vào link dưới đây để kích hoạt tài khoản của bạn:"
+    success: "Thành công"
+    invalid: "Email hoặc mật khẩu không đúng"
