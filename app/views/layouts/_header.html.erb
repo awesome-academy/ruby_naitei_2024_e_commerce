@@ -24,17 +24,18 @@
       </div>
     <% end %>
   </div>
-
   <div class="header__center">
     <%= link_to t("app_name"), root_path, class: "logo" %>
-
-    <%= form_with url: "/search", class: "search-box", method: :get do |form| %>
-      <%= form.text_field :search__input, placeholder: t("search_product") %>
+    <%= form_tag products_path, class: "search-box", method: :get do %>
+      <%= text_field_tag :name_or_description, nil,
+    class: "search-box__input",
+    name: "product_list[name_or_description]",
+    value: value_search(params[:product_list], :name_or_description),
+    placeholder: t("name_description") %>
       <button class="search-box__btn" type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-magnifying-glass"></i>
       </button>
     <% end %>
-
     <div class="wishlist-cart">
       <%= link_to "#" do %>
         <i class="fa-regular fa-heart"></i>
@@ -51,7 +52,6 @@
       <% end %>
     </div>
   </div>
-
   <div class="navbar-new">
     <ul>
       <li>
@@ -66,7 +66,6 @@
         </li>
       <% end %>
     </ul>
-
     <div class="phone">
       <i class="fa-solid fa-phone-volume phone__icon"></i>
       <span class="phone__number"><%= Settings.phone_number %></span>

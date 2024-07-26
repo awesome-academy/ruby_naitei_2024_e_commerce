@@ -65,6 +65,10 @@ gem "stripe"
 
 gem "rack-cors"
 
+gem "ransack"
+
+gem "impressionist"
+
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "pry-rails"

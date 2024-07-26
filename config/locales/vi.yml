@@ -19,6 +19,7 @@ vi:
     account: "Tài khoản"
     personal_info: "Thông tin cá nhân"
   price: ! "%{price}"
+  name_description: "Tên hoặc mô tả sản phẩm"
   flash:
     create_successfully: "Tạo thành công"
     create_unsuccessfully: "Tạo không thành công"

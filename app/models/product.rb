@@ -10,10 +10,7 @@ class Product < ApplicationRecord
   scope :newest, ->{order(created_at: :desc)}
   delegate :name, to: :category, prefix: true
   scope :order_by_comment, ->{order("COUNT(comments.id) DESC")}
-  scope :product_by_comments, (lambda do
-    joins(:comments)
-      .group("products.id")
-  end)
+  scope :product_by_comments, ->{joins(:comments).group("products.id")}
 
   validates :name, presence: true
   validates :description, presence: true
@@ -28,4 +25,13 @@ class Product < ApplicationRecord
   validates :image,
             content_type: Settings.image_format,
             size: {less_than: Settings.max_image_data.megabytes}
+  scope :search_product, lambda {|search|
+    search&.squish! if search
+    ransack(name_or_description_cont: search).result
+  }
+
+  def self.ransackable_attributes _auth_object = nil
+    %w(category_id created_at deleted_at description id name
+price remain_quantity sales_count updated_at)
+  end
 end

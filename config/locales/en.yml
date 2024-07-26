@@ -15,6 +15,7 @@ en:
   static_pages:
     account: "Account"
     personal_info: "Personal Information"
+  name_description: "Name or description of product"
   flash:
     create_successfully: "Create successfully"
     create_unsuccessfully: "Create unsuccessfully"

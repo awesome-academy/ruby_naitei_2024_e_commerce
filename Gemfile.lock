@@ -134,6 +134,8 @@ GEM
     importmap-rails (1.2.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    impressionist (2.0.0)
+      nokogiri (~> 1)
     io-console (0.6.0)
     irb (1.7.4)
       reline (>= 0.3.6)
@@ -231,7 +233,11 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
-    rake (13.2.1)
+    rake (13.0.6)
+    ransack (4.2.0)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     rb-fsevent (0.11.2)
     rb-inotify (0.11.1)
       ffi (~> 1.0)
@@ -361,6 +367,7 @@ DEPENDENCIES
   i18n-js (= 3.8.0)
   image_processing
   importmap-rails
+  impressionist
   jbuilder
   jquery-rails
   mini_racer
@@ -372,6 +379,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 7.0.5)
   rails-i18n
+  ransack
   redis
   rspec-rails (~> 4.0.1)
   rubocop (~> 1.26)
