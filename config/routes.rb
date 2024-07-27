@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     post "/signup", to: "users#create"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
+    root "static_pages#home"
     resources :products
     resources :users, only: %i(new create show)
     resources :account_activations, only: :edit

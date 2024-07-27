@@ -10,6 +10,7 @@ en:
   errors:
     product:
       not_found: "Product doesn't exist"
+  search_product: "Search for products"
   app_name: "Shop da dang"
   hello: "Hello"
   base_title: "Ecommerce"
@@ -40,6 +41,8 @@ en:
     invalid: "Invalid email/password combination"
   sessions:
     login: "Login"
+    new_user: "New user?"
+    signup_now: "Signup now"
     new:
       title: "Log in"
       email: "Email"
@@ -49,3 +52,6 @@ en:
       remember_me: "Remember me"
     create:
       invalid: "Invalid email/password combination"
+  homepage:
+    home: "Homepage"
+    product: "Products"

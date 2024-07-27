@@ -1,0 +1,51 @@
+<header>
+  <div class="header__top">
+    <div class="i18n">
+      <%= link_to t("language.english"), locale: :en %>
+      <hr>
+      <%= link_to t("language.vietnamese"), locale: :vi %>
+    </div>
+    <div class="validation">
+      <%= link_to t("sign_up.title"), signup_path, class: "validation__register" %>
+      <hr>
+      <%= link_to t("sessions.new.title"), login_path, class: "validation__login" %>
+    </div>
+  </div>
+
+  <div class="header__center">
+    <%= link_to t("app_name"), root_path, class: "logo" %>
+
+    <%= form_with url: "/search", class: "search-box", method: :get do |form| %>
+      <%= form.text_field :search__input, placeholder: t("search_product") %>
+      <button class="search-box__btn" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    <% end %>
+
+    <div class="wishlist-cart">
+      <%= link_to "#" do %>
+        <i class="fa-regular fa-heart"></i>
+      <% end %>
+      <hr>
+      <%= link_to "#" do %>
+        <i class="fa-solid fa-cart-shopping"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <ul>
+      <li>
+        <%= link_to t("homepage.home"), root_path %>
+      </li>
+      <li>
+        <%= link_to t("homepage.product"), products_path %>
+      </li>
+    </ul>
+
+    <div class="phone">
+      <i class="fa-solid fa-phone-volume phone__icon"></i>
+      <span class="phone__number"><%= Settings.phone_number %></span>
+    </div>
+  </div>
+</header>

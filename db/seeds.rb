@@ -3,6 +3,7 @@ admin = User.create!(email: "admin@ecommerce.org",
                      name: "Admin",
                      gender: 1,
                      admin: true,
+                     activated: true,
                      password: "admin1234",
                      password_confirmation: "admin1234")
 admin.avatar.attach(io: File.open(Rails.root.join("./app/assets/images", "admin.png")), filename: "admin.png")
@@ -14,6 +15,7 @@ admin.avatar.attach(io: File.open(Rails.root.join("./app/assets/images", "admin.
   gender = Random.rand(0..2)
   user = User.create!(email: email,
                       name: name,
+                      activated: true,
                       gender: gender,
                       password: password,
                       password_confirmation: password)
