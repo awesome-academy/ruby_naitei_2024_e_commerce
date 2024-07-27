@@ -1,0 +1,44 @@
+<div class="sidebar">
+  <div class="sidebar-user">
+    <%= image_tag current_user.avatar, class: "sidebar-user__img" %>
+    <span class="sidebar-user__name"><%= current_user.name %></span>
+  </div>
+  <ul class="sidebar-list">
+    <li class="sidebar-item">
+      <%= link_to "#" do %>
+        <i class="fa-solid fa-user sidebar-item-icon"></i>
+        <p><%= t "admin.sidebar.user" %></p>
+      <% end %>
+    </li>
+    <li class="sidebar-item">
+      <%= link_to "#" do %>
+        <i class="fa-solid fa-box"></i>
+        <p><%= t "admin.sidebar.product" %></p>
+      <% end %>
+    </li>
+    <li class="sidebar-item">
+      <%= link_to "#" do %>
+        <i class="fa-solid fa-list"></i>
+        <p><%= t "admin.sidebar.category" %></p>
+      <% end %>
+    </li>
+    <li class="sidebar-item">
+      <%= link_to "#" do %>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <p><%= t "admin.sidebar.order" %></p>
+      <% end %>
+    </li>
+    <li class="sidebar-item">
+      <%= link_to "#" do %>
+        <i class="fa-solid fa-chart-simple"></i>
+        <p><%= t "admin.sidebar.statistic" %></p>
+      <% end %>
+    </li>
+    <li class="sidebar-item">
+      <%= link_to "#" do %>
+        <i class="fa-solid fa-comment"></i>
+        <p><%= t "admin.sidebar.comment" %></p>
+      <% end %>
+    </li>
+  </ul>
+</div>

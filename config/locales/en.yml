@@ -115,3 +115,14 @@ en:
   error:
     user_not_correct: "User not correct"
     user_not_admin: "You are not admin"
+  admin:
+    dashboard: "Admin Dashboard"
+    sidebar:
+      user: "Users"
+      product: "Products"
+      category: "Categories"
+      order: "Order list"
+      statistic: "Statistic"
+      comment: "Comments"
+  flash:
+    not_admin: "You are not admin"

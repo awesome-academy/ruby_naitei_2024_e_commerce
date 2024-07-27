@@ -117,3 +117,14 @@ vi:
   error:
     user_not_correct: "Người dùng không chính xác"
     user_not_admin: "Bạn không có quyền truy cập trang này."
+  admin:
+    dashboard: "Trang quản trị của admin"
+    sidebar:
+      user: "Danh sách người dùng"
+      product: "Sản phẩm"
+      category: "Danh mục sản phẩm"
+      order: "Đơn đặt hàng"
+      statistic: "Thống kê"
+      comment: "Bình luận"
+  flash:
+    not_admin: "Bạn không phải quản trị viên"

@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
     else
       forget(user)
     end
-    redirect_back_or @user
+    redirect_back_or root_path
   end
 
   def handle_failed_activated

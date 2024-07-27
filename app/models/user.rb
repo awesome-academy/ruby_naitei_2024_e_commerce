@@ -81,6 +81,10 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
+  def admin?
+    admin
+  end
+
   private
 
   def downcase_email
