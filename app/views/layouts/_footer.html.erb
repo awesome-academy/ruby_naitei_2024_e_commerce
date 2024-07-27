@@ -1,0 +1,69 @@
+<footer>
+  <div class="footer__top">
+    <div class="box">
+      <%= link_to t("app_name"), root_path, class: "logo" %>
+      <div class="social-icon">
+        <%= link_to "#" do %>
+          <i class="fa-brands fa-facebook"></i>
+        <% end %>
+        <%= link_to "#" do %>
+          <i class="fa-brands fa-instagram"></i>
+        <% end %>
+        <%= link_to "#" do %>
+          <i class="fa-brands fa-twitter"></i>
+        <% end %>
+        <%= link_to "#" do %>
+          <i class="fa-brands fa-youtube"></i>
+        <% end %>
+        <%= link_to "#" do %>
+          <i class="fa-brands fa-threads"></i>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="box">
+      <h2 class="box__header"><%= t "footer.my_account" %></h2>
+      <ul>
+        <li><%= t "footer.profile" %></li>
+        <li><%= t "footer.order_history" %></li>
+        <li><%= t "footer.cart" %></li>
+        <li><%= t "footer.wishlist" %></li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2 class="box__header"><%= t "footer.help" %></h2>
+      <ul>
+        <li><%= t "footer.contact" %></li>
+        <li><%= t "footer.rule" %></li>
+        <li><%= t "footer.privacy" %></li>
+        <li><%= t "footer.guide" %></li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2 class="box__header"><%= t "footer.download" %></h2>
+      <div class="download">
+        <a class="ggplay" href="">
+          <i class="fa-brands fa-google-play ggplay__icon"></i>
+          <div class="ggplay__text">
+            <span><%= t "footer.download_on" %></span> <br>
+            Google Play
+          </div>
+        </a>
+
+        <a class="appstore" href="">
+          <i class="fa-brands fa-apple appstore__icon"></i>
+          <div class="appstore__text">
+            <span><%= t "footer.download_on" %></span> <br>
+            App Store
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div><%= t "footer.copyright" %></div>
+  </div>
+</footer>

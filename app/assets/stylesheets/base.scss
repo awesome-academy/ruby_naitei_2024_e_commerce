@@ -233,3 +233,118 @@ header {
 .phone__icon {
   margin-right: 6px;
 }
+
+.footer__top {
+  padding: 40px 160px 14px 160px;
+  background-color: $footer-bottom;
+  color: $footer-icon;
+  display: grid;
+  grid-template-columns: 0.6fr 0.5fr 0.5fr 0.6fr;
+}
+
+.footer__top .logo {
+  color: $white;
+  font-size: 22px;
+  line-height: 33px;
+  margin-top: 16px;
+}
+
+.footer__top .social-icon {
+  margin-top: 20px;
+}
+
+.footer__top .social-icon a {
+  text-decoration: none;
+  color: $footer-icon;
+  font-size: 20px;
+  margin: 6px 16px 0 0;
+}
+
+.footer__top .social-icon a:hover {
+  color: $primary-color;
+}
+
+.box:first-child {
+  margin-left: 0;
+}
+
+.box {
+  border-bottom: 1px solid $footer-icon;
+  padding-bottom: 44px;
+}
+
+.box__header {
+  font-size: 16px;
+  color: $white;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.footer__top li {
+  list-style: none;
+  margin: 14px 0;
+  font-size: 14px;
+  transition: margin-left 0.1s linear;
+}
+
+.footer__top li:hover {
+  cursor: pointer;
+  color: $primary-color;
+  margin-left: 6px;
+}
+
+.download {
+  font-size: 14px;
+}
+
+.ggplay,
+.appstore {
+  display: flex;
+  text-decoration: none;
+  color: $white;
+  justify-content: center;
+  align-items: center;
+  background-color: $header-top-background;
+  width: 150px;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.ggplay:hover,
+.appstore:hover {
+  color: $white;
+  text-decoration: none;
+}
+
+.ggplay__icon {
+  font-size: 24px;
+}
+
+.appstore__icon {
+  font-size: 30px;
+}
+
+.ggplay__icon,
+.appstore__icon {
+  margin-right: 8px;
+}
+
+.ggplay__text span,
+.appstore__text span {
+  color: $header-top-color;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.footer__bottom {
+  background-color: $footer-bottom;
+}
+
+.footer__bottom div {
+  text-align: center;
+  color: $footer-icon;
+  font-size: 13px;
+  margin: auto;
+  padding-bottom: 14px;
+}

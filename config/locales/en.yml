@@ -55,3 +55,17 @@ en:
   homepage:
     home: "Homepage"
     product: "Products"
+  footer:
+    my_account: "My account"
+    profile: "Profile"
+    order_history: "Order history"
+    cart: "Cart"
+    wishlist: "Wishlist"
+    help: "Help"
+    contact: "Contact"
+    rule: "Rules"
+    privacy: "Privacy policy"
+    guide: "Shopping guide"
+    download: "Download our app"
+    download_on: "Download on"
+    copyright: "© 2024 - Copyright by Shop Da Dang"
