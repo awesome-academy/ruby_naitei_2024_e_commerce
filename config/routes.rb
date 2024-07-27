@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :account_activations, only: :edit
     namespace :admin do
       resources :categories
+      resources :home
     end
   end
 end

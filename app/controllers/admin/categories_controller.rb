@@ -1,6 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   include ApplicationHelper
-  before_action :load_category, only: %i(edit update)
+  before_action :load_category, only: %i(edit update destroy)
   def index
     @pagy, @categories = pagy Category.oldest, limit: Settings.page_size
   end
@@ -31,6 +31,15 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def edit; end
+
+  def destroy
+    if @category.destroy
+      flash.now[:success] = t "flash.delete_successfully"
+    else
+      flash.now[:danger] = t "flash.delete_unsuccessfull"
+    end
+    redirect_to admin_categories_path
+  end
 
   private
   def category_params

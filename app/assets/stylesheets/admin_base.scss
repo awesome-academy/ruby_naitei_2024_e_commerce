@@ -1,0 +1,123 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'variable';
+
+.admin__body{
+  display: flex;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $header-top-background;
+  padding: 20px;
+  width: 1214px;
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  margin-left: 230px;
+}
+
+.toggle-sidebar {
+  padding: 20px;
+  background-color: $primary-color;
+  color: $white;
+}
+
+.toggle-sidebar:hover,
+.header-left .logo:hover {
+  color: $white;
+}
+
+.header-left .logo {
+  color: $white;
+  margin-left: 20px;
+}
+
+.i18n {
+  display: flex;
+  align-items: center;
+  a {
+    margin: 0 5px;
+    color: $white;
+  }
+  a:hover {
+    color: $primary-color;
+    text-decoration: none;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  color: $white;
+}
+
+.admin-chat {
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+.user__img {
+  width: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.sidebar {
+  background-color: $admin-sidebar;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  background-color: $admin-sidebar-user;
+  padding: 20px 30px 20px 20px;
+}
+
+.sidebar-user__img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.sidebar-user__name {
+  font-size: 16px;
+  color: $white;
+  margin-left: 20px;
+}
+
+.sidebar-list {
+  margin-bottom: 0;
+}
+
+.sidebar-item {
+  font-size: 16px;
+  padding: 20px;
+  width: 228px;
+  a {
+    color: $white;
+    display: flex;
+    align-items: center;
+    p {
+      margin: 0 0 0 10px;
+    }
+  }
+}
+
+.sidebar-item:hover {
+  background-color: $primary-color;
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+}

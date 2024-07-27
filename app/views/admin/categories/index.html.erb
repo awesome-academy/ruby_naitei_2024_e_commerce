@@ -3,6 +3,7 @@
   <table class="data-table">
     <thead>
       <tr>
+        <th class="table-header"><%= t "number" %></th>
         <th class="table-header"><%= t "category.name" %></th>
         <th class="table-header"><%= t "create_time" %></th>
         <th class="table-header"><%= t "update_time" %></th>
@@ -10,7 +11,7 @@
       </tr>
     </thead>
     <tbody id="categories_list">
-      <%= render @categories %>
+      <%= render partial: "category", collection: @categories, as: :category %>
     </tbody>
   </table>
   <div class="pagy--center">

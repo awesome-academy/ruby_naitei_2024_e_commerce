@@ -1,22 +1,26 @@
 en:
-  comment: "Comment"
-  description: "Description"
   time:
     formats:
       default: "%H:%M %d %B, %Y"
+  comment: "Comment"
   description: "Description"
-  edit: "Edit"
   created_at: ! "Created at %{date}"
   updated_at: ! "Updated at %{date}"
   create_time: "Create time"
   update_time: "Update time"
   action: "Action"
+  udpate: "Update"
+  delete: "Delete"
+  number: "Number"
   flash:
     create_successfully: "Create successfully"
     create_unsuccessfully: "Create unsuccessfully"
     update_successfully: "Update successfully"
     update_unsuccessfully: "Update unsuccessfully"
     not_found: ! "%{model} not found"
+    delete_successfully: "Delete successfully"
+    delete_unsuccessfully: "Delete unsuccessfully"
+    you_sure?: "Are you sure?"
   product:
     price: ! "Price: %{price} đ"
     comment: ! "%{comments} rate"
@@ -115,3 +119,14 @@ en:
   error:
     user_not_correct: "User not correct"
     user_not_admin: "You are not admin"
+  admin:
+    dashboard: "Admin Dashboard"
+    sidebar:
+      user: "Users"
+      product: "Products"
+      category: "Categories"
+      order: "Order list"
+      statistic: "Statistic"
+      comment: "Comments"
+  flash:
+    not_admin: "You are not admin"

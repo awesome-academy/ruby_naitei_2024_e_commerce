@@ -1,8 +1,12 @@
 <tr class="table-row">
+  <td class="table-data"><%= category_counter + 1 %></td>
   <td class="table-data"><%= category.name %></td>
   <td class="table-data"><%= l(category.created_at) %></td>
   <td class="table-data"><%= l(category.updated_at) %></td>
   <td class="table-data">
-    <%= link_to t("edit"), edit_admin_category_path(category), class: "btn btn-warning" %>
+    <%= link_to t("update"), edit_admin_category_path(category), class: "btn btn-warning" %>
+    <%= link_to t("delete"), admin_category_path(category), data: { "turbo-method": :delete,
+                                                    turbo_confirm: t("flash.you_sure?") },
+                                                    class: "btn btn-danger" %>
   </td>
 </tr>

@@ -7,18 +7,23 @@ vi:
       [nil, Tháng 1, Tháng 2, Tháng 3, Tháng 4, Tháng 5, Tháng 6, Tháng 7, Tháng 8, Tháng 9, Tháng 10, Tháng 11, Tháng 12]
   comment: "Bình luận"
   description: "Mô tả"
-  edit: "Sửa"
+  update: "Sửa"
+  delete: "Xóa"
   created_at: ! "Created at %{date}"
   updated_at: ! "Updated at %{date}"
   create_time: "Thời gian tạo"
   update_time: "Thời gian cập nhật"
   action: "Thao tác"
+  number: "STT"
   flash:
     create_successfully: "Tạo thành công"
     create_unsuccessfully: "Tạo không thành công"
     update_successfully: "Cập nhật thành công"
     update_unsuccessfully: "Cập nhật không thành công"
     not_found: ! "Không tìm thấy %{model}"
+    delete_successfully: "Xóa thành công"
+    delete_unsuccessfully: "Xóa không thành công"
+    you_sure?: "Bạn có chắc không?"
   product:
     price: ! "Giá: %{price} đ"
     comment: ! "%{comments} đánh giá"
@@ -117,3 +122,14 @@ vi:
   error:
     user_not_correct: "Người dùng không chính xác"
     user_not_admin: "Bạn không có quyền truy cập trang này."
+  admin:
+    dashboard: "Trang quản trị của admin"
+    sidebar:
+      user: "Danh sách người dùng"
+      product: "Sản phẩm"
+      category: "Danh mục sản phẩm"
+      order: "Đơn đặt hàng"
+      statistic: "Thống kê"
+      comment: "Bình luận"
+  flash:
+    not_admin: "Bạn không phải quản trị viên"
