@@ -13,4 +13,9 @@ class Category < ApplicationRecord
                        resize_to_limit: [Settings.digit_160, Settings.digit_160]
   end
   scope :oldest, ->{order(parent_category_id: :asc, created_at: :asc)}
+  scope :order_by_comment, ->{order("COUNT(comments.id) DESC")}
+  scope :category_by_comments, (lambda do
+    joins(products: :comments)
+      .group("categories.id")
+  end)
 end

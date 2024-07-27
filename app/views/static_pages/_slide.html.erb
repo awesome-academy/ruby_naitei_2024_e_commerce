@@ -1,0 +1,13 @@
+<div class="slide-img">
+  <%= image_tag Settings.slide_img %>
+</div>
+<div class="slide__content">
+  <div class="text-content">
+    <p class="text-welcome"><%= t "slide.welcome" %></p>
+    <h1 class="text-heading"><%= t "slide.heading" %></h1>
+  </div>
+  <%= link_to products_path do %>
+    <%= t "slide.shopping_now" %>
+    <i class="fa-solid fa-arrow-right"></i>
+  <% end %>
+</div>

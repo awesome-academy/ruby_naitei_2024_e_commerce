@@ -1,0 +1,19 @@
+<div class="client-testimonail__box">
+  <p><%= homepage_comment.content %></p>
+  <div class="customer-acc">
+    <%= image_tag homepage_comment.user.avatar, class: "customer-acc__avatar" %>
+    <div>
+      <p class="customer-acc__name"><%= homepage_comment.user.name %></p>
+    </div>
+    <div class="customer-acc__rate">
+      <% if !homepage_comment.star.nil? %>
+        <% (homepage_comment.star).times do |i| %>
+          <span class="fa fa-star checked"></span>
+        <% end %>
+        <% (Settings.max_rating_star - homepage_comment.star).times do |i| %>
+          <span class="fa fa-star"></span>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

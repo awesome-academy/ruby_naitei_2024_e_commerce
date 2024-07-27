@@ -91,8 +91,30 @@ vi:
     create:
       invalid: "Tài khoản/mật khẩu không hợp lệ"
   homepage:
+    view_all: "Xem tất cả"
     home: "Trang chủ"
     product: "Sản phẩm"
+    feature:
+      delivery:
+        title: "Miễn phí vận chuyển"
+        describe: "Miễn phí vận chuyển tất cả các đơn đặt hàng của bạn"
+      support:
+        title: "Hỗ trợ 24/7"
+        describe: "Luôn sẵn sàng đễ hỗ trợ khách hàng"
+      privacy:
+        title: "Bảo mật thanh toán 100%"
+        describe: "Chúng tôi đảm bảo tiền của bạn an toàn"
+      refund:
+        title: "Chính sách hoàn tiền"
+        describe: "Hoàn tiền trong vòng 30 ngày"
+    category: "Các loại sản phẩm phổ biến"
+    banner:
+      title: "Ưu đãi mùa hè lên đến 37%"
+      day: "ngày"
+      hour: "giờ"
+      minute: "phút"
+      second: "giây"
+    popular_product: "Các sản phẩm phổ biến"
   footer:
     my_account: "Tài khoản của tôi"
     profile: "Hồ sơ"
@@ -152,3 +174,7 @@ vi:
   image:
     title: "Ảnh minh họa"
     image_invalid_format: "Sai định dạng file"
+  slide:
+    welcome: "Chào mừng đến với Shop Đa Dạng"
+    heading: "Chúng tôi cung cấp những sản phẩm rẻ và chất lượng"
+    shopping_now: "Mua sắm ngay!"
