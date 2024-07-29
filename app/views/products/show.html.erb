@@ -1,2 +1,60 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class="product-detail_body">
+  <div class="addinfo">
+    <div class="addinfo_img">
+      <%= image_tag @product.image, class: "addinfo_img" %>
+    </div>
+    <div class="addinfo_info">
+      <h1><%= @product.name %></h1>
+      <% average_rating = average_of_rating(@comments) %>
+      <% if average_rating.present? %>
+        <% average_rating.times do %>
+          <span class="fa fa-star checked"></span>
+        <% end %>
+        <% (Settings.max_rating_star - average_rating).times do %>
+          <span class="fa fa-star"></span>
+        <% end %>
+      <% end %>
+      <p class="addinfo_info__starnote"><%= t("product.comment", comments: comment_users(@comments).size) %></p>
+      <p class="addinfo_info__gia"><%= t("product.price", price: @product.price) %></p>
+      <p class="addinfo_info__info"><%= @product.description %></p>
+      <div class="addinfo_buy">
+        <div class="addinfo_buy__amount">
+          <button id="addinfo_buy__amount--decrease"><i class="fa-solid fa-minus"></i></button>
+            <span id="addinfo_buy__amount--number">0</span>
+          <button id="addinfo_buy__amount--increase"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="addinfo_buy__addtocart">
+          <button>
+            <%= t "cart.add_to_cart" %><i class="fa-solid fa-bag-shopping"></i>
+          </button>
+        </div>
+        <div class="addinfo_buy__wishlist">
+          <button><i class="fa-regular fa-heart"></i></button>
+        </div>
+        </div>
+        <div class="addinfo_info__tag">
+          <p><%= t "category" %>:
+            <span class="addinfo_info__tag--grey"><%= @product.category_name %></span>
+          </p>
+        </div>
+      </div>
+  </div>
+  <div class="about">
+    <div class="about_button">
+      <%= link_to "#", class: "about_button__button", data: { toggle: "about_section" }, id: "about-description" do %>
+        <%= t "description" %>
+      <% end %>
+      <%= link_to "#", class: "about_button__button", data: { toggle: "about_section" },id: "about-comment" do %>
+        <%= t "comment" %>
+      <% end %>
+    </div>
+    <div class="about_section" id="zero">
+      <div class="description" id="description">
+        <p class="addinfo_info__info"><%= @product.description %></p>
+      </div>
+      <div class="comments" id="comments">
+        <%= render @comments %>
+      </div>
+    </div>
+  </div>
+</div>

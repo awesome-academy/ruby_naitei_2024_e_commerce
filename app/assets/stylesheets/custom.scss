@@ -2,7 +2,7 @@
 @import 'bootstrap';
 @import 'variable';
 
-body {
+body{
   background-image: $background-image-signup;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -243,20 +243,24 @@ p {
   padding: 20px 160px 20px 160px;
 }
 .collage-pic{
-  width:230px;
-  position:relative;
+  width: 230px;
+  position: relative;
   border:solid 1px $collage-pic-border;
   margin-bottom: 10px;
   border-radius: 5px;
   box-sizing: content-box;
+  margin: 20px;
   background-color: $background-color;
+}
+.collage-pic_image{
+  margin: 0;
 }
 .collage-info {
   text-decoration: none;
   color: inherit;
 }
 .collage-pic__img{
-  width:100%;
+  width: 230px;
 }
 .center{
   text-align: center;

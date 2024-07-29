@@ -51,11 +51,14 @@ gem "i18n-js", "3.8.0"
 
 gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 
+gem "hotwire-rails"
+
 gem "bootstrap-sass", "3.4.1"
 
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "pry-rails"
+  gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false
@@ -64,7 +67,6 @@ end
 group :development do
   gem "web-console"
 end
-
 group :test do
   gem "capybara"
   gem "selenium-webdriver"

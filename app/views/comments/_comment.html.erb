@@ -1,0 +1,15 @@
+<div class="comment">
+  <%= image_tag comment.user.avatar, class: "comment__profileimage" %>
+  <p class="comment__username"><%= comment.user.name %></p>
+  <p>
+    <% if !comment.star.nil? %>
+      <% (comment.star).times do |i| %>
+        <span class="fa fa-star checked"></span>
+      <% end %>
+      <% (Settings.max_rating_star - comment.star).times do |i| %>
+        <span class="fa fa-star"></span>
+      <% end %>
+    <% end %>
+  </p>
+  <p class="comment__content"><%= comment.content %></p>
+</div>

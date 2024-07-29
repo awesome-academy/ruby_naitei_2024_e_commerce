@@ -1,6 +1,15 @@
 vi:
+  category: "Phân loại"
+  comment: "Bình luận"
+  description: "Mô tả"
   product:
     price: ! "Giá: %{price} đ"
+    comment: ! "%{comments} đánh giá"
+  cart:
+    add_to_cart: "Thêm vào giỏ hàng"
+  errors:
+    product:
+      not_found: "Không tìm thấy sản phẩm"
   app_name: "Shop đa dạng"
   hello: "Xin chào"
   base_title: "Thương mại điện tử"
