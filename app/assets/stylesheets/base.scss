@@ -1,0 +1,235 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'variable';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes FadeIn {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.8;
+  }
+}
+
+@keyframes indent {
+  from {
+    margin-left: 0;
+  }
+
+  to {
+    margin-left: 10px;
+  }
+}
+
+@keyframes popupSlideIn {
+  from {
+    opacity: 0.7;
+    transform: translateX(300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes sliderSlideIn {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+header {
+  background-color: $white;
+}
+
+.header__top {
+  background-color: $header-top-background;
+  color: $header-top-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 160px;
+  height: 38px;
+  font-size: 15px;
+}
+
+.i18n {
+  display: flex;
+}
+
+.header__top hr {
+  border-color: $border-color;
+  margin: 0 10px;
+  height: 16px;
+  -webkit-transform:rotate(90deg);
+}
+
+.header__top a {
+  text-decoration: none;
+  color: $header-top-color;
+}
+
+.header__top a:hover {
+  cursor: pointer;
+  color: $primary-color;
+}
+
+.validation {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.validation__register,
+.validation__login {
+  text-decoration: none;
+  color: $header-top-color;
+}
+
+.header__center {
+  padding: 0 160px;
+  display: flex;
+  align-items: center;
+  margin: 26px 0;
+  justify-content: space-between;
+  position: sticky;
+}
+
+.logo-shop {
+  width: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.96px;
+  color: $logo-text;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: $logo-text;
+}
+
+.search-box {
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  width: 500px;
+  overflow: hidden;
+}
+
+#search__input {
+  border: none;
+  outline: none;
+  padding: 12px 18px;
+  flex: 1;
+}
+
+.search-box__btn {
+  border: none;
+  outline: none;
+  padding: 12px 24px;
+  background-color: $primary-color;
+  color: $white;
+}
+
+.search-box__btn:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.wishlist-cart {
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+}
+
+.wishlist-cart a {
+  color: $header-top-background;
+  font-size: 20px;
+}
+
+.wishlist-cart hr {
+  border-color: $navbar-border-color;
+  margin: 0 20px;
+  height: 26px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 160px;
+  border-top: 1px solid $navbar-border-color;
+  border-bottom: 1px solid $navbar-border-color;
+  align-items: center;
+  font-size: 15px;
+}
+
+.navbar-selected {
+  color: $primary-color !important;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  width: 776px;
+}
+
+.navbar ul li {
+  margin: 16px 40px 10px 0;
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: $navbar-text-color
+}
+
+.navbar ul li hr {
+  display: none;
+  position: absolute;
+  border: 1px solid $primary-color;
+  top: 26px;
+  left: -4px;
+  width: 84px;
+}
+
+.navbar ul li:nth-child(3) hr {
+  left: -6px;
+}
+
+.navbar ul li:last-child hr {
+  left: -8px;
+  width: 70px;
+}
+
+.navbar ul li a:hover {
+  color: $primary-color;
+  animation: FadeIn linear 0.3s;
+}
+
+.navbar ul li a:hover .navbar ul li hr {
+  display: block;
+}
+
+.phone {
+  font-size: 16px;
+}
+
+.phone__icon {
+  margin-right: 6px;
+}

@@ -1,132 +1,141 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "variable";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'variable';
 
-.signup-page {
+.background {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-image: $background-image-signup;
   background-repeat: no-repeat;
   background-size: 100%;
+  height: 800px;
+  .signup-page {
+    .signup-logo {
+      padding-bottom: 50px;
+      width: 100%;
+      text-align: center;
+    }
 
-  header {
-    background-color: #f8f9fa;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    border-bottom: 1px solid #e3e3e3;
-  }
+    .signup-logo a {
+      text-decoration: none;
+    }
 
-  .signup-logo {
-    padding-bottom: 50px;
-    width: 100%;
-    text-align: center;
-  }
+    .signup-logo span {
+      font-size: 30px;
+      color: white;
+    }
 
-  .signup-logo a {
-    text-decoration: none;
-  }
+    .body-signup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
-  .signup-logo span {
-    font-size: 30px;
-    color: white;
-  }
+    .logo__img {
+      height: 36px;
+    }
 
-  .body-signup {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+    .formdk {
+      width: 500px;
+      border: solid 2px $border-color;
+      margin: 0 auto;
+      font-size: 14px;
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px 40px;
+    }
 
-  .logo__img {
-    height: 36px;
-  }
+    .tieude-form {
+      display: block;
+      font-size: 30px;
+      text-align: center;
+      padding: 20px;
+      font-weight: bold;
+    }
 
-  .formdk {
-    width: 500px;
-    border: solid 2px $border-color;
-    margin: 0 auto;
-    font-size: 14px;
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px 40px;
-  }
+    #error_explanation {
+      ul {
+        li {
+          list-style: none;
+        }
+      }
+    }
 
-  .tieude-form {
-    display: block;
-    font-size: 30px;
-    text-align: center;
-    padding: 20px;
-    font-weight: bold;
-  }
+    .email-name {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
 
-  input {
-    width: 100%;
-    display: block;
-    margin: 0 auto 30px auto;
-    border: 1px solid $border-color;
-    border-radius: 5px;
-    padding: 16px 10px;
-  }
+    input {
+      width: 100%;
+      display: block;
+      margin: 0 auto 30px auto;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      padding: 16px 10px;
+    }
 
-  a.signup-button {
-    text-align: center;
-    font-size: 16px;
-    text-decoration: none;
-    width: 100%;
-    display: block;
-    margin: 0 auto 10px auto;
-    padding: 16px 0;
-    border: none;
-    color: white;
-    font-weight: bold;
-    border-radius: 20px;
-    background-color: $background-color-signup;
-    cursor: pointer;
-  }
+    .signup-button {
+      text-align: center;
+      font-size: 16px;
+      text-decoration: none;
+      width: 100%;
+      display: block;
+      margin: 0 auto 10px auto;
+      padding: 16px 0;
+      border: none;
+      font-weight: bold;
+      border-radius: 20px;
+      color: $white;
+      background-color: $primary-color;
+      cursor: pointer;
+    }
 
-  button:hover {
-    opacity: 0.8;
-    cursor: pointer;
-  }
+    button:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
 
-  p {
-    text-align: center;
-    padding: 10px 0;
-  }
+    p {
+      text-align: center;
+      padding: 10px 0;
+    }
 
-  .login a {
-    color: $primary-color;
-  }
+    .login a {
+      color: $primary-color;
+    }
 
-  .formdk__lienlac,
-  .formdk__inputhoten,
-  .formdk__taikhoan,
-  .formdk__gioitinh {
-    width: 100%;
-    display: block;
-    margin: 0 auto 30px auto;
-    border: 1px solid $border-color;
-    border-radius: 5px;
-    padding: 16px 10px;
-  }
+    .formdk__lienlac,
+    .formdk__inputhoten,
+    .formdk__taikhoan,
+    .formdk__gioitinh {
+      width: 100%;
+      display: block;
+      margin: 0 auto 20px auto;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      padding: 16px 10px;
+    }
 
-  .formdk__gioitinh {
-    margin-bottom: 30px;
+    .formdk__gioitinh {
+      margin-bottom: 30px;
+    }
   }
 }
 
 /* CSS cho trang đăng nhập */
 .login-page {
-  .body-login {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-image: $background-image-login;
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: $background-image-login;
+  background-repeat: no-repeat;
+  background-size: 100%;
 
   .signup-logo {
     padding-bottom: 60px;
@@ -150,6 +159,7 @@
   .formdn {
     border: solid 2px $border-color;
     margin: 0 auto;
+    width: 800px;
     font-size: 14px;
     background-color: white;
     border-radius: 8px;
@@ -264,22 +274,29 @@
   background-color: $background-color;
 }
 
-.collage-pic__img {
+.collage-pic_image{
+  margin: 0;
+}
+
+.collage-info {
+  text-decoration: none;
+  color: inherit;
+}
+
+.collage-pic__img{
   width: 230px;
 }
 
-.center {
+.center{
   text-align: center;
 }
 
-.collage-pic__preview--hidden,
-.collage-pic__heart--hidden {
+.collage-pic__heart--hidden{
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
-.collage-pic:hover .collage-pic__preview--hidden,
 .collage-pic:hover .collage-pic__heart--hidden {
   opacity: 1;
   pointer-events: auto;
@@ -288,18 +305,6 @@
 .collage-pic__heart--visible {
   position: absolute;
   top: 20px;
-  right: 20px;
-  height: 35px;
-  width: 35px;
-  border: none;
-  border-radius: 50%;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.collage-pic__preview--visible {
-  position: absolute;
-  top: 60px;
   right: 20px;
   height: 35px;
   width: 35px;
@@ -321,11 +326,9 @@
   cursor: pointer;
 }
 
-.collage-pic__preview--visible:hover,
-.collage-pic__heart--visible:hover,
-.collage-pic__bag:hover {
-  background-color: #00b207;
-  color: white;
+.collage-pic__heart--visible:hover, .collage-pic__bag:hover{
+  background-color: #00B207;
+  color: $white;
 }
 
 .collage-pic__name,

@@ -6,14 +6,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "custom", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "base", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "product", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <header>
-      <%= link_to t("language.english"), locale: :en %>
-      <%= link_to t("language.vietnamese"), locale: :vi %>
-    </header>
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>">
         <%= message %>
