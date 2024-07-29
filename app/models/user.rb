@@ -5,7 +5,7 @@ class User < ApplicationRecord
   before_save :downcase_email
   before_create :create_activation_digest
 
-  attr_accessor :activation_token
+  attr_accessor :activation_token, :remember_token
 
   enum gender: {
     female: 0,
@@ -54,6 +54,15 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+  end
+
+  def remember
+    self.remember_token = User.new_token
+    update_column :remember_digest, User.digest(remember_token)
+  end
+
+  def forget
+    update_column :remember_digest, nil
   end
 
   def authenticated? attribute, token
