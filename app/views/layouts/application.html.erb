@@ -12,11 +12,7 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>">
-        <%= message %>
-      </div>
-    <% end %>
+    <%= render "shared/flash_messages" %>
     <%= yield %>
   </body>
 </html>
