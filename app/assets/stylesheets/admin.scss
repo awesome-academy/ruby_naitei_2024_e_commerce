@@ -1,0 +1,59 @@
+@import 'var_shop';
+.admin_container {
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  margin-top: 40px;
+}
+
+.page-title {
+  text-align: center;
+  color: $table-header-color;
+  margin: 20px 0;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: white;
+  box-shadow: 0 0 10px $table-shadow-color;
+}
+
+.table-header {
+  background-color: $wishlist-color;
+  color: $table-header-color;
+  padding: 12px;
+  text-align: left;
+}
+
+.table-data {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid $table-border-color;
+}
+
+.table-row:hover {
+  background-color: $table-background-color;
+}
+
+.create-category_form {
+  display: block;
+  background-color: $table-background-color;
+  width: 30%;
+  margin-left: 30px;
+  margin-top: 30px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn-form {
+  margin: 20px 0;
+  display: block;
+  width: 100%;
+}
+
+.pagy--center {
+  display: flex;
+  justify-content: center;
+}

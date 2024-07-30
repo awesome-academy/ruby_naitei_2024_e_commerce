@@ -1,0 +1,7 @@
+<% provide :title, t("category.new_category") %>
+<% provide :button_text, t("category.add") %>
+<div id= "create-category_form" class= "create-category_form">
+  <h1><%= t "category.new_category" %></h1>
+  <%= render "form" %>
+  <%= link_to t("categories.view_list"), admin_categories_path, class: "btn btn-primary btn_form" %>
+</div>

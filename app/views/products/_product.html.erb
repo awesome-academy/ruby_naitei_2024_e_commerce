@@ -5,11 +5,15 @@
       <p class= "center"><%= product.name %></p>
       <p><%= t "product.price", price: product.price %></p>
       <div class="collage-pic__star">
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
+        <% average_rating = average_of_rating(product.comments) %>
+        <% if average_rating.present? %>
+          <% average_rating.times do %>
+            <span class="fa fa-star checked"></span>
+          <% end %>
+          <% (Settings.max_rating_star - average_rating).times do %>
+            <span class="fa fa-star"></span>
+          <% end %>
+        <% end %>
       </div>
       <button class="collage-pic__heart--hidden collage-pic__heart--visible"><i class="fa-solid fa-heart"></i></button>
       <button class="collage-pic__bag"><i class="fa-solid fa-bag-shopping"></i></button>

@@ -1,15 +1,36 @@
 vi:
-  category: "Phân loại"
+  time:
+    formats:
+      default: "%H:%M %d %B, %Y"
+  date:
+    month_names:
+      [nil, Tháng 1, Tháng 2, Tháng 3, Tháng 4, Tháng 5, Tháng 6, Tháng 7, Tháng 8, Tháng 9, Tháng 10, Tháng 11, Tháng 12]
   comment: "Bình luận"
   description: "Mô tả"
+  created_at: ! "Created at %{date}"
+  updated_at: ! "Updated at %{date}"
+  create_time: "Thời gian tạo"
+  update_time: "Thời gian cập nhật"
+  flash:
+    create_successfully: "Tạo thành công"
+    create_unsuccessfully: "Tạo không thành công"
   product:
     price: ! "Giá: %{price} đ"
     comment: ! "%{comments} đánh giá"
   cart:
     add_to_cart: "Thêm vào giỏ hàng"
+  category:
+    title: "Phân loại"
+    new_category: "Thêm danh mục sản phẩm mới"
+    add: "Thêm danh mục sản phẩm"
+    name: "Danh mục sản phẩm"
+    parent_category: "Thuộc về danh mục"
   errors:
     product:
       not_found: "Không tìm thấy sản phẩm"
+  shared:
+    error_messages:
+      the_form_contains: "Form này bao gồm"
   search_product: "Tìm kiếm sản phẩm"
   app_name: "Shop đa dạng"
   hello: "Xin chào"
