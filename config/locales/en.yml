@@ -5,13 +5,18 @@ en:
     formats:
       default: "%H:%M %d %B, %Y"
   description: "Description"
+  edit: "Edit"
   created_at: ! "Created at %{date}"
   updated_at: ! "Updated at %{date}"
   create_time: "Create time"
   update_time: "Update time"
+  action: "Action"
   flash:
     create_successfully: "Create successfully"
     create_unsuccessfully: "Create unsuccessfully"
+    update_successfully: "Update successfully"
+    update_unsuccessfully: "Update unsuccessfully"
+    not_found: ! "%{model} not found"
   product:
     price: ! "Price: %{price} đ"
     comment: ! "%{comments} rate"
@@ -20,9 +25,11 @@ en:
   category:
     title: "Category"
     new_category: "Add new product category"
+    update_category: "Update product category"
     add: "Add product category"
     name: "Product category"
     parent_category: "Belongs to category"
+    update: "Update"
   errors:
     product:
       not_found: "Product doesn't exist"

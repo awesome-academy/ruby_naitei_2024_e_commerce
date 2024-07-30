@@ -1,0 +1,7 @@
+<% provide :title, t("category.update_category") %>
+<% provide :button_text, t("category.update") %>
+<div id= "create-category_form" class= "create-category_form">
+  <h1><%= t "category.update_category" %></h1>
+  <%= render "form", url: admin_category_path, method: :patch %>
+  <%= link_to t("categories.view_list"), admin_categories_path, class: "btn btn-primary btn_form" %>
+</div>

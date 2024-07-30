@@ -2,4 +2,7 @@
   <td class="table-data"><%= category.name %></td>
   <td class="table-data"><%= l(category.created_at) %></td>
   <td class="table-data"><%= l(category.updated_at) %></td>
+  <td class="table-data">
+    <%= link_to t("edit"), edit_admin_category_path(category), class: "btn btn-warning" %>
+  </td>
 </tr>

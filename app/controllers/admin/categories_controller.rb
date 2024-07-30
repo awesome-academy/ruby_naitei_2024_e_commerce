@@ -1,5 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   include ApplicationHelper
+  before_action :load_category, only: %i(edit update)
   def index
     @pagy, @categories = pagy Category.oldest, limit: Settings.page_size
   end
@@ -11,16 +12,36 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
     if @category.save
-      flash.now[:success] = t("flash.create_successfully")
+      flash.now[:success] = t "flash.create_successfully"
       render :new, status: :see_other
     else
-      flash.now[:danger] = t("flash.create_unsuccessfully")
+      flash.now[:danger] = t "flash.create_unsuccessfully"
       render :new, status: :unprocessable_entity
     end
   end
 
+  def update
+    if @category.update category_params
+      flash[:success] = t "flash.update_successfully"
+      redirect_to admin_categories_path, status: :see_other
+    else
+      flash.now[:danger] = t "flash.update_unsuccessfully"
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def edit; end
+
   private
   def category_params
     params.require(:category).permit(:name, :parent_category_id)
+  end
+
+  def load_category
+    @category = Category.find_by id: params[:id]
+    return if @category
+
+    flash[:danger] = t "flash.not_found", model: t("category.title")
+    redirect_to admin_categories_path
   end
 end
