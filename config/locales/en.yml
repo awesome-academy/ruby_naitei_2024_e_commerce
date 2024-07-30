@@ -41,6 +41,10 @@ en:
   hello: "Hello"
   base_title: "Ecommerce"
   user_creation_failed: "User creation failed"
+  user_created_successfully: "User created successfully"
+  user_update_successfully: "User updated successfully"
+  user_update_failed: "User update failed"
+  please_log_in: "Please log in"
   language:
     english: "English"
     vietnamese: "Vietnamese"
@@ -95,3 +99,19 @@ en:
     download: "Download our app"
     download_on: "Download on"
     copyright: "© 2024 - Copyright by Shop Da Dang"
+  edit:
+    title: "Edit Profile"
+    name: "Name"
+    email: "Email"
+    gender: "Gender"
+    submit: "Save changes"
+  profile:
+    personal_info: "Personal Information"
+    account: "Account"
+    address_book: "Address Book"
+    order_history: "Order History"
+    favorites: "Favorites"
+    logout: "Logout"
+  error:
+    user_not_correct: "User not correct"
+    user_not_admin: "You are not admin"

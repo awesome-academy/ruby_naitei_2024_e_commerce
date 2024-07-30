@@ -42,7 +42,11 @@ vi:
   app_name: "Shop đa dạng"
   hello: "Xin chào"
   base_title: "Thương mại điện tử"
+  user_update_successfully: "Người dùng đã được cập nhật thành công"
+  user_update_failed: "Cập nhật người dùng thất bại"
   user_creation_failed: "Tạo người dùng thất bại"
+  user_update_successfully: "Người dùng đã được cập nhật thành công"
+  please_log_in: "Please log in"
   language:
     english: "Tiếng Anh"
     vietnamese: "Tiếng Việt"
@@ -97,3 +101,19 @@ vi:
     download: "Tải xuống ứng dụng của chúng tôi"
     download_on: "Tải xuống trên"
     copyright: "© 2024 - Bản quyền thuộc về Shop Đa Dạng"
+  edit:
+    title: "Chỉnh sửa hồ sơ"
+    name: "Họ tên"
+    email: "Email"
+    gender: "Giới tính"
+    submit: "Lưu thay đổi"
+  profile:
+    personal_info: "Thông tin cá nhân"
+    account: "Tài khoản"
+    address_book: "Sổ địa chỉ"
+    order_history: "Lịch sử đặt hàng"
+    favorites: "Danh sách yêu thích"
+    logout: "Đăng xuất"
+  error:
+    user_not_correct: "Người dùng không chính xác"
+    user_not_admin: "Bạn không có quyền truy cập trang này."

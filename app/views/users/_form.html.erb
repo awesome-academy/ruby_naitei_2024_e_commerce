@@ -1,0 +1,19 @@
+<%= form_for @user, class: "js-RegisterModal" do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="auth-form__group">
+    <%= f.email_field :email, placeholder: t("sign_up.email"), class: "formdk__lienlac" %>
+  </div>
+  <div class="hoten-container auth-form__group">
+    <%= f.text_field :name, placeholder: t("sign_up.name"), class: "formdk__inputhoten" %>
+  </div>
+  <div class="auth-form__group">
+    <%= f.password_field :password, placeholder: t("sign_up.password"), class: "formdk__taikhoan" %>
+  </div>
+  <div class="auth-form__group">
+    <%= f.password_field :password_confirmation, placeholder: t("sign_up.password_confirmation"), class: "formdk__taikhoan" %>
+  </div>
+  <div class="auth-form__group">
+    <%= gender_field(f) %>
+  </div>
+  <%= f.submit yield(:title), class: "btn btn-primary" %>
+<% end %>
