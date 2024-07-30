@@ -76,3 +76,17 @@ vi:
   homepage:
     home: "Trang chủ"
     product: "Sản phẩm"
+  footer:
+    my_account: "Tài khoản của tôi"
+    profile: "Hồ sơ"
+    order_history: "Lịch sử đặt hàng"
+    cart: "Giỏ hàng"
+    wishlist: "Danh sách yêu thích"
+    help: "Trợ giúp"
+    contact: "Liên hệ"
+    rule: "Điều khoản"
+    privacy: "Chính sách bảo mật"
+    guide: "Hướng dẫn mua hàng"
+    download: "Tải xuống ứng dụng của chúng tôi"
+    download_on: "Tải xuống trên"
+    copyright: "© 2024 - Bản quyền thuộc về Shop Đa Dạng"
