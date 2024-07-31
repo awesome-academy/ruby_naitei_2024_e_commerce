@@ -4,6 +4,6 @@ class BillMailer < ApplicationMailer
     @user = user
     @bill = bill
     @bill_details = @bill.bill_details
-    mail to: user.email, subject: t("user_mailer.title")
+    mail to: user.email, subject: t("order.check")
   end
 end

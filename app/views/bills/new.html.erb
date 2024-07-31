@@ -43,8 +43,8 @@
       <div class="check-out__body-right__info">
         <p class="check-out__body-right__info__title"><%= t "order.choose_voucher" %></p>
         <%= form.collection_select :voucher_id,
-                                    voucher_select_options[:collection], :last, :first,
-                                    voucher_select_options.slice(:include_blank),
+                                    voucher_select_options(@cart.total)[:collection], :last, :first,
+                                    voucher_select_options(@cart.total).slice(:include_blank),
                                     { class: "form-select", data: { controller: "vouchers", action: "change->vouchers#applyVoucher"}} %>
       </div>
       <turbo-frame id="total-price">

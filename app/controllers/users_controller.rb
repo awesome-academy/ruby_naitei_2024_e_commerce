@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def update
     if @user&.update user_params
       flash[:success] = t "user_update_successfully"
-      redirect_to @user
+      redirect_to edit_user_path(@user)
     else
       flash.now[:danger] = t "user_update_failed"
       render :edit, status: :unprocessable_entity

@@ -173,9 +173,9 @@
   cursor: not-allowed;
   opacity: 1;
 }
+
 .row__remove {
   border-radius: 50%;
-  border: 1px solid $homepage-comment-avatar-border;
   padding: 5px 8px;
 }
 
@@ -188,4 +188,15 @@
   color: $alert-notice-color;
   background-color: $alert-notice-background-color;
   margin-bottom: 0 !important;
+}
+
+.addinfo_buy__addtocar.mt-8{
+  margin-top: 0px;
+  input{
+    min-width: 120px;
+    background-color: $primary-color;
+    color: white;
+    border-radius: 20px;
+    padding: 12px;
+  }
 }

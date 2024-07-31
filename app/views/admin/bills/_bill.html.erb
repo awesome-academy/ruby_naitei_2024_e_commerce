@@ -4,14 +4,18 @@
   <td><%= bill.address %></td>
   <td><%= bill.phone_number %></td>
   <td><%= discount_to_percentage(bill.voucher_discount) %></td>
-  <td>
-    <%= turbo_frame_tag dom_id(bill, :status) do %>
-      <%= form_with(model: bill, url: update_status_admin_bill_path(bill), method: :patch, data: { turbo_frame: dom_id(bill, :status) }) do |form| %>
-        <%= form.select :status, Bill::STATUSES, { include_blank: "Select Status" }, class: 'form-control' %>
-        <%= form.submit 'Update Status', class: 'btn btn-primary mt-2' %>
+  <% if bill.completed? || bill.cancelled? %>
+    <td><%= bill_attribute_status bill.status %></td>
+  <% else %>
+    <td>
+      <%= turbo_frame_tag dom_id(bill, :status) do %>
+        <%= form_with(model: bill, url: update_status_admin_bill_path(bill), method: :patch, data: { turbo_frame: dom_id(bill, :status) }) do |form| %>
+          <%= form.select :status, Bill::STATUSES, { include_blank: "Select Status" }, class: 'form-control' %>
+          <%= form.submit 'Update Status', class: 'btn btn-primary mt-2' %>
+        <% end %>
       <% end %>
-    <% end %>
-  </td>
+    </td>
+  <% end %>
   <td><%= number_to_currency(bill.total, unit: Settings.money_unit_vnd, precision: Settings.digits_0, format: Settings.currency_format) %></td>
   <td><%= number_to_currency(bill.total_after_discount, unit: Settings.money_unit_vnd, precision: Settings.digits_0, format: Settings.currency_format) %></td>
   <td><%= format_expired_at(bill.expired_at) %></td>

@@ -1,6 +1,6 @@
 class Voucher < ApplicationRecord
   has_many :bills, dependent: :destroy
-  PERMITTED_ATTRIBUTES = %i(discount started_at ended_at condition).freeze
+  PERMITTED_ATTRIBUTES = %i(discount name started_at ended_at condition).freeze
 
   validates :discount, presence: true,
                        numericality: {
@@ -8,6 +8,7 @@ class Voucher < ApplicationRecord
                          less_than_or_equal_to: Settings.digit_100
                        }
   validates :started_at, presence: true
+  validates :name, presence: true
   validates :ended_at, presence: true
   validates :condition, presence: true,
                         numericality: {

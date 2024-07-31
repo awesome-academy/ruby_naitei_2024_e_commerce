@@ -3,6 +3,7 @@ page_size: 15
 help_link: "http://www.railstutorial.org/help"
 home_link: "http://www.railstutorial.org/"
 email_regex: \A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z
+phone_regex: !ruby/regexp /\A0\d{9}\z/
 image_url: "http://gravatar.com/emails"
 mailer_from: "noreply@shodadang.com"
 maximum_email_length: 255
@@ -33,6 +34,8 @@ currency_format: "%n %u"
 digit_100: 100
 dollar_convert: 0.00004
 digit_2 : 2
+digit_1 : 1
+digit_5 : 5
 init_value_add_cart: 1
 init_min_add_cart: 1
 dicount_percentage_convert: 100

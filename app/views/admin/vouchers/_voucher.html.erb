@@ -1,5 +1,6 @@
 <tr>
   <td><%= voucher_counter + Settings.counter_index %></td>
+  <td><%= voucher.name %></td>
   <td><%= format_currency voucher.condition %></td>
   <td><%= discount_to_percentage voucher.discount %></td>
   <td class="table-data"><%= l voucher.started_at %></td>

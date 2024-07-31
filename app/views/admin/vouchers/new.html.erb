@@ -2,8 +2,12 @@
 <h1><%= t "admin.voucher.new.title" %></h1>
 <%= form_with model: @voucher, url: admin_vouchers_path, local: true do |f| %>
   <div class="form-group">
+    <%= f.label :name, t("admin.voucher.index.name") %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :discount, t("admin.voucher.form.discount") %>
-    <%= f.number_field :discount, class: "form-control", step: Settings.digit_step_discount, min: Settings.digit_0, max: Settings.digit_100 %>
+    <%= f.number_field :discount, class: "form-control", step: Settings.digit_step_discount, min: Settings.digit_0, max: Settings.digit_1%>
   </div>
   <div class="form-group">
     <%= f.label :condition, t("admin.voucher.form.condition") %>

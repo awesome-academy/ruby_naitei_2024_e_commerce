@@ -50,7 +50,7 @@
             <div class="infor-price__body">
               <div class="infor-price-body__row">
                 <span><%= t "order_history.total" %></span>
-                <%= public_send("#{I18n.locale}", @bill.total) %>
+                <%= send("#{I18n.locale}", @bill.total) %>
               </div>
               <% if @bill.voucher_discount.nil? %>
                 <div class="infor-price-body__row">
@@ -66,7 +66,7 @@
               <% end %>
               <div class="infor-price-total">
                 <%= t "order_history.subtotal" %>
-                <span><%= public_send("#{I18n.locale}", @bill.total_after_discount) %></span>
+                <span><%= send("#{I18n.locale}", @bill.total_after_discount) %></span>
               </div>
             </div>
           </div>
@@ -111,10 +111,9 @@
           </div>
         </div>
       </div>
-      <% if @bill.wait_for_pay? %>
-        <%= link_to "#", class: "repay-btn" do %>
-          <%= t "order_history.repay" %>
-        <% end %>
+      <% if @bill.status == "wait_for_pay" %>
+        <%= button_to t("order_history.repay"), checkout_repayment_path,
+            method: :post, params: { bill_id: @bill.id }, class: "repay-btn" %>
       <% end %>
     </div>
   </div>

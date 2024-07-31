@@ -4,7 +4,7 @@ class AccountActivationsController < ApplicationController
     if user && !user.activated? && user.authenticated?(:activation, params[:id])
       user.activate
       flash[:success] = t "user_mailer.success"
-      redirect_to user
+      redirect_to edit_user_path(user)
     else
       flash[:danger] = t "user_mailer.invalid"
       redirect_to root_url

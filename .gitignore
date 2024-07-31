@@ -68,3 +68,4 @@ config/application.yml
 yarn-debug.log*
 .yarn-integrity
 quit
+/app/assets/images/*

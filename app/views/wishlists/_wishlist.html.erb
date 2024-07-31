@@ -9,15 +9,26 @@
   <div>
     <% if check_remain wishlist %>
       <p class="row__status"><%= t "wishlist.stocking" %></p>
-      <div>
-        <button class="add-product"><%= t "cart.add_to_cart" %></button>
-      </div>
+      <%= form_with url: cart_index_path, class: "addinfo_buy__amount" do |f| %>
+        <%= f.hidden_field :product_id, value: wishlist.product.id %>
+        <%= f.hidden_field :quantity, value: Settings.digit_1 %>
+        <div class="addinfo_buy__addtocar mt-8">
+          <%= f.submit t "cart.add_to_cart" %>
+        </div>
+      <% end %>
     <% else %>
       <p class="row__status row__status--out-of-stock"><%= t "wishlist.out_stock" %></p>
       <div>
         <button class="add-product add-product--out-of-stock"><%= t "cart.add_to_cart" %></button>
       </div>
     <% end %>
-    <i class="row__remove fa-solid fa-xmark"></i>
+    <%= form_with(model: find_liked_product(current_user, wishlist.product),
+                  url: wishlist_path(find_liked_product(current_user, wishlist.product)),
+                            method: :delete, remote: true) do |f| %>
+      <div><%= hidden_field_tag :product_id, wishlist.product.id %></div>
+      <%= f.button type: "submit" do %>
+        <i class="row__remove fa-solid fa-xmark"></i>
+      <% end %>
+    <% end %>
   </div>
 </div>
