@@ -1,17 +1,17 @@
 <% provide :title, t("wishlist.title") %>
 <%= render "layouts/header" %>
-<div class="wish-list">
-  <div class="nav-link">
-    <div class="nav-link-text">
-      <%= link_to root_url do %>
-        <i class="fa-solid fa-house"></i>
-      <% end %>
-      <i class="right fa-solid fa-chevron-right"></i>
-      <%= link_to t("profile.personal_info"), edit_user_path(current_user) %>
-      <i class="right fa-solid fa-chevron-right"></i>
-      <%= link_to t("wishlist.title"), wishlists_path, class: "nav-link--selected" %>
-    </div>
+<div class="nav-link">
+  <div class="nav-link-text">
+    <%= link_to root_url do %>
+      <i class="fa-solid fa-house"></i>
+    <% end %>
+    <i class="right fa-solid fa-chevron-right"></i>
+    <%= link_to t("profile.personal_info"), edit_user_path(current_user) %>
+    <i class="right fa-solid fa-chevron-right"></i>
+    <%= link_to t("wishlist.title"), wishlists_path, class: "nav-link--selected" %>
   </div>
+</div>
+<div class="wish-list">
   <div class="account-menu-wrapper">
     <%= render "layouts/sidebar" %>
     <div class="account-wish-list__wrapper">

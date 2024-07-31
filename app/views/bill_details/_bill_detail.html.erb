@@ -1,0 +1,12 @@
+<div class="products__row">
+  <div>
+    <%= image_tag bill_detail.product_image %>
+    <%= bill_detail.product_name %>
+  </div>
+  <span><%= send("#{I18n.locale}", bill_detail.product_price) %></span>
+  <span><%= bill_detail.quantity %></span>
+  <span><%= send("#{I18n.locale}", bill_detail.quantity * bill_detail.product_price) %></span>
+  <%= link_to "#", class: "leave_review" do %>
+    <%= t "order_history.leave_review" %>
+  <% end %>
+</div>

@@ -20,7 +20,7 @@ class Bill < ApplicationRecord
   has_many :products, through: :bill_details
 
   validates :status, inclusion: {in: statuses.keys}
-  delegate :name, to: :user, prefix: true
+  delegate :name, :email, to: :user, prefix: true
   delegate :discount, to: :voucher, prefix: true, allow_nil: true
 
   scope :newest, ->{order(created_at: :desc)}

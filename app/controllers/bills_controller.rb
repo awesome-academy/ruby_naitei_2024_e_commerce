@@ -1,10 +1,15 @@
 class BillsController < ApplicationController
   before_action :logged_in_user, :load_current_user_cart
+  before_action :find_bill, only: :show
   protect_from_forgery with: :exception
   include BillsHelper
 
   def index
     @pagy, @bills = pagy(Bill.newest, items: Settings.page_size)
+  end
+
+  def show
+    @bill_details = @bill.bill_details
   end
 
   def new
@@ -29,5 +34,15 @@ class BillsController < ApplicationController
                                               discount: discount_voucher})
       end
     end
+  end
+
+  private
+
+  def find_bill
+    @bill = Bill.includes(:bill_details).find_by(id: params[:id])
+    return if @bill
+
+    flash[:alert] = t "errors.bill.not_found"
+    redirect_to root_path and return
   end
 end
