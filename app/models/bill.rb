@@ -23,6 +23,8 @@ class Bill < ApplicationRecord
   delegate :name, to: :user, prefix: true
   delegate :discount, to: :voucher, prefix: true, allow_nil: true
 
+  scope :newest, ->{order(created_at: :desc)}
+
   private
 
   def calculate_total_after_discount
