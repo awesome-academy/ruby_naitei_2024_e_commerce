@@ -11,7 +11,15 @@
   </div>
 
   <div>
-    <p class="my-cart__row__quantity"><%= cart_detail.quantity %></p>
+    <p class="my-cart__row__quantity">
+      <%= form_with url: cart_path, method: :patch do |f| %>
+        <%= f.hidden_field :product_id, value: cart_detail.product.id %>
+        <%= f.number_field :quantity, value: cart_detail.quantity.to_i,min: Settings.digit_0, max: cart_detail.remain_quantity, style: "width: 40%;" %>
+        <div class= "cart_update">
+          <%= f.submit t "cart.update" %>
+        </div>
+      <% end %>
+    </p>
   </div>
 
   <div>

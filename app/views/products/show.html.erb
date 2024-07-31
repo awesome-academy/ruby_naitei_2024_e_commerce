@@ -23,9 +23,9 @@
       <p class="addinfo_info__info"><%= @product.description %></p>
       <div class="addinfo_buy">
         <% if logged_in? %>
-          <%= form_with url: cart_create_path, class: "addinfo_buy__amount" do |f| %>
-            <%= f.hidden_field :id, :value => @product.id %>
-            <%= f.number_field :quantity, :value => Settings.init_value_add_cart, :min => Settings.init_min_add_cart, :max => @product.remain_quantity %>
+          <%= form_with url: cart_index_path, class: "addinfo_buy__amount" do |f| %>
+            <%= f.hidden_field :product_id, value: @product.id %>
+            <%= f.number_field :quantity, value: Settings.init_value_add_cart.to_i, min: Settings.init_min_add_cart, max: @product.remain_quantity %>
             <div class="addinfo_buy__addtocart">
               <%= f.submit t "cart.add_to_cart" %>
             </div>

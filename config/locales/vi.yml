@@ -50,9 +50,13 @@ vi:
     not_have_product: "Giỏ hàng của bạn trống"
     add_success: "Thêm sản phẩm thành công!"
     add_failed: "Thêm sản phẩm thất bại"
+    update_success: "Cập nhật giỏ hàng thành công!"
+    update_failed: "Cập nhật giỏ hàng thất bại"
+    update: "Cập nhật giỏ hàng"
     quantity_greater_than_remain: "Không thể tiến hành thanh toán. Số lượng sản phẩm trong giỏ hàng vượt quá số lượng trong kho."
   cart_detail:
     price: "%{price}vnđ"
+    is_nil: "Chi tiết hóa đơn không tồn tại"
   category:
     title: "Phân loại"
     new_category: "Thêm danh mục sản phẩm mới"

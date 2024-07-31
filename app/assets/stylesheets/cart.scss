@@ -95,6 +95,19 @@
 
 .my-cart__row__quantity {
   margin: 0 10px;
+  input {
+    width: 20%;
+  }
+}
+
+.cart_update input {
+  background-color: $primary-color;
+  color: $white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: -20%;
 }
 
 .my-cart__row div:last-child {
@@ -176,9 +189,8 @@
   color: $white;
   border-radius: 43px;
   font-size: 15px;
-  position: absolute;
-  top: 70%;
-  left: 14%;
+  width: 100%;
+  margin-top: 20%;
 }
 
 .my-cart__body__up-right a:hover {

@@ -40,8 +40,14 @@
         <i class="fa-regular fa-heart"></i>
       <% end %>
       <hr>
-      <%= link_to cart_path do %>
-        <i class="fa-solid fa-cart-shopping"></i>
+      <% if logged_in? %>
+        <%= link_to cart_path(current_user) do %>
+          <i class="fa-solid fa-cart-shopping"></i>
+        <% end %>
+      <% else %>
+        <%= link_to login_path do %>
+          <i class="fa-solid fa-cart-shopping"></i>
+        <% end %>
       <% end %>
     </div>
   </div>
