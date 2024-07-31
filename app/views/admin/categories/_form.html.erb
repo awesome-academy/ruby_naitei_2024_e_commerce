@@ -7,5 +7,6 @@
                               category_select_options[:collection], :last, :first,
                               category_select_options.slice(:include_blank),
                               { class: "category-select create-form_component" } %>
+  <%= form.file_field :image, accept: Settings.image_format.join(", "), class: "create-form_component" %>
   <%= form.submit yield(:button_text), class: "btn btn-primary btn-form" %>
 <% end %>

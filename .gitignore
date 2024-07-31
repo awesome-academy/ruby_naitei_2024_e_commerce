@@ -60,3 +60,4 @@ config/environments/*.local.yml
 config/application.yml
 /storage
 .byebug_history
+node_modules

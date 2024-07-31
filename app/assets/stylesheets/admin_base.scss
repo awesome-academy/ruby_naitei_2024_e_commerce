@@ -11,7 +11,7 @@
   justify-content: space-between;
   background-color: $header-top-background;
   padding: 20px;
-  width: 1214px;
+  width: 100%;
 }
 
 .header-left,
@@ -108,16 +108,21 @@
     color: $white;
     display: flex;
     align-items: center;
+    text-decoration: none;
     p {
       margin: 0 0 0 10px;
     }
   }
 }
 
-.sidebar-item:hover {
+.sidebar-item:hover, .sidebar-item.active{
   background-color: $primary-color;
   a {
     text-decoration: none;
     color: $white;
   }
+}
+
+.wrapper{
+  width: 100%;
 }

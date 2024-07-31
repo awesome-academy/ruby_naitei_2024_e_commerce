@@ -1,6 +1,6 @@
 @import 'var_shop';
 .admin_container {
-  width: 80%;
+  width: 100%;
   margin: auto;
   background-color: white;
   margin-top: 40px;
@@ -33,6 +33,11 @@
   border-bottom: 1px solid $table-border-color;
 }
 
+.table-header, .table-data {
+  text-align: center;
+  padding: 8px;
+}
+
 .table-row:hover {
   background-color: $table-background-color;
 }
@@ -56,4 +61,12 @@
 .pagy--center {
   display: flex;
   justify-content: center;
+}
+
+.table-data__image{
+  width: 160px;
+}
+
+.create-form_component{
+  display: block;
 }

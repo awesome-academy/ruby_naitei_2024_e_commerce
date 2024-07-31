@@ -10,3 +10,7 @@ maximum_name_length: 50
 min_password_length: 9
 max_rating_star: 5
 phone_number: 0123456789
+image_format: ["image/jpeg", "image/gif", "image/png"]
+max_image_data: 5
+digit_160: 160
+counter_index: 1

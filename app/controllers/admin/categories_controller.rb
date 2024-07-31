@@ -1,6 +1,7 @@
 class Admin::CategoriesController < ApplicationController
+  layout "admin"
   include ApplicationHelper
-  before_action :load_category, only: %i(edit update)
+  before_action :load_category, only: %i(edit update destroy)
   def index
     @pagy, @categories = pagy Category.oldest, limit: Settings.page_size
   end
@@ -11,6 +12,7 @@ class Admin::CategoriesController < ApplicationController
 
   def create
     @category = Category.new category_params
+    @category.image.attach params.dig(:category, :image)
     if @category.save
       flash.now[:success] = t "flash.create_successfully"
       render :new, status: :see_other
@@ -21,6 +23,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def update
+    @category.image.attach params.dig(:category, :image)
     if @category.update category_params
       flash[:success] = t "flash.update_successfully"
       redirect_to admin_categories_path, status: :see_other
@@ -31,6 +34,15 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def edit; end
+
+  def destroy
+    if @category.destroy
+      flash.now[:success] = t "flash.delete_successfully"
+    else
+      flash.now[:danger] = t "flash.delete_unsuccessfull"
+    end
+    redirect_to admin_categories_path
+  end
 
   private
   def category_params
