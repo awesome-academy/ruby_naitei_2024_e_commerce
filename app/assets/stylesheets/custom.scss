@@ -91,7 +91,7 @@
       border: none;
       font-weight: bold;
       border-radius: 20px;
-      color: $white;
+      color: white;
       background-color: $primary-color;
       cursor: pointer;
     }
@@ -149,7 +149,7 @@
 
   .signup-logo span {
     font-size: 30px;
-    color: $text-color-signup;
+    color: $login-logo-color;
     font-weight: bold;
   }
 
@@ -162,7 +162,7 @@
     margin: 0 auto;
     width: 800px;
     font-size: 14px;
-    background-color: white;
+    background-color: $form-background-color;
     border-radius: 8px;
     padding: 20px 40px;
   }
@@ -202,11 +202,11 @@
   .formdk__gioitinh {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid $border-color;
     border-radius: 4px;
     font-size: 16px;
-    color: #333;
-    background-color: #fff;
+    color: $input-text-color;
+    background-color: $input-background-color;
     margin-top: 10px;
     margin-bottom: 20px;
   }
@@ -235,7 +235,7 @@
     margin: 0 auto 10px auto;
     padding: 16px 0;
     border: none;
-    color: white;
+    color: $button-text-color;
     font-weight: bold;
     border-radius: 20px;
     background-color: $background-color-signup;
@@ -297,7 +297,6 @@
   opacity: 0;
   pointer-events: none;
 }
-
 .collage-pic:hover .collage-pic__heart--hidden {
   opacity: 1;
   pointer-events: auto;
@@ -329,7 +328,7 @@
 
 .collage-pic__heart--visible:hover, .collage-pic__bag:hover{
   background-color: $background-color;
-  color: $white;
+  color: white;
 }
 
 .collage-pic__name,
@@ -356,7 +355,7 @@
 }
 
 .checked {
-  color: orange;
+  color: $star-checked-color;
 }
 
 .edit-page {
@@ -464,129 +463,82 @@
     border-radius: 8px;
     border: none;
     color: white;
-    background-color: $primary-color;
-  }
-
-  .body__order-history {
-    width: 960px;
-    height: fit-content;
-    border: 2px solid $border-color;
-    margin: 10px;
-  }
-
-  .body__order-history .title {
-    padding: 20px 0;
-    border-bottom: 2px solid $border-color;
-    border-left: 3px solid $primary-color;
-  }
-
-  .title__icon {
-    color: $primary-color;
-    font-size: 20px;
-    padding: 0 10px;
-  }
-
-  .content__item {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.3fr 1fr 0.7fr;
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .content .header {
-    background-color: $border-color;
-    padding: 5px;
-  }
-
-  .content__item div {
-    margin: 5px 20px;
-  }
-
-  .content__item div a {
-    color: $primary-color;
-    text-decoration: none;
-  }
-
-  .content__next-page {
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .content__next-page a {
-    text-decoration: none;
-    padding: 7px 11px;
-    font-size: 10px;
-    margin: 3px;
-    border-radius: 50%;
-  }
-
-  .content__next-page .disable {
-    background-color: $border-color;
-    border: 1px solid $border-color;
-    color: gray;
-  }
-
-  .content__next-page .enable {
-    background-color: white;
-    border: 1px solid $border-color;
-    color: black;
-  }
-
-  .content__next-page .numpage {
-    background-color: white;
-    border: 1px solid white;
-    color: black;
-  }
-
-  .content__next-page .selected_numpage {
-    background-color: $primary-color;
-    border: 1px solid $primary-color;
-    color: white;
-  }
-
-  .content__next-page .numpage:hover,
-  .content__next-page .enable:hover {
-    background-color: $hover-background-color;
-    border: 1px solid $hover-background-color;
-    color: black;
-  }
-
-  .form-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-
-  .formdk__lienlac,
-  .formdk__inputhoten,
-  .formdk__taikhoan,
-  .formdk__gioitinh {
-    width: 95%;
-    display: block;
-    margin: 0 auto 30px auto;
-    border: 1px solid $border-color;
-    border-radius: 5px;
-    padding: 16px 10px;
-  }
-
-  .formdk__gioitinh {
-    margin-bottom: 30px;
-  }
-
-  a.signup-button {
-    text-align: center;
-    font-size: 16px;
-    text-decoration: none;
-    width: 100%;
-    display: block;
-    margin: 0 auto 10px auto;
-    padding: 16px 0;
-    border: none;
-    color: white;
-    font-weight: bold;
-    border-radius: 20px;
-    background-color: $background-color-signup;
     cursor: pointer;
+    font-size: 16px;
+  }
+}
+
+//CSS cho view product page Admin
+.product-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  h1 {
+    text-align: start;
+  }
+
+  nav {
+    margin-bottom: 20px;
+  }
+
+  .product-list {
+    width: 80%;
+    table {
+      border-collapse: collapse;
+      margin: 20px 0;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid $color-border;
+      text-align: center;
+      width: 150px;
+      min-width: 150px;
+
+      th {
+        background-color: $color-th-background;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: $color-tr-even-background;
+      }
+
+      tbody tr:hover {
+        background-color: $color-tr-hover-background;
+      }
+    }
+
+    .actions {
+      a {
+        margin-right: 10px;
+        text-decoration: none;
+        color: $color-link;
+
+        &:hover {
+          text-decoration: $color-link-hover;
+        }
+
+        &.delete {
+          color: $color-link-delete;
+        }
+      }
+    }
+
+    .new-product-link {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 10px 20px;
+      background-color: $color-new-product-background;
+      color: $color-new-product-text;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $color-new-product-hover-background;
+      }
+    }
   }
 }
