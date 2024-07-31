@@ -52,6 +52,7 @@ vi:
     add_failed: "Thêm sản phẩm thất bại"
     update_success: "Cập nhật giỏ hàng thành công!"
     update_failed: "Cập nhật giỏ hàng thất bại"
+    delete_success: "Xóa sản phẩm thành công!"
     update: "Cập nhật giỏ hàng"
     quantity_greater_than_remain: "Không thể tiến hành thanh toán. Số lượng sản phẩm trong giỏ hàng vượt quá số lượng trong kho."
   cart_detail:
@@ -260,7 +261,6 @@ vi:
       create:
         success: "Tạo Voucher thành công."
         fail: "Không thể tạo Voucher. Vui lòng kiểm tra form."
-    dashboard: "Trang quản trị của admin"
     sidebar:
       user: "Danh sách người dùng"
       product: "Sản phẩm"
