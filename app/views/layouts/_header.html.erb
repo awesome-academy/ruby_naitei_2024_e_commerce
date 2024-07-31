@@ -62,7 +62,7 @@
       </li>
       <% if logged_in? && current_user.admin? %>
         <li>
-          <%= link_to t("homepage.admin"), "#" %>
+          <%= link_to t("homepage.admin"), "admin/users" %>
         </li>
       <% end %>
     </ul>

@@ -55,6 +55,19 @@ en:
   cart_detail:
     price: "$%{price}"
     is_nil: "Cart detail does not exist"
+  order_history:
+    title: "Order history"
+    id: "ID"
+    subtotal: "Subtotal"
+    created_at: "Created at"
+    status:
+      title: "Status"
+      wait_for_pay: "Waiting for pay"
+      wait_for_prepare: "Waiting for prepare"
+      wait_for_delivery: "Waiting for delivery"
+      completed: "Completed"
+      cancelled: "Cancelled"
+    view_detail: "View details"
   category:
     title: "Category"
     new_category: "Add new product category"

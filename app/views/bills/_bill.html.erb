@@ -1,0 +1,9 @@
+<tr>
+  <td><%= bill_counter + Settings.counter_index %></td>
+  <td><%= l bill.created_at, format: :long %></td>
+  <td><%= public_send("#{I18n.locale}", bill.total_after_discount) %></td>
+  <td><%= bill_attribute_status bill.status %></td>
+  <td>
+    <%= link_to t("order_history.view_detail"), "#" %>
+  </td>
+</tr>

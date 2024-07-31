@@ -1,6 +1,11 @@
 class BillsController < ApplicationController
   before_action :logged_in_user, :load_current_user_cart
   protect_from_forgery with: :exception
+  include BillsHelper
+
+  def index
+    @pagy, @bills = pagy(Bill.newest, items: Settings.page_size)
+  end
 
   def new
     @bill = Bill.new
