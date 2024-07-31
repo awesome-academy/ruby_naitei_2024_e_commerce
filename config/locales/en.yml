@@ -12,6 +12,9 @@ en:
   udpate: "Update"
   delete: "Delete"
   number: "Number"
+  static_pages:
+    account: "Account"
+    personal_info: "Personal Information"
   flash:
     create_successfully: "Create successfully"
     create_unsuccessfully: "Create unsuccessfully"
@@ -132,6 +135,7 @@ en:
       minute: "minutes"
       second: "seconds"
     popular_product: "Popular products"
+    admin: "Admin View"
   footer:
     my_account: "My account"
     profile: "Profile"

@@ -16,7 +16,10 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    log_out
+    redirect_to root_path, status: :see_other
+  end
 
   def find_user_by_email
     @user = User.find_by(email: params.dig(:session, :email)&.downcase)
