@@ -32,6 +32,11 @@
   color: $white;
 }
 
+.nav-link-text a:hover {
+  text-decoration: none;
+  color: $white;
+}
+
 .my-cart__header {
   margin: 40px 0 32px 0;
   text-align: center;
