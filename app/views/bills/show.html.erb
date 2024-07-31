@@ -1,0 +1,114 @@
+<% provide :title, t("order_history.detail.title") %>
+<%= render "layouts/header" %>
+<div class="nav-link">
+  <div class="nav-link-text">
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-house"></i>
+    <% end %>
+    <i class="right fa-solid fa-chevron-right"></i>
+    <%= link_to t("profile.personal_info"), edit_user_path(current_user) %>
+    <i class="right fa-solid fa-chevron-right"></i>
+    <%= link_to t("order_history.title"), bills_path %>
+    <i class="right fa-solid fa-chevron-right"></i>
+    <%= link_to t("order_history.detail.title"), bill_path, class: "nav-link--selected" %>
+  </div>
+</div>
+<div class="edit-page">
+  <div class="body">
+    <%= render "layouts/sidebar" %>
+    <div class="order-detail">
+      <div class="order-detail-wrapper">
+        <div class="order-detail__header">
+          <h1><%= t "order_history.detail.title" %></h1>
+          <p>
+            <span class="dot">・</span>
+            <%= @bill.created_at %>
+          </p>
+          <%= link_to bills_path do %>
+            <%= t "order_history.return_to_list" %>
+          <% end %>
+        </div>
+        <div class="order-detail__infor">
+          <div class="infor__address">
+            <div class="address__receive">
+              <h2 class="infor__header"><%= t "order_history.detail.receiver" %></h2>
+              <div class="infor__content">
+                <p class="infor-content__name"><%= @bill.user_name %></p>
+                <p>
+                  <div>
+                    <%= @bill.address %>
+                  </div>
+                  <p class="infor-content__title"><%= t "order_history.detail.email" %></p>
+                  <%= @bill.user_email %> <br><br>
+                  <p class="infor-content__title"><%= t "order_history.detail.phone_number" %></p>
+                  <%= @bill.phone_number %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="infor__price">
+            <div class="infor-price__body">
+              <div class="infor-price-body__row">
+                <span><%= t "order_history.total" %></span>
+                <%= send("#{I18n.locale}", @bill.total) %>
+              </div>
+              <div class="infor-price-body__row">
+                <span><%= t "order_history.detail.discount" %></span>
+                <%= @bill.voucher_discount * Settings.dicount_percentage_convert %>%
+              </div>
+              <div class="infor-price-total">
+                <%= t "order_history.subtotal" %>
+                <span><%= send("#{I18n.locale}", @bill.total_after_discount) %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-detail__process">
+          <div class="process-bar">
+            <div class="process-bar--active" style="width: <%= progress_bar_width @bill.status %>"></div>
+            <div class="process-trackings">
+              <div class="process-tracking">
+                <span>01</span>
+                <p><%= t "order_history.status.wait_for_pay" %></p>
+              </div>
+              <div class="process-tracking">
+                <span>02</span>
+                <p><%= t "order_history.status.wait_for_prepare" %></p>
+              </div>
+              <div class="process-tracking">
+                <span>03</span>
+                <p><%= t "order_history.status.wait_for_delivery" %></p>
+              </div>
+              <div class="process-tracking">
+                <span>04</span>
+                <p><%= t "order_history.status.completed" %></p>
+              </div>
+              <div class="process-tracking">
+                <span>05</span>
+                <p><%= t "order_history.status.cancelled" %></p>
+              </div>
+          </div>
+          </div>
+        </div>
+        <div class="order-detail__products">
+          <div class="products__header">
+            <p><%= t "cart.product" %></p>
+            <p><%= t "cart.price" %></p>
+            <p><%= t "cart.quantity" %></p>
+            <p><%= t "cart.total" %></p>
+            <p><%= t "order_history.review" %></p>
+          </div>
+          <div class="products__list">
+            <%= render @bill_details %>
+          </div>
+        </div>
+      </div>
+      <% if @bill.status == "wait_for_pay" %>
+        <%= link_to "#", class: "repay-btn" do %>
+          <%= t "order_history.repay" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "layouts/footer" %>

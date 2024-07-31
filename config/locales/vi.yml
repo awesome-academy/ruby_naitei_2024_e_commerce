@@ -62,6 +62,7 @@ vi:
   order_history:
     title: "Lịch sử đặt hàng"
     id: "ID"
+    total: "Thanh toán"
     subtotal: "Tổng thanh toán"
     created_at: "Ngày tạo"
     status:
@@ -72,6 +73,16 @@ vi:
       completed: "Hoàn tất"
       cancelled: "Đã hủy"
     view_detail: "Xem chi tiết"
+    detail:
+      title: "Chi tiết hóa đơn"
+      receiver: "Người nhận"
+      email: "Email"
+      phone_number: "Số điện thoại"
+      discount: "Giảm giá"
+    return_to_list: "Về danh sách"
+    review: "Đánh giá"
+    leave_review: "Để lại đánh giá"
+    repay: "Thanh toán lại"
   category:
     title: "Phân loại"
     new_category: "Thêm danh mục sản phẩm mới"
@@ -84,6 +95,8 @@ vi:
   errors:
     product:
       not_found: "Không tìm thấy sản phẩm"
+    bill:
+      not_found: "Không tìm thấy hóa đơn"
   shared:
     error_messages:
       the_form_contains: "Form này bao gồm"
