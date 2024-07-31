@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
   include Pagy::Backend
+  include ApplicationHelper
   include ProductsHelper
   include CategoriesHelper
   include SessionsHelper

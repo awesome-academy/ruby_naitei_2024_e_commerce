@@ -8,8 +8,12 @@ Rails.application.routes.draw do
     post "/signup", to: "users#create"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
+    get "/cart", to: "cart#show"
+    post "/cart/create"
+    post "/check_remain_and_redirect", to: "cart#check_remain_and_redirect"
     root "static_pages#home"
     post "checkout/create", to: "checkout#create"
+    resources :carts
     resources :products
     resources :checkout, only: :create
     resources :users
@@ -22,6 +26,7 @@ Rails.application.routes.draw do
       resources :home
       resources :products
       resources :bills, only: [:index, :show]
+      resources :cart_details
     end
   end
 end

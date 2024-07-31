@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_31_012826) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_01_065435) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -43,7 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_31_012826) do
     t.integer "bill_id"
     t.integer "product_id"
     t.integer "quantity"
-    t.decimal "total", precision: 10, default: "0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bill_id", "product_id"], name: "index_bill_details_on_bill_id_and_product_id", unique: true
@@ -69,9 +68,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_31_012826) do
     t.integer "cart_id"
     t.integer "product_id"
     t.integer "quantity"
-    t.decimal "total", precision: 10, default: "0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "total", precision: 10
+    t.decimal "unit_price", precision: 10
     t.index ["cart_id", "product_id"], name: "index_cart_details_on_cart_id_and_product_id", unique: true
     t.index ["cart_id"], name: "index_cart_details_on_cart_id"
     t.index ["product_id"], name: "index_cart_details_on_product_id"

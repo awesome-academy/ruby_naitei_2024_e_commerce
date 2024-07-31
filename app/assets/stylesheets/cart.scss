@@ -1,0 +1,250 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'variable';
+
+.nav-link {
+  background-color: $header-top-background;
+  height: 100px;
+  position: relative;
+}
+
+.nav-link--selected {
+  color: $primary-color !important;
+}
+
+.nav-link-text {
+  position: absolute;
+  top: 40%;
+  color: $white;
+  margin: 0 160px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.nav-link-text .right {
+  margin: 4px 12px 0 12px;
+  font-size: 10px;
+}
+
+.nav-link-text a {
+  text-decoration: none;
+  color: $white;
+}
+
+.my-cart__header {
+  margin: 40px 0 32px 0;
+  text-align: center;
+}
+
+.my-cart__body {
+  margin: 0 160px 80px 160px;
+}
+
+.my-cart__body__up {
+  display: flex;
+}
+
+.my-cart__body__up-left {
+  width: 72%;
+  border: 1px solid $navbar-border-color;
+  border-radius: 8px;
+}
+
+.my-cart__body__up-left__header {
+  display: grid;
+  grid-template-columns: 1.2fr 0.5fr 0.5fr 0.3fr 0.5fr;
+  list-style: none;
+  padding: 10px 24px;
+  border-bottom: 1px solid $navbar-border-color;
+  color: $form-background-color;
+}
+
+.my-cart__products {
+  max-height: 440px;
+  overflow-y: scroll;
+}
+
+.my-cart__products::-webkit-scrollbar {
+  width: 0;
+}
+
+.my-cart__row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.5fr 0.5fr 0.3fr 0.5fr;
+  padding: 8px 24px 0 24px;
+  border-bottom: 1px solid $navbar-border-color;
+  align-items: center;
+  border-top: none;
+  font-size: 16px;
+  div {
+    p {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.my-cart__row.button {
+  border-bottom: none;
+}
+
+.my-cart__row div:first-child {
+  display: flex;
+  align-items: center;
+}
+
+.my-cart__row__quantity {
+  margin: 0 10px;
+}
+
+.my-cart__row div:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.my-cart__row img {
+  margin: 0 20px 10px 0;
+  width: 100px;
+}
+
+.my-cart__row a {
+  font-size: 14px;
+  text-decoration: none;
+  width: 190px;
+  background-color: $my-cart-row-a;
+  color: $primary-color;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 43px;
+  margin: 8px 0 16px 0;
+}
+
+.my-cart__row a:hover {
+  animation: FadeIn linear 0.2s;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.my-cart__body__up-right {
+  border: 1px solid $navbar-border-color;
+  width: 28%;
+  margin-left: 24px;
+  border-radius: 8px;
+  padding: 24px;
+  max-height: 275px;
+  position: relative;
+}
+
+.my-cart__body__up-right h3 {
+  color: $footer-bottom;
+  margin: 0;
+  text-align: center;
+}
+
+.my-cart__body__up-right__info {
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.my-cart__body__up-right__info div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-cart__body__up-right__info div:last-child {
+  font-size: 16px;
+}
+
+.my-cart__body__up-right__info div:last-child .info__price {
+  font-weight: 600;
+}
+
+.my-cart__body__up-right__info .line {
+  border: 1px solid $color-tr-hover-background;
+  margin: 14px 0;
+}
+
+.my-cart__body__up-right__info .info__title {
+  color: $slide-interaction;
+}
+
+.my-cart__body__up-right input {
+  padding: 14px 50px;
+  border: none;
+  background-color: $primary-color;
+  color: $white;
+  border-radius: 43px;
+  font-size: 15px;
+  position: absolute;
+  top: 70%;
+  left: 14%;
+}
+
+.my-cart__body__up-right a:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  animation: FadeIn linear 0.2s;
+}
+
+.my-cart__body__down {
+  position: relative;
+  display: flex;
+  border: 1px solid $navbar-border-color;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 24px;
+  width: 70.5%;
+  align-items: center;
+}
+
+.my-cart__body__down h3 {
+  margin-right: 24px;
+  color: $footer-bottom;
+}
+
+.my-cart__body__down input {
+  border: 1px solid $border-color;
+  outline: none;
+  flex: 1;
+  padding: 16px 24px;
+  border-radius: 46px;
+  font-size: 15px;
+}
+
+.my-cart__body__down button {
+  padding: 16px 40px;
+  position: absolute;
+  background-color: $header-top-background;
+  color: white;
+  border: none;
+  border-radius: 43px;
+  font-size: 15px;
+  right: 21px;
+}
+
+.my-cart__body__down button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  animation: FadeIn linear 0.2s;
+}
+
+.empty-cart {
+  font-size: 16px;
+  margin: auto;
+  text-align: center;
+  height: 300px;
+  a {
+    text-decoration: none;
+    background-color: $primary-color;
+    color: $white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 25px;
+  }
+  p {
+    margrin-top: 50px;
+    margin-bottom: 100px;
+    font-size: 20px;
+  }
+}

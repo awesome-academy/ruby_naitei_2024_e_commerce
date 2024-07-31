@@ -4,6 +4,7 @@ class Product < ApplicationRecord
                             category_id).freeze
 
   has_many :comments, dependent: :destroy
+  has_many :cart_details, dependent: :destroy
   belongs_to :category, optional: true
   has_one_attached :image
   scope :newest, ->{order(created_at: :desc)}

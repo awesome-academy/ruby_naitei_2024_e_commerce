@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_secure_password
   before_save :downcase_email
   before_create :create_activation_digest
+
+  has_one :cart, dependent: :destroy
+
   attr_accessor :activation_token, :remember_token
 
   enum gender: {
