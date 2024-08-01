@@ -14,3 +14,11 @@ image_format: ["image/jpeg", "image/gif", "image/png"]
 max_image_data: 5
 digit_160: 160
 counter_index: 1
+slide_img: "slide-img.jpg"
+homepage_delivery: "delivery-truck 1.svg"
+homepage_support: "headphones 1.svg"
+homepage_shopping: "shopping-bag.svg"
+homepage_package: "package.svg"
+homepage_popular_category_size: 10
+homepage_popular_product_size: 10
+homepage_comments: 3

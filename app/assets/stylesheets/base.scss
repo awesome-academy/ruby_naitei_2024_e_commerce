@@ -169,37 +169,38 @@ header {
   height: 26px;
 }
 
-.navbar {
+.navbar-new {
   display: flex;
   justify-content: space-between;
   padding: 0 160px;
-  border-top: 1px solid $navbar-border-color;
-  border-bottom: 1px solid $navbar-border-color;
+  border-top: 1px solid $navbar-border-color !important;
+  border-bottom: 1px solid $navbar-border-color !important;
   align-items: center;
   font-size: 15px;
+  margin-bottom: 0 !important;
 }
 
-.navbar-selected {
+.navbar-new-selected {
   color: $primary-color !important;
 }
 
-.navbar ul {
+.navbar-new ul {
   display: flex;
   list-style: none;
   width: 776px;
 }
 
-.navbar ul li {
+.navbar-new ul li {
   margin: 16px 40px 10px 0;
   position: relative;
 }
 
-.navbar ul li a {
+.navbar-new ul li a {
   text-decoration: none;
   color: $navbar-text-color
 }
 
-.navbar ul li hr {
+.navbar-new ul li hr {
   display: none;
   position: absolute;
   border: 1px solid $primary-color;
@@ -208,21 +209,22 @@ header {
   width: 84px;
 }
 
-.navbar ul li:nth-child(3) hr {
+
+.navbar-new ul li:nth-child(3) hr {
   left: -6px;
 }
 
-.navbar ul li:last-child hr {
+.navbar-new ul li:last-child hr {
   left: -8px;
   width: 70px;
 }
 
-.navbar ul li a:hover {
+.navbar-new ul li a:hover {
   color: $primary-color;
   animation: FadeIn linear 0.3s;
 }
 
-.navbar ul li a:hover .navbar ul li hr {
+.navbar-new ul li a:hover .navbar-new ul li hr {
   display: block;
 }
 

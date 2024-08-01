@@ -88,8 +88,30 @@ en:
     create:
       invalid: "Invalid email/password combination"
   homepage:
+    view_all: "View all"
     home: "Homepage"
     product: "Products"
+    feature:
+      delivery:
+        title: "Free shipping"
+        describe: "Free shipping on all your orders"
+      support:
+        title: "24/7 support"
+        describe: "Always ready to support customers"
+      privacy:
+        title: "100% payment security"
+        describe: "We guarantee your money is safe"
+      refund:
+        title: "Refund policy"
+        describe: "Refund within 30 days"
+    category: "Popular product categories"
+    banner:
+      title: "Summer sale up to 37%"
+      day: "days"
+      hour: "hours"
+      minute: "minutes"
+      second: "seconds"
+    popular_product: "Popular products"
   footer:
     my_account: "My account"
     profile: "Profile"
@@ -149,3 +171,7 @@ en:
   image:
     title: "Image"
     image_invalid_format: "Wrong file format"
+  slide:
+    welcome: "Welcome to Shop Da Dang"
+    heading: "We provide cheap and quality products"
+    shopping_now: "Go shopping now!"

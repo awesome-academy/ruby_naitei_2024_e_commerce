@@ -162,7 +162,7 @@
     margin: 0 auto;
     width: 800px;
     font-size: 14px;
-    background-color: $form-background-color;
+    background-color: $white;
     border-radius: 8px;
     padding: 20px 40px;
   }
@@ -265,18 +265,18 @@
 }
 
 .collage-pic {
-  width: 230px;
+  width: 19%;
   position: relative;
   border: solid 1px $collage-pic-border;
   margin-bottom: 10px;
   border-radius: 5px;
   box-sizing: content-box;
-  margin: 20px;
   background-color: $background-color;
 }
 
 .collage-pic_image{
   margin: 0;
+  width: 100%;
 }
 
 .collage-info {
@@ -317,8 +317,8 @@
 .collage-pic__bag {
   position: absolute;
   border: solid 1px $collage-pic-border;
-  top: 260px;
-  right: 20px;
+  top: 80%;
+  right: 8%;
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -327,8 +327,8 @@
 }
 
 .collage-pic__heart--visible:hover, .collage-pic__bag:hover{
-  background-color: $background-color;
-  color: white;
+  background-color: $primary-color;
+  color: $white;
 }
 
 .collage-pic__name,

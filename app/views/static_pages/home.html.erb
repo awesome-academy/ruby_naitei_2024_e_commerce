@@ -1,2 +1,119 @@
 <%= render "layouts/header" %>
+<div class="homepage">
+  <div id="slider">
+    <div class="slides">
+      <div class="slide actived">
+        <%= render "slide" %>
+      </div>
+      <div class="slide">
+        <%= render "slide" %>
+      </div>
+      <div class="slide">
+        <%= render "slide" %>
+      </div>
+    </div>
+
+    <div class="slider__interaction">
+      <span id="btn-prev"><i class="fa-solid fa-chevron-left"></i></span>
+      <span id="btn-next"><i class="fa-solid fa-chevron-right"></i></span>
+      <ul>
+        <li class="node--actived"></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="homepage__feature">
+    <div class="feature__item">
+      <div class="feature__item__img">
+        <%= image_tag Settings.homepage_delivery %>
+      </div>
+      <div class="feature__item__text">
+        <div class="feature__item__text__heading"><%= t "homepage.feature.delivery.title" %></div>
+        <div class="feature__item__text__descrb"><%= t "homepage.feature.delivery.describe" %></div>
+      </div>
+    </div>
+    <div class="feature__item">
+      <div class="feature__item__img">
+        <%= image_tag Settings.homepage_support %>
+      </div>
+      <div class="feature__item__text">
+        <div class="feature__item__text__heading"><%= t "homepage.feature.support.title" %></div>
+        <div class="feature__item__text__descrb"><%= t "homepage.feature.support.describe" %></div>
+      </div>
+    </div>
+    <div class="feature__item">
+      <div class="feature__item__img">
+        <%= image_tag Settings.homepage_shopping %>
+      </div>
+      <div class="feature__item__text">
+        <div class="feature__item__text__heading"><%= t "homepage.feature.privacy.title" %></div>
+        <div class="feature__item__text__descrb"><%= t "homepage.feature.privacy.describe" %></div>
+      </div>
+    </div>
+    <div class="feature__item">
+      <div class="feature__item__img">
+        <%= image_tag Settings.homepage_package %>
+      </div>
+      <div class="feature__item__text">
+        <div class="feature__item__text__heading"><%= t "homepage.feature.refund.title" %></div>
+        <div class="feature__item__text__descrb"><%= t "homepage.feature.refund.describe" %></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="homepage__line"></div>
+
+  <div class="homepage__category">
+    <div class="homepage__category__header">
+      <h2><%= t "homepage.category" %></h2>
+      <%= link_to products_path do %>
+        <%= t "homepage.view_all" %>
+        <i class="fa-solid fa-arrow-right"></i>
+      <% end %>
+    </div>
+
+    <div class="homepage__category__body">
+      <%= render partial: "popular_category", collection: @top_categories %>
+    </div>
+  </div>
+
+  <div class="homepage__banner">
+    <h1><%= t "homepage.banner.title" %></h1>
+    <div class="banner__countdown">
+      <span id="days"></span> <%= t "homepage.banner.day" %>
+      <span id="hours"></span> <%= t "homepage.banner.hour" %>
+      <span id="minutes"></span> <%= t "homepage.banner.minute" %>
+      <span id="seconds"></span> <%= t "homepage.banner.second" %>
+    </div>
+    <%= link_to products_path do %>
+      <%= t "slide.shopping_now" %>
+      <i class="fa-solid fa-arrow-right"></i>
+    <% end %>
+  </div>
+
+  <div class="homepage__popular-products">
+    <div class="homepage__popular-products__header">
+      <h2><%= t "homepage.popular_product" %></h2>
+      <%= link_to products_path do %>
+        <%= t "homepage.view_all" %>
+        <i class="fa-solid fa-arrow-right"></i>
+      <% end %>
+    </div>
+
+    <div class="homepage__popular-products__body">
+      <%= render partial: "popular_product", collection: @top_products %>
+    </div>
+  </div>
+
+  <div class="client-testimonail">
+    <div class="client-testimonail__title">
+      <h1>Bình luận của khách hàng</h1>
+    </div>
+    <div class="client-testimonail__boxs">
+      <%= render partial: "homepage_comment", collection: @top_comments %>
+    </div>
+  </div>
+</div>
 <%= render "layouts/footer" %>
