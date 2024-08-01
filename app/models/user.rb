@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  PERMITTED_ATTRIBUTES = [:name, :email, :password,
-                          :password_confirmation, :gender].freeze
+  PERMITTED_ATTRIBUTES = %i(name email password password_confirmation
+                            gender).freeze
+
   has_secure_password
   before_save :downcase_email
   before_create :create_activation_digest

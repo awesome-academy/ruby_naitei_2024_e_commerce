@@ -156,6 +156,7 @@ vi:
       order: "Đơn đặt hàng"
       statistic: "Thống kê"
       comment: "Bình luận"
+  admin:
     view:
       title: "Danh sách sản phẩm"
       id: "ID"
@@ -171,6 +172,21 @@ vi:
       delete: "Xóa"
       confirm_delete: "Bạn có chắc chắn muốn xóa không?"
       new_product: "Thêm sản phẩm mới"
+    products:
+      new:
+        title: "Thêm sản phẩm mới"
+      create:
+        success: "Sản phẩm đã được tạo thành công."
+        fail: "Không thể tạo sản phẩm. Vui lòng kiểm tra lại thông tin."
+      form:
+        name: "Tên"
+        description: "Mô tả"
+        price: "Giá"
+        remain_quantity: "Số lượng còn lại"
+        image: "Hình ảnh"
+        submit: "Tạo sản phẩm"
+      back: "Quay lại danh sách sản phẩm"
+      resource: "sản phẩm"
   image:
     title: "Ảnh minh họa"
     image_invalid_format: "Sai định dạng file"

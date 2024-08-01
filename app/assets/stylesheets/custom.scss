@@ -1,7 +1,7 @@
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
-@import 'variable';
-@import 'var_shop';
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "variable";
+@import "var_shop";
 
 .background {
   position: absolute;
@@ -274,7 +274,7 @@
   background-color: $background-color;
 }
 
-.collage-pic_image{
+.collage-pic_image {
   margin: 0;
   width: 100%;
 }
@@ -284,19 +284,20 @@
   color: inherit;
 }
 
-.collage-pic__img{
+.collage-pic__img {
   width: 230px;
 }
 
-.center{
+.center {
   text-align: center;
 }
 
-.collage-pic__heart--hidden{
+.collage-pic__heart--hidden {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
+.collage-pic:hover .collage-pic__preview--hidden,
 .collage-pic:hover .collage-pic__heart--hidden {
   opacity: 1;
   pointer-events: auto;
@@ -305,6 +306,17 @@
 .collage-pic__heart--visible {
   position: absolute;
   top: 20px;
+  right: 20px;
+  height: 35px;
+  width: 35px;
+  border: none;
+  border-radius: 50%;
+  font-size: 15px;
+  cursor: pointer;
+}
+.collage-pic__preview--visible {
+  position: absolute;
+  top: 60px;
   right: 20px;
   height: 35px;
   width: 35px;
@@ -358,6 +370,82 @@
   color: $star-checked-color;
 }
 
+//CSS cho view product page Admin
+.product-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  h1 {
+    text-align: start;
+  }
+
+  nav {
+    margin-bottom: 20px;
+  }
+
+  .product-list {
+    width: 80%;
+    table {
+      border-collapse: collapse;
+      margin: 20px 0;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      border: 1px solid $color-border;
+      text-align: center;
+      width: 150px;
+      min-width: 150px;
+
+      th {
+        background-color: $color-th-background;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: $color-tr-even-background;
+      }
+
+      tbody tr:hover {
+        background-color: $color-tr-hover-background;
+      }
+    }
+
+    .actions {
+      a {
+        margin-right: 10px;
+        text-decoration: none;
+        color: $color-link;
+
+        &:hover {
+          text-decoration: $color-link-hover;
+        }
+
+        &.delete {
+          color: $color-link-delete;
+        }
+      }
+    }
+
+    .new-product-link {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 10px 20px;
+      background-color: $color-new-product-background;
+      color: $color-new-product-text;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $color-new-product-hover-background;
+      }
+    }
+  }
+}
+
 .edit-page {
   .body {
     display: flex;
@@ -387,7 +475,6 @@
     font-weight: bold;
     text-indent: 10px;
     padding: 10px 0;
-    left: 30%;
   }
 
   .list__item {
@@ -447,6 +534,7 @@
     font-weight: bold;
     border-radius: 8px 8px 0 0;
   }
+
   #hoten,
   #email,
   #sdt {
@@ -463,82 +551,255 @@
     border-radius: 8px;
     border: none;
     color: white;
-    cursor: pointer;
+    background-color: $primary-color;
+  }
+
+  .body__order-history {
+    width: 960px;
+    height: fit-content;
+    border: 2px solid $border-color;
+    margin: 10px;
+  }
+
+  .body__order-history .title {
+    padding: 20px 0;
+    border-bottom: 2px solid $border-color;
+    border-left: 3px solid $primary-color;
+  }
+
+  .title__icon {
+    color: $primary-color;
+    font-size: 20px;
+    padding: 0 10px;
+  }
+
+  .content__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.3fr 1fr 0.7fr;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .content .header {
+    background-color: $border-color;
+    padding: 5px;
+  }
+
+  .content__item div {
+    margin: 5px 20px;
+  }
+
+  .content__item div a {
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  .content__next-page {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content__next-page a {
+    text-decoration: none;
+    padding: 7px 11px;
+    font-size: 10px;
+    margin: 3px;
+    border-radius: 50%;
+  }
+
+  .content__next-page .disable {
+    background-color: $border-color;
+    border: 1px solid $border-color;
+    color: gray;
+  }
+
+  .content__next-page .enable {
+    background-color: white;
+    border: 1px solid $border-color;
+    color: black;
+  }
+
+  .content__next-page .numpage {
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+  }
+
+  .content__next-page .selected_numpage {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    color: white;
+  }
+
+  .content__next-page .numpage:hover,
+  .content__next-page .enable:hover {
+    background-color: $hover-background-color;
+    border: 1px solid $hover-background-color;
+    color: black;
+  }
+
+  .form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .formdk__lienlac,
+  .formdk__inputhoten,
+  .formdk__taikhoan,
+  .formdk__gioitinh {
+    width: 95%;
+    display: block;
+    margin: 0 auto 30px auto;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    padding: 16px 10px;
+  }
+
+  .formdk__gioitinh {
+    margin-bottom: 30px;
+  }
+
+  a.signup-button {
+    text-align: center;
     font-size: 16px;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    margin: 0 auto 10px auto;
+    padding: 16px 0;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: $background-color-signup;
+    cursor: pointer;
   }
 }
 
 //CSS cho view product page Admin
-.product-list-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+.product-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
 
-  h1 {
-    text-align: start;
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid $color-border;
+    text-align: center;
   }
 
-  nav {
-    margin-bottom: 20px;
+  th {
+    background-color: $color-th-background;
   }
 
-  .product-list {
-    width: 80%;
-    table {
-      border-collapse: collapse;
-      margin: 20px 0;
-      margin-top: 20px;
-      width: 100%;
-    }
+  tbody tr:nth-child(even) {
+    background-color: $color-tr-even-background;
+  }
 
-    th, td {
-      padding: 10px;
-      border: 1px solid $color-border;
-      text-align: center;
-      width: 150px;
-      min-width: 150px;
+  tbody tr:hover {
+    background-color: $color-tr-hover-background;
+  }
 
-      th {
-        background-color: $color-th-background;
-      }
-
-      tbody tr:nth-child(even) {
-        background-color: $color-tr-even-background;
-      }
-
-      tbody tr:hover {
-        background-color: $color-tr-hover-background;
-      }
-    }
-
-    .actions {
-      a {
-        margin-right: 10px;
-        text-decoration: none;
-        color: $color-link;
-
-        &:hover {
-          text-decoration: $color-link-hover;
-        }
-
-        &.delete {
-          color: $color-link-delete;
-        }
-      }
-    }
-
-    .new-product-link {
-      display: inline-block;
-      margin: 20px 0;
-      padding: 10px 20px;
-      background-color: $color-new-product-background;
-      color: $color-new-product-text;
+  .actions {
+    a {
+      margin-right: 10px;
       text-decoration: none;
+      color: $color-link;
 
       &:hover {
-        background-color: $color-new-product-hover-background;
+        text-decoration: $color-link-hover;
       }
+
+      &.delete {
+        color: $color-link-delete;
+      }
+    }
+  }
+
+  .new-product-link {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: $color-new-product-background;
+    color: $color-new-product-text;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $color-new-product-hover-background;
+    }
+  }
+}
+
+//CSS cho trang them product Admin
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: $light-color;
+  border: 1px solid $input-border-color;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .field {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: $label-color;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid $input-border-color;
+      border-radius: 0.25rem;
+      background-color: $input-background-color;
+      color: $input-text-color;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+      &:focus {
+        border-color: $input-focus-border-color;
+        outline: 0;
+        box-shadow: 0 0 8px rgba($input-focus-border-color, 0.6);
+      }
+    }
+  }
+
+  .actions {
+    margin-top: 1.5rem;
+
+    input[type="submit"] {
+      background-color: $submit-background-color;
+      color: $light-color;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.15s ease-in-out;
+
+      &:hover {
+        background-color: $submit-hover-background-color;
+      }
+    }
+  }
+
+  .link-back {
+    display: inline-block;
+    margin-top: 1rem;
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

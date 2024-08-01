@@ -168,6 +168,21 @@ en:
       delete: "Delete"
       confirm_delete: "Are you sure you want to delete?"
       new_product: "Add New Product"
+    products:
+      new:
+        title: "Add New Product"
+      create:
+        success: "Product was successfully created."
+        fail: "Failed to create product. Please check the form."
+      form:
+        name: "Name"
+        description: "Description"
+        price: "Price"
+        remain_quantity: "Remaining Quantity"
+        image: "Image"
+        submit: "Create Product"
+      back: "Back to Product List"
+      resource: "product"
   image:
     title: "Image"
     image_invalid_format: "Wrong file format"

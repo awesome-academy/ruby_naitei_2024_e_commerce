@@ -1,0 +1,30 @@
+<%= form_with model: [:admin, @product], url: admin_products_path do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="field">
+    <%= f.label :name, t("admin.products.form.name") %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description, t("admin.products.form.description") %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :price, t("admin.products.form.price") %>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :remain_quantity, t("admin.products.form.remain_quantity") %>
+    <%= f.number_field :remain_quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id, t("admin.products.form.category") %>
+    <%= f.select :category_id, options_for_select(category_options), prompt: true %>
+  </div>
+  <span class="image">
+    <%= f.label :image, t("admin.products.form.image") %>
+    <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+  </span>
+  <div class="actions">
+    <%= f.submit t("admin.products.form.submit") %>
+  </div>
+<% end %>
