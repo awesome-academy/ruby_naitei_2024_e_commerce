@@ -153,6 +153,7 @@ en:
       order: "Order list"
       statistic: "Statistic"
       comment: "Comments"
+  admin:
     view:
       title: "Product List"
       id: "ID"
@@ -181,6 +182,12 @@ en:
         remain_quantity: "Remaining Quantity"
         image: "Image"
         submit: "Create Product"
+      back: "Back to Product List"
+      resource: "product"
+      edit:
+        title: "Edit Product"
+        success: "Product updated successfully."
+        fail: "Failed to update the product."
       back: "Back to Product List"
       resource: "product"
   image:

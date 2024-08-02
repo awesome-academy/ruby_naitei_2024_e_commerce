@@ -187,6 +187,12 @@ vi:
         submit: "Tạo sản phẩm"
       back: "Quay lại danh sách sản phẩm"
       resource: "sản phẩm"
+      edit:
+        title: "Chỉnh sửa Sản phẩm"
+        success: "Cập nhật sản phẩm thành công."
+        fail: "Cập nhật sản phẩm không thành công."
+      back: "Quay lại danh sách sản phẩm"
+      resource: "sản phẩm"
   image:
     title: "Ảnh minh họa"
     image_invalid_format: "Sai định dạng file"
