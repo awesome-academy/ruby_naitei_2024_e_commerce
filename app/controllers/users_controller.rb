@@ -44,14 +44,6 @@ class UsersController < ApplicationController
     redirect_to root_path unless @user
   end
 
-  def logged_in_user
-    return if logged_in?
-
-    flash[:danger] = t "please_log_in"
-    store_location
-    redirect_to login_path
-  end
-
   def correct_user
     return if current_user? @user
 

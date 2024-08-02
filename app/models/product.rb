@@ -23,9 +23,8 @@ class Product < ApplicationRecord
                                 only_integer: true,
                                 greater_than_or_equal_to: Settings.digit_0
                               }
-  validates :category_id,
-            presence: true
-  validates :image, attached: true,
-                    content_type: Settings.image_format,
-                    size: {less_than: Settings.max_image_data.megabytes}
+  validates :category_id, presence: true
+  validates :image,
+            content_type: Settings.image_format,
+            size: {less_than: Settings.max_image_data.megabytes}
 end

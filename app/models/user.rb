@@ -5,7 +5,6 @@ class User < ApplicationRecord
   has_secure_password
   before_save :downcase_email
   before_create :create_activation_digest
-
   attr_accessor :activation_token, :remember_token
 
   enum gender: {
@@ -27,6 +26,7 @@ class User < ApplicationRecord
 
   before_save{self.email = email.downcase}
 
+  has_one :cart, dependent: :destroy
   has_many :bills, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :wishlists, dependent: :destroy

@@ -23,3 +23,5 @@ homepage_popular_category_size: 10
 homepage_popular_product_size: 10
 homepage_comments: 3
 digit_0: 0
+money_unit: "usd"
+dollar_convert: 0.042

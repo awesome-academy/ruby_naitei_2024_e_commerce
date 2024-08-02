@@ -1,4 +1,4 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < AdminController
   layout "admin"
   include ApplicationHelper
   before_action :load_category, only: %i(edit update destroy)

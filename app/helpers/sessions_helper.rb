@@ -43,4 +43,9 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end
+
+  def load_current_user_cart
+    @cart = current_user.cart
+    @cart_details = @cart.cart_details
+  end
 end

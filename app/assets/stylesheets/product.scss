@@ -1,4 +1,5 @@
 @import 'var_shop';
+@import 'variable';
 /*body cho thông tin sản phẩm*/
 .product-detail_body{
   padding:0 160px 0 160px;
@@ -191,4 +192,158 @@
 
 .create-form_component{
   display: block;
+}
+
+/* Checkout */
+.check-out__body {
+  margin: 32px 160px 40px 160px;
+  color: $checkout-text-color;
+  display: flex;
+}
+
+.check-out__body-left {
+  width: 64%;
+}
+
+.check-out__body-left h2 {
+  margin-bottom: 32px;
+}
+
+.check-out__body-left__row {
+  display: flex;
+}
+
+.check-out__body-left__item {
+  margin-right: 14px;
+  width: 100%;
+}
+
+.check-out__body-left__item p {
+  margin-bottom: 10px;
+}
+
+.check-out__body-left__item input,
+.check-out__body-left__item select,
+.check-out__body-left__item textarea {
+  padding: 14px 0 14px 16px;
+  border: 1px solid $line-color;
+  border-radius: 6px;
+  outline: none;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.check-out__body-left__item .checkbox {
+  width: 20px;
+}
+
+.check-out__body-left .line {
+  border: 1px solid $line-color;
+  margin: 12px 0 32px 0;
+  width: 98.1%;
+}
+
+.check-out__body-right {
+  border: 1px solid $line-color;
+  border-radius: 8px;
+  width: 36%;
+  margin-left: 10px;
+  padding: 0 24px 24px 24px;
+  height: fit-content;
+}
+
+.check-out__body-right h3 {
+  margin: 30px 0 20px 0;
+}
+
+.check-out__body-right__products {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.check-out__body-right__product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.check-out__body-right__product__info {
+  display: flex;
+  align-items: center;
+}
+
+.check-out__body-right__product__info img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.check-out__body-right__product__price {
+  font-weight: 600;
+  color: $checkout-text-color;
+}
+
+.check-out__body-right__info {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.check-out__body-right__info__title {
+  color: $check-out-title-color;
+}
+
+.check-out__body-right .line {
+  border: 1px solid $line-color;
+  margin: 14px 0 14px 0;
+}
+
+.check-out__body-right .check-out__body-right__info:last-child .check-out__body-right__product__price {
+  font-size: 18px;
+}
+
+.check-out__body-right__payment-item {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.check-out__body-right__payment-item input {
+  appearance: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $line-color;
+  transition: 0.2s all linear;
+  margin-right: 8px;
+}
+
+.check-out__body-right__payment-item input:hover {
+  cursor: pointer;
+  border: 1px solid $primary-color;
+}
+
+.check-out__body-right__payment-item input:checked {
+  background-color: white;
+  border: 7px solid $primary-color;
+}
+
+.check-out__body-right .btn-buy {
+  margin-top: 10px;
+  width: 100%;
+  background-color: $primary-color;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 43px;
+  padding: 16px 0;
+}
+
+.check-out__body-right button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  animation: FadeIn linear 0.2s;
 }
