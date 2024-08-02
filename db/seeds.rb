@@ -155,6 +155,16 @@ end
   prod4.image.attach(io: File.open(Rails.root.join("./app/assets/images", "prod4.jpg")), filename: "prod4.jpg")
 end
 
+
+
+prod2 = Product.create!(name: "Keyboard M1W",
+                        price: 15000000,
+                        remain_quantity: 0,
+                        description: "Ban phim cua tui",
+                        category_id: Category.find(5).id)
+
+prod2.image.attach(io: File.open(Rails.root.join("./app/assets/images", "k.jpeg")), filename: "k.jpeg")
+
 #Seed comments
 for a in 1..100 do
   5.times do |n|
@@ -229,6 +239,17 @@ BillDetail.create!(bill_id: 2,
                    quantity: 1)
 
 #Seed wishlist
+#
+Wishlist.create!(user_id: 2,
+                product_id: 4)
+
+Wishlist.create!(user_id: 2,
+                 product_id: 120)
+
+
+Wishlist.create!(user_id: 2,
+                product_id: 121)
+
 Wishlist.create!(user_id: 3,
                  product_id: 1)
 

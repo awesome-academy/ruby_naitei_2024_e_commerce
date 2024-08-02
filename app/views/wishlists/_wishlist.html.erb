@@ -1,0 +1,23 @@
+<div class="wish-list__row">
+  <div>
+    <% if wishlist.image.persisted? %>
+      <%= image_tag wishlist.image %>
+    <% end %>
+    <p class="row__name"><%= wishlist.name %></p>
+  </div>
+  <div><p class="row__price"><%= public_send("#{I18n.locale}", wishlist.price) %></p></div>
+  <div>
+    <% if check_remain wishlist %>
+      <p class="row__status"><%= t "wishlist.stocking" %></p>
+      <div>
+        <button class="add-product"><%= t "cart.add_to_cart" %></button>
+      </div>
+    <% else %>
+      <p class="row__status row__status--out-of-stock"><%= t "wishlist.out_stock" %></p>
+      <div>
+        <button class="add-product add-product--out-of-stock"><%= t "cart.add_to_cart" %></button>
+      </div>
+    <% end %>
+    <i class="row__remove fa-solid fa-xmark"></i>
+  </div>
+</div>

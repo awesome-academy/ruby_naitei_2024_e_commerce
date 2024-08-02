@@ -1,0 +1,28 @@
+<div class="body__menu">
+  <div class="list">
+    <div class="list__item">
+      <%= link_to edit_user_path(current_user) do %>
+        <i class="list__icon fa-solid fa-address-card"></i>
+        <span><%= t "profile.account" %></span>
+      <% end %>
+    </div>
+    <div class="list__item">
+      <%= link_to "#" do %>
+        <i class="list__icon fa-solid fa-wallet"></i>
+        <span><%= t "profile.order_history" %></span>
+      <% end %>
+    </div>
+    <div class="list__item">
+      <%= link_to wishlists_path do %>
+        <i class="list__icon fa-solid fa-heart"></i>
+        <span><%= t "profile.favorites" %></span>
+      <% end %>
+    </div>
+    <div class="list__item">
+      <%= link_to "#" do %>
+        <i class="list__icon fa-solid fa-right-from-bracket"></i>
+        <span><%= t "profile.logout" %></span>
+      <% end %>
+    </div>
+  </div>
+</div>

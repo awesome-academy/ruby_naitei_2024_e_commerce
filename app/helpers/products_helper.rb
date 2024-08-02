@@ -10,4 +10,8 @@ module ProductsHelper
   def comment_users comments
     comments&.select{|comment| comment.star.present?}
   end
+
+  def check_remain wishlist
+    wishlist.remain_quantity > Settings.digit_0
+  end
 end
