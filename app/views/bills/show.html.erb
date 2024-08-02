@@ -52,10 +52,12 @@
                 <span><%= t "order_history.total" %></span>
                 <%= send("#{I18n.locale}", @bill.total) %>
               </div>
-              <div class="infor-price-body__row">
-                <span><%= t "order_history.detail.discount" %></span>
-                <%= @bill.voucher_discount * Settings.dicount_percentage_convert %>%
-              </div>
+              <% unless @bill.voucher_discount.nil? %>
+                <div class="infor-price-body__row">
+                  <span><%= t "order_history.detail.discount" %></span>
+                  <%= @bill.voucher_discount * Settings.dicount_percentage_convert %>
+                </div>
+              <% end %>
               <div class="infor-price-total">
                 <%= t "order_history.subtotal" %>
                 <span><%= send("#{I18n.locale}", @bill.total_after_discount) %></span>
@@ -104,9 +106,8 @@
         </div>
       </div>
       <% if @bill.status == "wait_for_pay" %>
-        <%= link_to "#", class: "repay-btn" do %>
-          <%= t "order_history.repay" %>
-        <% end %>
+        <%= button_to t("order_history.repay"), checkout_repayment_path,
+            method: :post, params: { bill_id: @bill.id }, class: "repay-btn" %>
       <% end %>
     </div>
   </div>

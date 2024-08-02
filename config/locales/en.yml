@@ -27,6 +27,7 @@ en:
     you_sure?: "Are you sure?"
     not_admin: "You are not admin"
     login_to_view_cart: "Please login to view cart"
+    syntax_error_phone: "Wrong syntax phone number"
   product:
     price: ! "Price: %{price}"
     comment: ! "%{comments} rate"
