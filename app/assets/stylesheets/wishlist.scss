@@ -183,3 +183,9 @@
   opacity: 0.6;
   cursor: pointer;
 }
+
+.alert-notice {
+  color: $alert-notice-color;
+  background-color: $alert-notice-background-color;
+  margin-bottom: 0 !important;
+}

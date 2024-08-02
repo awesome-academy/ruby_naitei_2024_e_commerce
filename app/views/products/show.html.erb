@@ -32,7 +32,7 @@
           <% end %>
         <% end %>
         <div class="addinfo_buy__wishlist">
-          <button><i class="fa-regular fa-heart"></i></button>
+          <%= render "wishlists/add_wishlist" if logged_in? %>
         </div>
       </div>
       <div class="addinfo_info__tag">

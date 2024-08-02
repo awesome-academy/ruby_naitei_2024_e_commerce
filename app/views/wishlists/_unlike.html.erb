@@ -1,0 +1,8 @@
+<%= form_with(model: find_liked_product(current_user, @product),
+    url: wishlist_path(find_liked_product(current_user, @product)),
+                            method: :delete, remote: true) do |f| %>
+  <div><%= hidden_field_tag :product_id, @product.id %></div>
+  <%= f.button type: "submit" do %>
+    <i class="fa-solid fa-heart"></i>
+  <% end %>
+<% end %>

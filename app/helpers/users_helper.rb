@@ -5,4 +5,8 @@ module UsersHelper
         [t("sign_up.genders.#{gender}"), gender]
       end, {}, class: "formdk__gioitinh")
   end
+
+  def find_liked_product current_user, product
+    current_user.wishlist_products.find_by(id: product.id)
+  end
 end

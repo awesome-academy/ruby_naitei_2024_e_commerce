@@ -1,0 +1,7 @@
+<%= form_with(model: current_user.wishlists.build,
+              url: wishlists_path, method: :post, remote: true) do |f| %>
+  <div><%= hidden_field_tag :product_id, @product.id %></div>
+  <%= f.button type: "submit", class: "addinfo-like__button" do %>
+    <i class="fa-regular fa-heart"></i>
+  <% end %>
+<% end %>

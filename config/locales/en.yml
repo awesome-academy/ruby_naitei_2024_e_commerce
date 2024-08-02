@@ -316,6 +316,8 @@ en:
     product: "Product"
     price: "Price"
     status: "Status"
+    liked: "You liked the product"
+    unlike: "You unliked the product"
   activerecord:
     errors:
       models:
