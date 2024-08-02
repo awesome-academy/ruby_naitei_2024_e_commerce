@@ -1,0 +1,8 @@
+<div class="check-out__body-right__info" id="total-price">
+  <p class="check-out__body-right__info__title"><%= t "order.total_payment" %>:</p>
+  <% if discount.present? %>
+    <p class="check-out__body-right__product__price">- <%= discount %>%</p>
+  <% end %>
+  <div class="line"></div>
+  <p class="check-out__body-right__product__price"><%= public_send("#{I18n.locale}", total) %></p>
+</div>
