@@ -67,3 +67,4 @@ config/application.yml
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+quit

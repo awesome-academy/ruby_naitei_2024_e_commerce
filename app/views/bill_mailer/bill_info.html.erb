@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= t "order.check" %></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .email-container {
+      width: 80%;
+      max-width: 600px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .email-header {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .order-details, .product-details, .order-total {
+      margin-bottom: 20px;
+    }
+    .details-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    .details-table th, .details-table td {
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+    .details-table th {
+      background-color: #f2f2f2;
+      text-align: left;
+    }
+    .order-total p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+    .order-total strong {
+      display: inline-block;
+      width: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <h1 class="email-header"><%= t "order.check" %></h1>
+    <div class="order-details">
+      <h2><%= t "order.title" %></h2>
+      <table class="details-table">
+        <tr>
+          <th><%= t "order.id" %>:</th>
+          <td><%= @bill.id %></td>
+        </tr>
+        <tr>
+          <th><%= t "create_time" %>:</th>
+          <td><%= t "created_at", date: l(@bill.created_at) %></td>
+        </tr>
+        <tr>
+          <th><%= t "order.address" %>:</th>
+          <td><%= @bill.address %></td>
+        </tr>
+        <tr>
+          <th><%= t "order.phone" %>:</th>
+          <td><%= @bill.phone_number %></td>
+        </tr>
+        <tr>
+          <th><%= t "order.note" %>:</th>
+          <td><%= @bill.note_content %></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="product-details">
+      <table class="details-table">
+        <tr>
+          <th><%= t "wishlist.product" %></th>
+          <th><%= t "order.quantity" %></th>
+          <th><%= t "order.price" %></th>
+          <th><%= t "order.total" %></th>
+        </tr>
+        <% @bill_details.each do |detail| %>
+          <tr>
+            <td><%= detail.product.name %></td>
+            <td><%= detail.quantity %></td>
+            <td><%= t("product.price", price: public_send("#{I18n.locale}", detail.product.price)) %></td>
+            <td><%= t("product.price", price: public_send("#{I18n.locale}", detail.total)) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div class="order-total">
+        <p>
+          <strong><%= t "order.total" %>:</strong>
+          <%= t("product.price", price: public_send("#{I18n.locale}", @bill.total)) %></p>
+        <p>
+          <strong><%= t "order.discount" %>:</strong>
+          <% total = @bill.total - @bill.total_after_discount %>
+          <%= t("product.price", price: public_send("#{I18n.locale}", total)) %></p>
+        <p>
+          <strong><%= t "order.total_payment" %>:</strong>
+          <%= t("product.price", price: public_send("#{I18n.locale}", @bill.total_after_discount)) %>
+        </p>
+    </div>
+  </div>
+</body>
+</html>

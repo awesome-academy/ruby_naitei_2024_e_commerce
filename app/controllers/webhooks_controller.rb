@@ -16,7 +16,7 @@ class WebhooksController < ApplicationController
 
   def parse_event payload, sig_header
     Stripe::Webhook.construct_event(payload, sig_header,
-                                    Figaro.env.webhooks_key)
+                                    Figaro.env.webhooks_local_key)
   rescue JSON::ParserError
     Rails.logger.error "Invalid JSON payload: #{e.message}"
     status 400

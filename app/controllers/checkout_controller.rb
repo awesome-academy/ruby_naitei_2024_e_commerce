@@ -18,6 +18,7 @@ class CheckoutController < ApplicationController
                     end.to_json
     }
     transfer_data
+    current_user.send_bill_info @bill
     @session = Stripe::Checkout::Session.create({
       payment_method_types: %w(card),  # rubocop:disable Layout/FirstHashElementIndentation
       line_items: @line_items,
@@ -38,7 +39,8 @@ class CheckoutController < ApplicationController
         quantity: detail.quantity,
         price_data: {
           currency: Settings.money_unit,
-          unit_amount: (detail.product.price * Settings.dollar_convert).to_i,
+          unit_amount:
+            (detail.product.price * Settings.dollar_convert * 100).to_i,
           product_data: {
             name: detail.product.name
           }
