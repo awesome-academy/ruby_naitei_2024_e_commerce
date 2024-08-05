@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :categories
       resources :home
+      resources :products
+      resources :bills, only: [:index, :show]
     end
   end
 end
