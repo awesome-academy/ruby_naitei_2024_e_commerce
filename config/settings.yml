@@ -23,6 +23,7 @@ homepage_popular_category_size: 10
 homepage_popular_product_size: 10
 homepage_comments: 3
 digit_0: 0
+digit_2: 2
 money_unit: "usd"
 money_unit_vnd: "vnd"
 counter_index: 1
@@ -31,3 +32,5 @@ currency_format: "%n %u"
 digit_100: 100
 dollar_convert: 0.00004
 digit_2 : 2
+init_value_add_cart: 1
+init_min_add_cart: 1

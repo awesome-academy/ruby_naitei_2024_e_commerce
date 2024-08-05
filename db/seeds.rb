@@ -42,7 +42,6 @@ end
                           remain_quantity: 20,
                           description: "Iphone",
                           category_id: Category.first.id)
-
   prod1.image.attach(io: File.open(Rails.root.join("./app/assets/images", "prod1.jpg")), filename: "prod1.jpg")
 end
 
@@ -245,8 +244,9 @@ Wishlist.create!(user_id: 4,
 Wishlist.create!(user_id: 4,
                  product_id: 4)
 
-
-Cart.create!(user_id: 2, total: 30020000)
+31.times do |n|
+  Cart.create!(user_id: n + 1)
+end
 
 CartDetail.create!(cart_id: 1, product_id: 1, quantity: 1, total: 30000000)
 CartDetail.create!(cart_id: 1, product_id: 120, quantity: 2, total: 20000)

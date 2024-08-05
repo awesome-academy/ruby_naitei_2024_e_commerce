@@ -1,0 +1,25 @@
+<div class="my-cart__row">
+  <div>
+    <% if cart_detail.image.persisted? %>
+      <%= image_tag cart_detail.image %>
+    <% end %>
+    <p class="row__name"><%= cart_detail.name %></p>
+  </div>
+
+  <div>
+    <p class="row__price"><%= public_send("#{I18n.locale}", cart_detail.price) %></p>
+  </div>
+
+  <div>
+    <p class="my-cart__row__quantity"><%= cart_detail.quantity %></p>
+  </div>
+
+  <div>
+    <p class="my-cart__row__quantity"><%= cart_detail.remain_quantity %></p>
+  </div>
+
+  <div>
+    <p><%= public_send("#{I18n.locale}", cart_detail.total) %></p>
+    <i class="row__remove fa-solid fa-xmark"></i>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+<% provide :title, @product.name %>
 <%= render "layouts/header" %>
 <div class="product-detail_body">
   <div class="addinfo">
@@ -15,31 +16,31 @@
           <span class="fa fa-star"></span>
         <% end %>
       <% end %>
+      <p class="addinfo_info__starnote"><%= t("product.remain_quantity", remain_quantity: @product.remain_quantity) %></p>
       <p class="addinfo_info__starnote"><%= t("product.sales_count", sales_count: @product.sales_count) %></p>
       <p class="addinfo_info__starnote"><%= t("product.comment", comments: comment_users(@comments).size) %></p>
       <p class="addinfo_info__gia"><%= t("product.price", price: @product.price) %></p>
       <p class="addinfo_info__info"><%= @product.description %></p>
       <div class="addinfo_buy">
-        <div class="addinfo_buy__amount">
-          <button id="addinfo_buy__amount--decrease"><i class="fa-solid fa-minus"></i></button>
-            <span id="addinfo_buy__amount--number">0</span>
-          <button id="addinfo_buy__amount--increase"><i class="fa-solid fa-plus"></i></button>
-        </div>
-        <div class="addinfo_buy__addtocart">
-          <%= button_to checkout_create_path(id: @product.id), data: { turbo: false } do %>
-            Buy <i class="fa-solid fa-bag-shopping"></i>
+        <% if logged_in? %>
+          <%= form_with url: cart_create_path, class: "addinfo_buy__amount" do |f| %>
+            <%= f.hidden_field :id, :value => @product.id %>
+            <%= f.number_field :quantity, :value => Settings.init_value_add_cart, :min => Settings.init_min_add_cart, :max => @product.remain_quantity %>
+            <div class="addinfo_buy__addtocart">
+              <%= f.submit t "cart.add_to_cart" %>
+            </div>
           <% end %>
-        </div>
+        <% end %>
         <div class="addinfo_buy__wishlist">
           <button><i class="fa-regular fa-heart"></i></button>
         </div>
-        </div>
-        <div class="addinfo_info__tag">
+      </div>
+      <div class="addinfo_info__tag">
           <p><%= t "category.title" %>:
             <span class="addinfo_info__tag--grey"><%= @product.category_name %></span>
           </p>
-        </div>
       </div>
+    </div>
   </div>
   <div class="about">
     <div class="about_button">

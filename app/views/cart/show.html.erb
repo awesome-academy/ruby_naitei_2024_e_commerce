@@ -1,0 +1,20 @@
+<% provide :title, t("cart.title") %>
+<%= render "layouts/header" %>
+<div class="my-cart">
+  <div class="nav-link">
+    <div class="nav-link-text">
+      <%= link_to root_path do %>
+        <i class="fa-solid fa-house"></i>
+      <% end %>
+      <i class="right fa-solid fa-chevron-right"></i>
+      <%= link_to cart_path, class: "nav-link--selected" do %>
+        <%= t "cart.title" %>
+      <% end %>
+    </div>
+  </div>
+
+  <h1 class="my-cart__header"><%= t "cart.title" %></h1>
+
+  <%= render @cart_details.blank? ? "empty_cart" : "cart" %>
+</div>
+<%= render "layouts/footer" %>

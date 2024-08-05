@@ -26,12 +26,28 @@ vi:
     delete_unsuccessfully: "Xóa không thành công"
     you_sure?: "Bạn có chắc không?"
     not_admin: "Bạn không phải quản trị viên"
+    login_to_view_cart: "Vui lòng đăng nhập để xem giỏ hàng"
   product:
     price: ! "Giá: %{price} đ"
     comment: ! "%{comments} đánh giá"
     sales_count: ! "%{sales_count} lượt mua"
+    remain_quantity: "Còn lại %{remain_quantity}"
+    is_nil: "Sản phẩm không tồn tại"
   cart:
+    title: "Giỏ hàng"
+    product: "Sản phẩm"
+    price: "Giá tiền"
+    quantity: "Số lượng"
+    remain: "Kho"
+    total: "Tổng tiền"
+    subtotal: "Tổng thanh toán"
+    checkout: "Thanh toán"
     add_to_cart: "Thêm vào giỏ hàng"
+    continue_shop: "Tiếp tục mua sắm"
+    not_have_product: "Giỏ hàng của bạn trống"
+    add_success: "Thêm sản phẩm thành công!"
+    add_failed: "Thêm sản phẩm thất bại"
+    quantity_greater_than_remain: "Không thể tiến hành thanh toán. Số lượng sản phẩm trong giỏ hàng vượt quá số lượng trong kho."
   cart_detail:
     price: "%{price}vnđ"
   category:
@@ -151,6 +167,14 @@ vi:
     user_not_correct: "Người dùng không chính xác"
     user_not_admin: "Bạn không có quyền truy cập trang này."
   admin:
+    dashboard: "Trang quản trị của admin"
+    sidebar:
+      user: "Danh sách người dùng"
+      product: "Sản phẩm"
+      category: "Danh mục sản phẩm"
+      order: "Đơn đặt hàng"
+      statistic: "Thống kê"
+      comment: "Bình luận"
     view:
       title: "Danh sách sản phẩm"
       id: "ID"
@@ -167,14 +191,6 @@ vi:
       confirm_delete: "Bạn có chắc chắn muốn xóa không?"
       new_product: "Thêm sản phẩm mới"
       show_action: "Xem"
-    dashboard: "Trang quản trị của admin"
-    sidebar:
-      user: "Danh sách người dùng"
-      product: "Sản phẩm"
-      category: "Danh mục sản phẩm"
-      order: "Đơn đặt hàng"
-      statistic: "Thống kê"
-      comment: "Bình luận"
       bills:
         title: "Danh Sách Hóa Đơn"
         new_bill: "Thêm Hóa Đơn Mới"
@@ -190,7 +206,6 @@ vi:
         created_at: "Ngày Tạo"
         updated_at: "Ngày Cập Nhật"
         actions: "Hành Động"
-    dashboard: "Trang quản trị của admin"
     sidebar:
       user: "Danh sách người dùng"
       product: "Sản phẩm"

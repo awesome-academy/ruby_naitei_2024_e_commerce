@@ -22,12 +22,28 @@ en:
     delete_unsuccessfully: "Delete unsuccessfully"
     you_sure?: "Are you sure?"
     not_admin: "You are not admin"
+    login_to_view_cart: "Please login to view cart"
   product:
     price: ! "Price: %{price} đ"
     comment: ! "%{comments} rate"
     sales_count: ! "%{sales_count} purchases"
+    remain_quantity: "Remaining %{remain_quantity}"
+    is_nil: "Product does not exist"
   cart:
+    title: "Cart"
+    product: "Product"
+    price: "Price"
+    quantity: "Quantity"
+    remain: "Remain"
+    total: "Total"
+    subtotal: "Subtotal"
+    checkout: "Checkout"
     add_to_cart: "Add to cart"
+    continue_shop: "Continue shopping"
+    not_have_product: "Your cart is empty"
+    add_success: "Product is added successfully!"
+    add_failed: "Product can not be added"
+    quantity_greater_than_remain: "Unable to proceed with payment. The number of products in the shopping cart exceeds the quantity in stock."
   cart_detail:
     price: "$%{price}"
   category:
@@ -179,7 +195,6 @@ en:
         created_at: "Created At"
         updated_at: "Updated At"
         actions: "Actions"
-    dashboard: "Admin Dashboard"
     sidebar:
       user: "Users"
       product: "Products"

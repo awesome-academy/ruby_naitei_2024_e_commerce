@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
+      @cart = Cart.create(user_id: @user.id)
       @user.send_activation_email
       flash[:info] = t "sign_up.notification_mail"
       redirect_to signup_path
