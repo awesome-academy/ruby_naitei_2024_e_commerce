@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     post "/signup", to: "users#create"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
+    delete "/logout", to: "sessions#destroy"
     get "/cart", to: "cart#show"
     post "/cart/create"
     post "/check_remain_and_redirect", to: "cart#check_remain_and_redirect"

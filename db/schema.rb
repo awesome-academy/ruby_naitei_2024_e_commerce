@@ -43,6 +43,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_01_065435) do
     t.integer "bill_id"
     t.integer "product_id"
     t.integer "quantity"
+    t.decimal "total", precision: 10, default: "0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bill_id", "product_id"], name: "index_bill_details_on_bill_id_and_product_id", unique: true
@@ -68,9 +69,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_01_065435) do
     t.integer "cart_id"
     t.integer "product_id"
     t.integer "quantity"
+    t.decimal "total", precision: 10, default: "0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "total", precision: 10
     t.decimal "unit_price", precision: 10
     t.index ["cart_id", "product_id"], name: "index_cart_details_on_cart_id_and_product_id", unique: true
     t.index ["cart_id"], name: "index_cart_details_on_cart_id"

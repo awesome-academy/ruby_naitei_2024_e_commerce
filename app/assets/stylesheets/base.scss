@@ -84,6 +84,14 @@ header {
   color: $primary-color;
 }
 
+.dropdown {
+  list-style: none;
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
 .validation {
   display: flex;
   position: relative;

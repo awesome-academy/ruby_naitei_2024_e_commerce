@@ -15,7 +15,9 @@ vi:
   update_time: "Thời gian cập nhật"
   action: "Thao tác"
   number: "STT"
-  price: ! "%{price} đ"
+  static_pages:
+    account: "Tài khoản"
+    personal_info: "Thông tin cá nhân"
   flash:
     create_successfully: "Tạo thành công"
     create_unsuccessfully: "Tạo không thành công"
@@ -136,6 +138,7 @@ vi:
       minute: "phút"
       second: "giây"
     popular_product: "Các sản phẩm phổ biến"
+    admin: "Giao diện quản trị viên"
   footer:
     my_account: "Tài khoản của tôi"
     profile: "Hồ sơ"
@@ -168,13 +171,6 @@ vi:
     user_not_admin: "Bạn không có quyền truy cập trang này."
   admin:
     dashboard: "Trang quản trị của admin"
-    sidebar:
-      user: "Danh sách người dùng"
-      product: "Sản phẩm"
-      category: "Danh mục sản phẩm"
-      order: "Đơn đặt hàng"
-      statistic: "Thống kê"
-      comment: "Bình luận"
     view:
       title: "Danh sách sản phẩm"
       id: "ID"
