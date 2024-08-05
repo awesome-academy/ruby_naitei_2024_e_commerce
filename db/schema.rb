@@ -141,6 +141,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_31_012826) do
   end
 
   create_table "vouchers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
     t.decimal "condition", precision: 10
     t.float "discount"
     t.timestamp "started_at"

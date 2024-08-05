@@ -15,6 +15,7 @@ vi:
   update_time: "Thời gian cập nhật"
   action: "Thao tác"
   number: "STT"
+  price: ! "%{price} đ"
   flash:
     create_successfully: "Tạo thành công"
     create_unsuccessfully: "Tạo không thành công"
@@ -31,12 +32,15 @@ vi:
     sales_count: ! "%{sales_count} lượt mua"
   cart:
     add_to_cart: "Thêm vào giỏ hàng"
+  cart_detail:
+    price: "%{price}vnđ"
   category:
     title: "Phân loại"
     new_category: "Thêm danh mục sản phẩm mới"
     update_category: "Cập nhật danh mục sản phẩm"
     add: "Thêm danh mục sản phẩm"
     update: "Cập nhật"
+    list_category: "Danh sách danh mục sản phẩm"
     name: "Danh mục sản phẩm"
     parent_category: "Thuộc về danh mục"
   errors:
@@ -234,3 +238,6 @@ vi:
     your_address: "Địa chỉ của bạn"
     your_phone: "Số điện thoại của bạn"
     your_note: "Ghi chú thêm cho người bán về đơn hàng"
+    total_payment: "Tổng thanh toán"
+    total: "Tổng"
+    choose_voucher: "Chọn phiếu giảm giá"

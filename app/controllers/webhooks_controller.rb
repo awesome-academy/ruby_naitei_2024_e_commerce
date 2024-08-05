@@ -31,13 +31,13 @@ class WebhooksController < ApplicationController
     when "checkout.session.completed"
       session = event.data.object
       metadata = session.metadata
-      event_successful(metadata, session.amount_total)
+      event_successful metadata
     end
   end
 
-  def event_successful metadata, amount_total
+  def event_successful metadata
     @bill = Bill.find_by(id: metadata.bill_id)
-    @bill&.update(status: :wait_for_prepare, total: amount_total)
+    @bill&.update(status: :wait_for_prepare)
     cart_details_json = metadata.cart_details
     cart_details = JSON.parse(cart_details_json, symbolize_names: true)
     cart_details.each do |detail|
@@ -45,8 +45,10 @@ class WebhooksController < ApplicationController
       next unless product
 
       product.increment!(:sales_count, detail[:quantity])
+      product.decrement!(:remain_quantity, detail[:quantity])
     end
     @cart = Cart.find_by(user_id: metadata.user_id)
+    @cart&.update(total: Settings.digit_0)
     @cart.cart_details.destroy_all
   end
 end

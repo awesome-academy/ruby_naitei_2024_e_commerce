@@ -25,7 +25,9 @@ homepage_comments: 3
 digit_0: 0
 money_unit: "usd"
 money_unit_vnd: "vnd"
-dollar_convert: 0.042
 counter_index: 1
 digits_100: 100
 currency_format: "%n %u"
+digit_100: 100
+dollar_convert: 0.00004
+digit_2 : 2

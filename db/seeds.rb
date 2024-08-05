@@ -177,17 +177,20 @@ end
 
 #Seed vouchers
 day_now = DateTime.now
-voucher1 = Voucher.create!(condition: 100000,
+voucher1 = Voucher.create!(name: "GIANGSINH",
+                           condition: 100000,
                            discount: 0.1,
                            started_at: day_now,
                            ended_at: day_now + 1.month)
 
-voucher2 = Voucher.create!(condition: 200000,
+voucher2 = Voucher.create!(name: "NAMMOI",
+                           condition: 200000,
                            discount: 0.2,
                            started_at: day_now,
                            ended_at: day_now + 1.month)
 
-voucher3 = Voucher.create!(condition: 500000,
+voucher3 = Voucher.create!(name: "TETDENROI",
+                           condition: 500000,
                            discount: 0.3,
                            started_at: day_now,
                            ended_at: day_now + 1.month)
@@ -243,7 +246,7 @@ Wishlist.create!(user_id: 4,
                  product_id: 4)
 
 
-Cart.create!(user_id: 2)
+Cart.create!(user_id: 2, total: 30020000)
 
-CartDetail.create!(cart_id: 1, product_id: 1, quantity: 1)
-CartDetail.create!(cart_id: 1, product_id: 120, quantity: 2)
+CartDetail.create!(cart_id: 1, product_id: 1, quantity: 1, total: 30000000)
+CartDetail.create!(cart_id: 1, product_id: 120, quantity: 2, total: 20000)

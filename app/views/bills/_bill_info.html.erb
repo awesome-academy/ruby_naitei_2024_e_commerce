@@ -1,0 +1,11 @@
+<div class="check-out__body-right__product">
+  <div class="check-out__body-right__product__info">
+    <% if cart_detail.image.persisted? %>
+      <%= image_tag cart_detail.image, class: "table-data__image" %>
+    <% end %>
+    <p><%= cart_detail.name %></p>
+  </div>
+  <p class="check-out__body-right__product__price"><%= public_send("#{I18n.locale}", cart_detail.price) %></p>
+  <p>x<%= cart_detail.quantity %></p>
+  <p class="check-out__body-right__product__price"><%= public_send("#{I18n.locale}", cart_detail.total) %></p>
+</div>

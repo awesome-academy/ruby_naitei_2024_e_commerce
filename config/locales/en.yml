@@ -28,12 +28,15 @@ en:
     sales_count: ! "%{sales_count} purchases"
   cart:
     add_to_cart: "Add to cart"
+  cart_detail:
+    price: "$%{price}"
   category:
     title: "Category"
     new_category: "Add new product category"
     update_category: "Update product category"
     add: "Add product category"
     name: "Product category"
+    list_category: "List Category"
     parent_category: "Belongs to category"
     update: "Update"
   errors:
@@ -224,3 +227,6 @@ en:
     your_address: "Your address"
     your_phone: "Your phone number"
     your_note: "Additional note to seller about order"
+    total_payment: "Total payment"
+    total: "Total"
+    choose_voucher: "Choose voucher"

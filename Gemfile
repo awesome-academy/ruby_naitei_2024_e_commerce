@@ -55,13 +55,13 @@ gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 
 gem "hotwire-rails"
 
+gem "redis"
+
 gem "bootstrap-sass", "3.4.1"
 
 gem "paranoia"
 
 gem "stripe"
-
-gem "webpacker"
 
 gem "rack-cors"
 

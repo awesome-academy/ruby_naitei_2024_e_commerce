@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     resources :products
     resources :checkout, only: :create
     resources :users
-    resources :bills
+    resources :bills do
+      patch :update_total, on: :collection
+    end
     resources :account_activations, only: :edit
     namespace :admin do
       resources :categories
