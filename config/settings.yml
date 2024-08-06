@@ -23,7 +23,8 @@ homepage_popular_category_size: 10
 homepage_popular_product_size: 10
 homepage_comments: 3
 digit_0: 0
-digit_2: 2
+digit_1000: 1000
+digit_step_discount: 0.01
 money_unit: "usd"
 money_unit_vnd: "vnd"
 money_unit_d: "đ"

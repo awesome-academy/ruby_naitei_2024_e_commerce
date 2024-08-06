@@ -1,0 +1,23 @@
+<% provide :title, t("admin.voucher.new.title") %>
+<h1><%= t "admin.voucher.new.title" %></h1>
+<%= form_with model: @voucher, url: admin_vouchers_path, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :discount, t("admin.voucher.form.discount") %>
+    <%= f.number_field :discount, class: "form-control", step: Settings.digit_step_discount, min: Settings.digit_0, max: Settings.digit_100 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :condition, t("admin.voucher.form.condition") %>
+    <%= f.number_field :condition, class: "form-control", step: Settings.digit_1000, min: Settings.digit_0 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :started_at, t("admin.voucher.form.started_at") %>
+    <%= f.datetime_select :started_at, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ended_at, t("admin.voucher.form.ended_at") %>
+    <%= f.datetime_select :ended_at, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit t("admin.voucher.form.create"), class: "btn btn-primary" %>
+  </div>
+<% end %>

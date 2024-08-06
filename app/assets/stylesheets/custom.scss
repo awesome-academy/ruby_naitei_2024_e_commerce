@@ -1097,25 +1097,31 @@
   }
 }
 
-.voucher-table {
-  width: 100%;
-  border-collapse: collapse;
-
-  th, td {
-    border: 1px solid $border-color;
-    padding: 8px;
+.voucher-table-wrapper {
+  .new-voucher-link {
+    margin-bottom: 20px;
   }
 
-  th {
-    background-color: $background-color;
-    text-align: left;
-  }
+  .voucher-table {
+    width: 100%;
+    border-collapse: collapse;
 
-  tr:nth-child(even) {
-    background-color: $background-color;
-  }
+    th, td {
+      border: 1px solid $border-color;
+      padding: 8px;
+    }
 
-  tr:hover {
-    background-color: $hover-color;
+    th {
+      background-color: $background-color;
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background-color: $background-color;
+    }
+
+    tr:hover {
+      background-color: $hover-color;
+    }
   }
 }

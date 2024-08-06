@@ -229,6 +229,18 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm_delete: "Are you sure?"
+        addvoucher: "Add voucher"
+      new:
+        title: "New Voucher"
+      form:
+        discount: "Discount Percentage"
+        condition: "Minimum Order Value"
+        started_at: "Start Date"
+        ended_at: "End Date"
+        create: "Create Voucher"
+      create:
+        success: "Voucher created successfully."
+        fail: "Failed to create voucher. Please check the form."
     dashboard: "Admin Dashboard"
     sidebar:
       user: "Users"
@@ -304,3 +316,10 @@ en:
     product: "Product"
     price: "Price"
     status: "Status"
+  activerecord:
+    errors:
+      models:
+        voucher:
+          attributes:
+            started_at:
+              before_end_date: "Must be before the end date"
