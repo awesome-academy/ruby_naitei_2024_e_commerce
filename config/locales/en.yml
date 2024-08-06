@@ -46,9 +46,13 @@ en:
     not_have_product: "Your cart is empty"
     add_success: "Product is added successfully!"
     add_failed: "Product can not be added"
+    update_success: "Cart is updated successfully!"
+    update_failed: "Cart can not be updated "
+    update: "Update cart"
     quantity_greater_than_remain: "Unable to proceed with payment. The number of products in the shopping cart exceeds the quantity in stock."
   cart_detail:
     price: "$%{price}"
+    is_nil: "Cart detail does not exist"
   category:
     title: "Category"
     new_category: "Add new product category"
