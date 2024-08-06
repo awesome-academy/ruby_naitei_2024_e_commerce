@@ -268,6 +268,3 @@ Wishlist.create!(user_id: 4,
 31.times do |n|
   Cart.create!(user_id: n + 1)
 end
-
-CartDetail.create!(cart_id: 1, product_id: 1, quantity: 1, total: 30000000)
-CartDetail.create!(cart_id: 1, product_id: 120, quantity: 2, total: 20000)

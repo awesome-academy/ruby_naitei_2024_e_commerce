@@ -9,6 +9,9 @@ import 'jquery'
 import 'jquery_ujs'
 import 'slider'
 import 'banner_countdown'
+
+import { Turbo } from "@hotwired/turbo-rails"
+Turbo.session.drive = false
 //= require i18n
 
 //= require i18n.js

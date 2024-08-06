@@ -89,6 +89,18 @@ class User < ApplicationRecord
     admin
   end
 
+  def like product
+    wishlist_products << product
+  end
+
+  def unlike product
+    wishlist_products.delete product
+  end
+
+  def like? product
+    wishlist_products.include? product
+  end
+
   private
 
   def downcase_email

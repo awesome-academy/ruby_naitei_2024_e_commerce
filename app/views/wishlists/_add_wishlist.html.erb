@@ -1,0 +1,3 @@
+<div id="wishlist_form">
+  <%= render(current_user.like?(@product) ? "wishlists/unlike" : "wishlists/like") %>
+</div>
