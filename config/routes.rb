@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     post "/signup", to: "users#create"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
+    get "/logout", to: "sessions#destroy"
     post "/check_remain_and_redirect", to: "cart#check_remain_and_redirect"
     root "static_pages#home"
     post "checkout/create", to: "checkout#create"
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :wishlists
     resources :checkout, only: :create
     resources :users
-    resources :cart, only: [:show, :create, :update]
+    resources :cart, only: [:show, :create, :update, :destroy]
     resources :bills do
       patch :update_total, on: :collection
     end

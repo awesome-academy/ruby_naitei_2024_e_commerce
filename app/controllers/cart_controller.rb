@@ -3,6 +3,7 @@ class CartController < ApplicationController
   before_action :find_product, only: %i(create update)
   before_action :load_current_user_cart
   before_action :find_current_cart_detail, only: :update
+  before_action :find_cart_detail, only: :destroy
 
   def create
     quantity = params[:quantity].to_i
@@ -19,6 +20,11 @@ class CartController < ApplicationController
       @cart_details.create(product: @product, quantity:)
     end
     handle_add_success
+  end
+
+  def destroy
+    @cart_detail.destroy
+    handle_delete_success
   end
 
   def update
@@ -53,6 +59,14 @@ class CartController < ApplicationController
   def find_current_cart_detail
     @current_cart_detail = @cart_details.find_by(product_id: @product.id)
     return if @current_cart_detail
+
+    flash[:danger] = t "cart_detail.is_nil"
+    redirect_to root_path
+  end
+
+  def find_cart_detail
+    @cart_detail = @cart_details.find_by id: params[:cart_detail_id]
+    return if @cart_detail
 
     flash[:danger] = t "cart_detail.is_nil"
     redirect_to root_path
@@ -95,5 +109,10 @@ class CartController < ApplicationController
   def handle_update_failed
     flash[:danger] = t "cart.update_failed"
     redirect_to cart_path(current_user)
+  end
+
+  def handle_delete_success
+    flash[:success] = t "cart.delete_success"
+    redirect_to cart_path
   end
 end

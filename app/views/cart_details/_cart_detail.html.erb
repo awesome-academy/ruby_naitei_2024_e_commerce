@@ -28,6 +28,11 @@
 
   <div>
     <p><%= public_send("#{I18n.locale}", cart_detail.total) %></p>
-    <i class="row__remove fa-solid fa-xmark"></i>
+    <%= form_with url: cart_path, method: :delete do |f| %>
+      <%= f.hidden_field :cart_detail_id, value: cart_detail.id %>
+      <div class= "cart_delete">
+        <%= f.submit "X" %>
+      </div>
+    <% end %>
   </div>
 </div>

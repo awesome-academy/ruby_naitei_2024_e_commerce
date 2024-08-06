@@ -48,6 +48,7 @@ en:
     add_failed: "Product can not be added"
     update_success: "Cart is updated successfully!"
     update_failed: "Cart can not be updated "
+    delete_success: "Product is deleted successfully!"
     update: "Update cart"
     quantity_greater_than_remain: "Unable to proceed with payment. The number of products in the shopping cart exceeds the quantity in stock."
   cart_detail:
@@ -171,6 +172,7 @@ en:
     user_not_correct: "User not correct"
     user_not_admin: "You are not admin"
   admin:
+    dashboard: "Admin Dashboard"
     view:
       title: "Product List"
       id: "ID"
@@ -252,7 +254,6 @@ en:
       create:
         success: "Voucher created successfully."
         fail: "Failed to create voucher. Please check the form."
-    dashboard: "Admin Dashboard"
     sidebar:
       user: "Users"
       product: "Products"
