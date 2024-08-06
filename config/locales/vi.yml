@@ -221,6 +221,19 @@ vi:
         updated_at: "Ngày Cập Nhật"
         actions: "Hành Động"
         not_found: "Không tìm thấy hóa đơn"
+    voucher:
+      index:
+        title: "Danh sách Voucher"
+        id: "ID"
+        condition: "Điều kiện"
+        discount: "Giảm giá"
+        started_at: "Ngày bắt đầu"
+        ended_at: "Ngày kết thúc"
+        created_at: "Ngày tạo"
+        actions: "Hành động"
+        edit: "Chỉnh sửa"
+        delete: "Xóa"
+        confirm_delete: "Bạn có chắc chắn không?"
     dashboard: "Trang quản trị của admin"
     sidebar:
       user: "Danh sách người dùng"
@@ -229,6 +242,21 @@ vi:
       order: "Đơn đặt hàng"
       statistic: "Thống kê"
       comment: "Bình luận"
+      bills:
+        title: "Danh Sách Hóa Đơn"
+        new_bill: "Thêm Hóa Đơn Mới"
+        id: "ID"
+        user: "Người Dùng"
+        address: "Địa Chỉ"
+        phone_number: "Số Điện Thoại"
+        voucher: "Voucher"
+        status: "Trạng Thái"
+        total: "Tổng"
+        total_after_discount: "Tổng Sau Giảm Giá"
+        expired_at: "Ngày Hết Hạn"
+        created_at: "Ngày Tạo"
+        updated_at: "Ngày Cập Nhật"
+        actions: "Hành Động"
     products:
       new:
         title: "Thêm sản phẩm mới"

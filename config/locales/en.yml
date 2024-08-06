@@ -167,7 +167,6 @@ en:
     user_not_correct: "User not correct"
     user_not_admin: "You are not admin"
   admin:
-    dashboard: "Admin Dashboard"
     view:
       title: "Product List"
       id: "ID"
@@ -217,6 +216,19 @@ en:
         updated_at: "Updated At"
         actions: "Actions"
         not_found: "Bill not found"
+    voucher:
+      index:
+        title: "Voucher List"
+        id: "ID"
+        condition: "Condition"
+        discount: "Discount"
+        started_at: "Started At"
+        ended_at: "Ended At"
+        created_at: "Created At"
+        actions: "Actions"
+        edit: "Edit"
+        delete: "Delete"
+        confirm_delete: "Are you sure?"
     dashboard: "Admin Dashboard"
     sidebar:
       user: "Users"
@@ -225,6 +237,21 @@ en:
       order: "Order list"
       statistic: "Statistic"
       comment: "Comments"
+      bills:
+        title: "Bills List"
+        new_bill: "New Bill"
+        id: "ID"
+        user: "User"
+        address: "Address"
+        phone_number: "Phone Number"
+        voucher: "Voucher"
+        status: "Status"
+        total: "Total"
+        total_after_discount: "Total After Discount"
+        expired_at: "Expired At"
+        created_at: "Created At"
+        updated_at: "Updated At"
+        actions: "Actions"
     products:
       new:
         title: "Add New Product"
@@ -247,6 +274,8 @@ en:
       destroy:
         fail: "Failed to destroy the product."
         success: "Product destroyed successfully."
+      back: "Back to Product List"
+      resource: "product"
   image:
     title: "Image"
     image_invalid_format: "Wrong file format"
