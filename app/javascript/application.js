@@ -17,3 +17,5 @@ Turbo.session.drive = false
 //= require i18n.js
 
 //= require i18n/translations
+import "controllers"
+import "@hotwired/turbo-rails"

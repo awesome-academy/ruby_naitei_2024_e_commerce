@@ -1,0 +1,5 @@
+<%= turbo_stream.replace dom_id(@bill, :status) do %>
+  <td id="<%= dom_id(@bill, :status) %>">
+    <%= I18n.t("admin.view.statuses.#{@bill.status}") %>
+  </td>
+<% end %>
