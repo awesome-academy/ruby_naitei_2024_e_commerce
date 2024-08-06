@@ -85,6 +85,10 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
+  def send_bill_info bill
+    BillMailer.bill_info(self, bill).deliver
+  end
+
   def admin?
     admin
   end

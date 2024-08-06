@@ -308,7 +308,9 @@ en:
     heading: "We provide cheap and quality products"
     shopping_now: "Go shopping now!"
   order:
+    id: "Id"
     buy: "Buy"
+    check: "Check order"
     title: "Order information"
     address: "Address"
     phone: "Phone number"
@@ -321,6 +323,8 @@ en:
     total_payment: "Total payment"
     total: "Total"
     choose_voucher: "Choose voucher"
+    quantity: "Quantity"
+    discount: "Discount"
   wishlist:
     title: "Wishlist"
     stocking: "Stocking"

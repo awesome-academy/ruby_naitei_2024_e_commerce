@@ -9,8 +9,8 @@ vi:
   description: "Mô tả"
   update: "Sửa"
   delete: "Xóa"
-  created_at: ! "Created at %{date}"
-  updated_at: ! "Updated at %{date}"
+  created_at: ! "Tạo lúc %{date}"
+  updated_at: ! "Cập nhật lúc %{date}"
   create_time: "Thời gian tạo"
   update_time: "Thời gian cập nhật"
   action: "Thao tác"
@@ -318,6 +318,8 @@ vi:
     heading: "Chúng tôi cung cấp những sản phẩm rẻ và chất lượng"
     shopping_now: "Mua sắm ngay!"
   order:
+    id: "Mã đơn hàng"
+    check: "Xác nhận đơn hàng"
     buy: "Mua hàng"
     title: "Thông tin đơn hàng"
     address: "Địa chỉ"
@@ -331,6 +333,8 @@ vi:
     total_payment: "Tổng thanh toán"
     total: "Tổng"
     choose_voucher: "Chọn phiếu giảm giá"
+    quantity: "Số lượng"
+    discount: "Giảm giá"
   wishlist:
     title: "Danh sách yêu thích"
     stocking: "Còn hàng"
