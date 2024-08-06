@@ -19,7 +19,7 @@
       <p class="addinfo_info__starnote"><%= t("product.remain_quantity", remain_quantity: @product.remain_quantity) %></p>
       <p class="addinfo_info__starnote"><%= t("product.sales_count", sales_count: @product.sales_count) %></p>
       <p class="addinfo_info__starnote"><%= t("product.comment", comments: comment_users(@comments).size) %></p>
-      <p class="addinfo_info__gia"><%= t("product.price", price: @product.price) %></p>
+      <p class="addinfo_info__gia"><%= t("product.price", price: public_send("#{I18n.locale}", @product.price)) %></p>
       <p class="addinfo_info__info"><%= @product.description %></p>
       <div class="addinfo_buy">
         <% if logged_in? %>

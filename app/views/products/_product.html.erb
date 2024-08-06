@@ -3,7 +3,7 @@
     <% if product.image.persisted? %>
       <%= image_tag product.image, class: "collage-pic collage-pic_image" %>
       <p class= "center"><%= product.name %></p>
-      <p><%= t "product.price", price: product.price %></p>
+      <p><%= t("product.price", price: public_send("#{I18n.locale}", product.price)) %></p>
       <div class="collage-pic__star">
         <% average_rating = average_of_rating(product.comments) %>
         <% if average_rating.present? %>

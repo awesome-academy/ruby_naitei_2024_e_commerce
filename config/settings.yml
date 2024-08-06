@@ -29,7 +29,6 @@ money_unit_vnd: "vnd"
 money_unit_d: "đ"
 dollar_convert: 0.042
 counter_index: 1
-digit_100: 100
 currency_format: "%n %u"
 digit_100: 100
 dollar_convert: 0.00004

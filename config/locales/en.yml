@@ -27,7 +27,7 @@ en:
     not_admin: "You are not admin"
     login_to_view_cart: "Please login to view cart"
   product:
-    price: ! "Price: %{price} đ"
+    price: ! "Price: %{price}"
     comment: ! "%{comments} rate"
     sales_count: ! "%{sales_count} purchases"
     remain_quantity: "Remaining %{remain_quantity}"
@@ -268,3 +268,10 @@ en:
     total_payment: "Total payment"
     total: "Total"
     choose_voucher: "Choose voucher"
+  wishlist:
+    title: "Wishlist"
+    stocking: "Stocking"
+    out_stock: "Out of stock"
+    product: "Product"
+    price: "Price"
+    status: "Status"

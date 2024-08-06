@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     post "checkout/create", to: "checkout#create"
     resources :carts
     resources :products
+    resources :wishlists
     resources :checkout, only: :create
     resources :users
     resources :bills do
