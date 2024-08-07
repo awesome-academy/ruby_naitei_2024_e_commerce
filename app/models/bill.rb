@@ -1,5 +1,5 @@
 class Bill < ApplicationRecord
-  before_save :calculate_total_after_discount
+  before_save :calculate_total_after_discount, :set_expired_at
   PERMITTED_ATTRIBUTES = %i(user_id address phone_number note_content voucher_id
                                                             total status).freeze
 
@@ -20,13 +20,21 @@ class Bill < ApplicationRecord
   has_many :products, through: :bill_details
 
   validates :status, inclusion: {in: statuses.keys}
-  delegate :name, to: :user, prefix: true
+  validates :phone_number, presence: true,
+            format: {with: Settings.phone_regex}
+  delegate :name, :email, to: :user, prefix: true
   delegate :discount, to: :voucher, prefix: true, allow_nil: true
+
+  scope :newest, ->{order(created_at: :desc)}
 
   private
 
   def calculate_total_after_discount
     self.total_after_discount =
       voucher.nil? ? total : (total - voucher.discount * total)
+  end
+
+  def set_expired_at
+    self.expired_at = 24.hours.from_now
   end
 end

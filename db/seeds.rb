@@ -155,8 +155,6 @@ end
   prod4.image.attach(io: File.open(Rails.root.join("./app/assets/images", "prod4.jpg")), filename: "prod4.jpg")
 end
 
-
-
 prod2 = Product.create!(name: "Keyboard M1W",
                         price: 15000000,
                         remain_quantity: 0,
@@ -221,8 +219,8 @@ bill2 = Bill.create!(user_id: 2,
                      voucher_id: 1,
                      status: 3,
                      note_content: "abc",
-                     total: 3020000,
-                     total_after_discount: 2718000,
+                     total: 60000000,
+                     total_after_discount: 54000000,
                      expired_at: nil)
 
 #Seed bill details
@@ -237,6 +235,26 @@ BillDetail.create!(bill_id: 2,
 BillDetail.create!(bill_id: 2,
                    product_id: 4,
                    quantity: 1)
+
+#Seed comments
+Comment.create!(bill_detail_id: 1,
+                product_id: 1,
+                user_id: 2,
+                content: "Thank you",
+                parent_comment_id: nil,
+                star: nil)
+Comment.create!(bill_detail_id: 2,
+                product_id: 3,
+                user_id: 2,
+                content: "Thank you",
+                parent_comment_id: nil,
+                star: nil)
+Comment.create!(bill_detail_id: 3,
+                product_id: 4,
+                user_id: 2,
+                content: "Thank you",
+                parent_comment_id: nil,
+                star: nil)
 
 #Seed wishlist
 #

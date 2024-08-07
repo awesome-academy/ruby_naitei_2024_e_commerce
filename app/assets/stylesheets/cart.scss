@@ -32,6 +32,11 @@
   color: $white;
 }
 
+.nav-link-text a:hover {
+  text-decoration: none;
+  color: $white;
+}
+
 .my-cart__header {
   margin: 40px 0 32px 0;
   text-align: center;
@@ -107,6 +112,16 @@
   padding: 5px 8px;
   border-radius: 20px;
   margin-top: 10px;
+  margin-left: -20%;
+}
+
+.cart_delete input {
+  background-color: $navbar-border-color;
+  color: $text-color-signup;
+  border: none;
+  padding: 5px 11px;
+  border-radius: 50%;
+  margin-top: -7px;
   margin-left: -20%;
 }
 

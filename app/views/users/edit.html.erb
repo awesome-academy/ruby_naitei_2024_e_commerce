@@ -1,14 +1,16 @@
 <% provide :title, t("edit.title") %>
 <%= render "layouts/header" %>
+<div class="nav-link">
+  <div class="nav-link-text">
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-house"></i>
+    <% end %>
+    <i class="right fa-solid fa-chevron-right"></i>
+    <%= link_to t("profile.personal_info"), edit_user_path, class: "nav-link--selected" %>
+  </div>
+</div>
 <div class="edit-page">
   <h1><%= t "edit.title" %></h1>
-  <div class="nav-link">
-    <div class="nav-link-text">
-      <i class="fa-solid fa-house"></i>
-      <i class="right fa-solid fa-chevron-right"></i>
-      <%= link_to t("profile.personal_info"), "#", class: "nav-link--selected" %>
-    </div>
-  </div>
   <div class="body">
     <%= render "layouts/sidebar" %>
     <div class="formedit">

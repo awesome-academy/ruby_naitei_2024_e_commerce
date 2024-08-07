@@ -445,16 +445,13 @@
 }
 
 .edit-page {
+  padding: 0 160px;
   .body {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
     margin-top: 30px;
     height: fit-content;
-  }
-
-  h1 {
-    margin-left: 20%;
   }
 
   .nav-link {
@@ -494,14 +491,8 @@
     cursor: pointer;
   }
 
-  .selected_item {
-    background-color: $hover-background-color;
-    border-left: 3px solid $primary-color;
-    font-weight: bold;
-  }
-
   .formedit {
-    width: 960px;
+    width: 80%;
     height: fit-content;
     border: solid 1px $border-color;
     border-radius: 8px;
