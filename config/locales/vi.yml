@@ -236,6 +236,17 @@ vi:
         wait_for_delivery: "Đang Giao Hàng"
         completed: "Hoàn Thành"
         cancelled: "Đã Hủy"
+      users:
+        title: "Danh sách người dùng"
+        email: "Email"
+        name: "Tên"
+        gender: "Giới tính"
+        admin: "Quản trị viên"
+        activated: "Đã kích hoạt"
+        created_at: "Ngày tạo"
+        updated_at: "Ngày cập nhật"
+        yes: "Có"
+        no: "Không"
     voucher:
       index:
         title: "Danh sách Voucher"

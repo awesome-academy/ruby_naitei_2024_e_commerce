@@ -45,7 +45,7 @@ class User < ApplicationRecord
   has_many :receivers, through: :receiver_relationship, source: :receiver
 
   has_one_attached :avatar
-
+  scope :all_users, ->{all}
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
