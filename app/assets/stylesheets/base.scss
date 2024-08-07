@@ -71,7 +71,7 @@ header {
   border-color: $border-color;
   margin: 0 10px;
   height: 16px;
-  -webkit-transform:rotate(90deg);
+  -webkit-transform: rotate(90deg);
 }
 
 .header__top a {
@@ -140,6 +140,16 @@ header {
   overflow: hidden;
 }
 
+.search-box__input {
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  width: 500px;
+  overflow: hidden;
+  border: none;
+  height: 46px;
+}
+
 #search__input {
   border: none;
   outline: none;
@@ -205,7 +215,7 @@ header {
 
 .navbar-new ul li a {
   text-decoration: none;
-  color: $navbar-text-color
+  color: $navbar-text-color;
 }
 
 .navbar-new ul li hr {
@@ -216,7 +226,6 @@ header {
   left: -4px;
   width: 84px;
 }
-
 
 .navbar-new ul li:nth-child(3) hr {
   left: -6px;

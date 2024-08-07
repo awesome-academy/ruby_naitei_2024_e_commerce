@@ -14,4 +14,8 @@ module ProductsHelper
   def check_remain wishlist
     wishlist.remain_quantity > Settings.digit_0
   end
+
+  def value_search params, key
+    params&.dig(key)
+  end
 end
