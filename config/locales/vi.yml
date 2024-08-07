@@ -59,6 +59,19 @@ vi:
   cart_detail:
     price: "%{price}vnđ"
     is_nil: "Chi tiết hóa đơn không tồn tại"
+  order_history:
+    title: "Lịch sử đặt hàng"
+    id: "ID"
+    subtotal: "Tổng thanh toán"
+    created_at: "Ngày tạo"
+    status:
+      title: "Trạng thái"
+      wait_for_pay: "Chờ thanh toán "
+      wait_for_prepare: "Chờ chuẩn bị hàng"
+      wait_for_delivery: "Chờ vận chuyển"
+      completed: "Hoàn tất"
+      cancelled: "Đã hủy"
+    view_detail: "Xem chi tiết"
   category:
     title: "Phân loại"
     new_category: "Thêm danh mục sản phẩm mới"

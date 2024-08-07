@@ -156,7 +156,6 @@ end
 end
 
 
-
 prod2 = Product.create!(name: "Keyboard M1W",
                         price: 15000000,
                         remain_quantity: 0,
@@ -237,6 +236,26 @@ BillDetail.create!(bill_id: 2,
 BillDetail.create!(bill_id: 2,
                    product_id: 4,
                    quantity: 1)
+
+#Seed comments
+Comment.create!(bill_detail_id: 1,
+                product_id: 1,
+                user_id: 2,
+                content: "Thank you",
+                parent_comment_id: nil,
+                star: nil)
+Comment.create!(bill_detail_id: 2,
+                product_id: 3,
+                user_id: 2,
+                content: "Thank you",
+                parent_comment_id: nil,
+                star: nil)
+Comment.create!(bill_detail_id: 3,
+                product_id: 4,
+                user_id: 2,
+                content: "Thank you",
+                parent_comment_id: nil,
+                star: nil)
 
 #Seed wishlist
 #

@@ -1,0 +1,46 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'variable';
+
+/* Order list */
+.user-bill-list-wrapper {
+  background-color: $background-color;
+  box-shadow: 0 2px 4px $box-shadow-color;
+  width: 80%;
+
+  h1 {
+    font-size: 24px;
+    color: $text-color;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .bill-list {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: $primary-color-background;
+      color: white;
+      border-bottom: 1px solid $border-color;
+    }
+
+    td {
+      border-bottom: 1px solid $border-color;
+    }
+
+    tr:nth-child(even) {
+      background-color: $table-row-even;
+    }
+
+    tr:hover {
+      background-color: $table-row-hover;
+    }
+  }
+}

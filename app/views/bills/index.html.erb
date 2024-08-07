@@ -1,0 +1,37 @@
+<% provide :title, t("order_history.title") %>
+<%= render "layouts/header" %>
+<div class="nav-link">
+  <div class="nav-link-text">
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-house"></i>
+    <% end %>
+    <i class="right fa-solid fa-chevron-right"></i>
+    <%= link_to t("profile.personal_info"), edit_user_path(current_user) %>
+    <i class="right fa-solid fa-chevron-right"></i>
+    <%= link_to t("order_history.title"), bills_path, class: "nav-link--selected" %>
+  </div>
+</div>
+<div class="edit-page">
+  <h1><%= t "order_history.title" %></h1>
+  <div class="body">
+    <%= render "layouts/sidebar" %>
+    <div class="user-bill-list-wrapper">
+      <table class="bill-list">
+        <thead>
+          <tr>
+            <th><%= t "order_history.id" %></th>
+            <th><%= t "order_history.created_at" %></th>
+            <th><%= t "order_history.subtotal" %></th>
+            <th><%= t "order_history.status.title" %></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @bills %>
+        </tbody>
+      </table>
+      <%== pagy_bootstrap_nav(@pagy) %>
+    </div>
+  </div>
+</div>
+<%= render "layouts/footer" %>
