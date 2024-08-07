@@ -28,7 +28,6 @@ digit_step_discount: 0.01
 money_unit: "usd"
 money_unit_vnd: "vnd"
 money_unit_d: "đ"
-dollar_convert: 0.042
 counter_index: 1
 currency_format: "%n %u"
 digit_100: 100
@@ -36,3 +35,4 @@ dollar_convert: 0.00004
 digit_2 : 2
 init_value_add_cart: 1
 init_min_add_cart: 1
+dicount_percentage_convert: 100

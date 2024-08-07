@@ -105,6 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_01_065435) do
   end
 
   create_table "comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "bill_detail_id"
     t.integer "user_id"
     t.integer "product_id"
     t.string "content"
@@ -112,6 +113,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_01_065435) do
     t.integer "star"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["bill_detail_id", "product_id", "user_id"], name: "index_comments_on_bill_detail_id_and_product_id_and_user_id", unique: true
+    t.index ["bill_detail_id"], name: "index_comments_on_bill_detail_id"
+    t.index ["product_id"], name: "index_comments_on_product_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

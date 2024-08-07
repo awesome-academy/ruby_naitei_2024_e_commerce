@@ -58,6 +58,7 @@ en:
   order_history:
     title: "Order history"
     id: "ID"
+    total: "Total"
     subtotal: "Subtotal"
     created_at: "Created at"
     status:
@@ -68,6 +69,16 @@ en:
       completed: "Completed"
       cancelled: "Cancelled"
     view_detail: "View details"
+    detail:
+      title: "Bill details"
+      receiver: "Receiver"
+      email: "Email"
+      phone_number: "Phone number"
+      discount: "Discount"
+    return_to_list: "Return to list"
+    review: "Review"
+    leave_review: "Leave a review"
+    repay: "Repayment"
   category:
     title: "Category"
     new_category: "Add new product category"
@@ -80,6 +91,8 @@ en:
   errors:
     product:
       not_found: "Product doesn't exist"
+    bill:
+      not_found: "Bill doesn't exist"
   shared:
     error_messages:
       the_form_contains: "The form contain"
