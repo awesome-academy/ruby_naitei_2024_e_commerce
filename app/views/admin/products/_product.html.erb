@@ -7,7 +7,6 @@
   <td class="table-data"><%= l product.created_at %></td>
   <td class="table-data"><%= l product.updated_at %></td>
   <td class="actions">
-    <%= link_to t("admin.view.show"), admin_product_path(product) %>
     <%= link_to t("admin.view.edit"), edit_admin_product_path(product) %>
     <%= link_to t("admin.view.delete"), admin_product_path(product), method: :delete, data: { confirm: t("admin.view.confirm_delete") }, class: "delete" %>
   </td>

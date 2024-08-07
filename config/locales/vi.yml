@@ -31,6 +31,7 @@ vi:
     you_sure?: "Bạn có chắc không?"
     not_admin: "Bạn không phải quản trị viên"
     login_to_view_cart: "Vui lòng đăng nhập để xem giỏ hàng"
+    syntax_error_phone: "Nhập sai định dạng số điện thoại"
   product:
     price: ! "Giá: %{price}"
     comment: ! "%{comments} đánh giá"
@@ -97,6 +98,8 @@ vi:
       not_found: "Không tìm thấy sản phẩm"
     bill:
       not_found: "Không tìm thấy hóa đơn"
+    comment:
+      has_commented: "Bạn đã đánh giá về sản phẩm này"
   shared:
     error_messages:
       the_form_contains: "Form này bao gồm"
@@ -278,6 +281,7 @@ vi:
       index:
         title: "Danh sách Voucher"
         id: "ID"
+        name: "Mã giảm giá"
         condition: "Điều kiện"
         discount: "Giảm giá"
         started_at: "Ngày bắt đầu"
@@ -306,6 +310,7 @@ vi:
       order: "Đơn đặt hàng"
       statistic: "Thống kê"
       comment: "Bình luận"
+      voucher: "Phiếu giảm giá"
       bills:
         title: "Danh Sách Hóa Đơn"
         new_bill: "Thêm Hóa Đơn Mới"

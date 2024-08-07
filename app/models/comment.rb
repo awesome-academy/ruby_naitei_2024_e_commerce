@@ -1,4 +1,6 @@
 class Comment < ApplicationRecord
+  PERMITTED_ATTRIBUTES = %i(user_id product_id content star
+                                      bill_detail_id).freeze
   belongs_to :product, optional: true
   belongs_to :billdetail, optional: true
   belongs_to :user, optional: true

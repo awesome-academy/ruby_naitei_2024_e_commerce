@@ -6,8 +6,8 @@
   <span><%= public_send("#{I18n.locale}", bill_detail.product_price) %></span>
   <span><%= bill_detail.quantity %></span>
   <span><%= public_send("#{I18n.locale}", bill_detail.quantity * bill_detail.product_price) %></span>
-  <% if @bill.completed? && bill_detail.comment.nil? %>
-    <%= link_to "#", class: "leave_review" do %>
+  <% if @bill.status == "completed" && bill_detail.comment.nil? %>
+    <%= link_to new_comment_path(product_id: bill_detail.product_id, bill_detail_id: bill_detail.id), class: "leave_review" do %>
       <%= t "order_history.leave_review" %>
     <% end %>
   <% end %>

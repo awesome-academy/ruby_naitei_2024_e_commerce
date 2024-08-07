@@ -2,9 +2,11 @@
 <%= render "layouts/header" %>
 <div class="product-detail_body">
   <div class="addinfo">
-    <div class="addinfo_img">
-      <%= image_tag @product.image, class: "addinfo_img" %>
-    </div>
+    <% if @product.image.persisted? %>
+      <div class="addinfo_img">
+        <%= image_tag @product.image, class: "addinfo_img" %>
+      </div>
+    <% end %>
     <div class="addinfo_info">
       <h1><%= @product.name %></h1>
       <% average_rating = average_of_rating(@comments) %>
@@ -21,18 +23,6 @@
       <p class="addinfo_info__starnote"><%= t("product.comment", comments: comment_users(@comments).size) %></p>
       <p class="addinfo_info__gia"><%= t("product.price", price: public_send("#{I18n.locale}", @product.price)) %></p>
       <p class="addinfo_info__info"><%= @product.description %></p>
-      <div class="addinfo_buy">
-        <%= form_with url: cart_index_path, class: "addinfo_buy__amount" do |f| %>
-          <%= f.hidden_field :product_id, value: @product.id %>
-          <%= f.number_field :quantity, value: Settings.init_value_add_cart.to_i, min: Settings.init_min_add_cart, max: @product.remain_quantity %>
-          <div class="addinfo_buy__addtocart">
-            <%= f.submit t "cart.add_to_cart" %>
-          </div>
-        <% end %>
-        <div class="addinfo_buy__wishlist">
-          <%= render "wishlists/add_wishlist" if logged_in? %>
-        </div>
-      </div>
       <div class="addinfo_info__tag">
           <p><%= t "category.title" %>:
             <span class="addinfo_info__tag--grey"><%= @product.category_name %></span>
@@ -42,9 +32,6 @@
   </div>
   <div class="about">
     <div class="about_button">
-      <%= link_to "#", class: "about_button__button", data: { toggle: "about_section" }, id: "about-description" do %>
-        <%= t "description" %>
-      <% end %>
       <%= link_to "#", class: "about_button__button", data: { toggle: "about_section" },id: "about-comment" do %>
         <%= t "comment" %>
       <% end %>
@@ -53,7 +40,26 @@
       <div class="description" id="description">
         <p class="addinfo_info__info"><%= @product.description %></p>
       </div>
-      <div class="comments" id="comments">
+      <div class="comments active" id="comments">
+        <div class="comment">
+          <%= form_with model: @comment, local: true do |form| %>
+            <%= form.hidden_field :product_id, value: @product.id %>
+            <%= form.hidden_field :user_id, value: current_user.id %>
+            <%= form.hidden_field :bill_detail_id, value: @bill_detail_id %>
+            <div class="star-rating">
+              <% (Settings.digit_0..Settings.digit_5).reverse_each do |star| %>
+                <%= form.radio_button :star, star, id: "star#{star}" %>
+                <%= form.label "star#{star}", for: "star#{star}" do %>
+                  <i class="fa fa-star"></i>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="comment_submit">
+              <%= form.text_area :content %>
+              <%= form.submit %>
+            </div>
+          <% end %>
+        </div>
         <%= render @comments %>
       </div>
     </div>

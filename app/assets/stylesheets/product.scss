@@ -360,3 +360,42 @@
   padding: 4px;
   border-radius: 2px;
 }
+
+.star-rating {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  padding: 10px;
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 30px;
+  color: $homepage-comment-avatar-border;
+  cursor: pointer;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type="radio"]:checked ~ label {
+  color: $star-color;
+}
+
+.comment_submit {
+  display: flex;
+  justify-content: flex-end;
+  textarea {
+    width: 100%;
+  }
+  input {
+    border-radius: 10px;
+    min-width: 120px;
+    margin-left: 20px;
+    padding: 12px;
+    background-color: $primary-color;
+    color: white
+  }
+}

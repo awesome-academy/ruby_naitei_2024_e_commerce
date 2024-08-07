@@ -37,7 +37,7 @@ class WebhooksController < ApplicationController
 
   def event_successful metadata
     @bill = Bill.find_by(id: metadata.bill_id)
-    @bill&.update(status: :wait_for_prepare)
+    @bill&.update(status: :wait_for_prepare, expired_at: nil)
     cart_details_json = metadata.cart_details
     cart_details = JSON.parse(cart_details_json, symbolize_names: true)
     cart_details.each do |detail|

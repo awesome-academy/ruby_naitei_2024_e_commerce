@@ -27,6 +27,7 @@ en:
     you_sure?: "Are you sure?"
     not_admin: "You are not admin"
     login_to_view_cart: "Please login to view cart"
+    syntax_error_phone: "Wrong syntax phone number"
   product:
     price: ! "Price: %{price}"
     comment: ! "%{comments} rate"
@@ -93,6 +94,8 @@ en:
       not_found: "Product doesn't exist"
     bill:
       not_found: "Bill doesn't exist"
+    comment:
+      has_commented: "You have rated on this product"
   shared:
     error_messages:
       the_form_contains: "The form contain"
@@ -271,6 +274,7 @@ en:
       index:
         title: "Voucher List"
         id: "ID"
+        name: "Voucher code"
         condition: "Condition"
         discount: "Discount"
         started_at: "Started At"
@@ -299,6 +303,7 @@ en:
       order: "Order list"
       statistic: "Statistic"
       comment: "Comments"
+      voucher: "Vouchers"
       bills:
         title: "Bills List"
         new_bill: "New Bill"

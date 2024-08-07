@@ -3,13 +3,49 @@ class CheckoutController < ApplicationController
   before_action :load_current_user_cart
   def create
     @bill = Bill.new bill_params
-    @bill.save
+    if @bill.save
+      create_stripe_session @cart_details
+      transfer_data
+      current_user.send_bill_info @bill
+    else
+      flash[:danger] = t "flash.syntax_error_phone"
+      redirect_to new_bill_path
+    end
+  end
 
-    @line_items = load_lines_item(@cart_details)
-    @metadata = {
+  def repayment
+    @bill = Bill.find_by(id: params[:bill_id])
+    if @bill
+      create_stripe_session @bill.bill_details
+    else
+      flash[:danger] = t "not_found", model: t("order.id")
+      redirect_to bills_url
+    end
+  end
+
+  private
+
+  def create_stripe_session line_items
+    @line_items = load_lines_item(line_items)
+    @metadata = build_metadata(line_items)
+
+    @session = Stripe::Checkout::Session.create({
+      payment_method_types: %w(card), # rubocop:disable Layout/FirstHashElementIndentation
+      line_items: @line_items,
+      metadata: @metadata,
+      payment_method_options: {card: {request_three_d_secure: "any"}},
+      mode: "payment",
+      success_url: bills_url,
+      cancel_url: bills_url
+                                                })
+    redirect_to @session.url, allow_other_host: true
+  end
+
+  def build_metadata line_item
+    {
       bill_id: @bill.id,
       user_id: @bill.user_id,
-      cart_details: @cart_details.map do |detail|
+      cart_details: line_item.map do |detail|
                       {
                         product_id: detail.product_id,
                         quantity: detail.quantity,
@@ -17,21 +53,7 @@ class CheckoutController < ApplicationController
                       }
                     end.to_json
     }
-    transfer_data
-    current_user.send_bill_info @bill
-    @session = Stripe::Checkout::Session.create({
-      payment_method_types: %w(card),  # rubocop:disable Layout/FirstHashElementIndentation
-      line_items: @line_items,
-      metadata: @metadata,
-      payment_method_options: {card: {request_three_d_secure: "any"}},
-      mode: "payment",
-      success_url: root_url,
-      cancel_url: root_url
-                                                })
-    respond_to(&:html)
   end
-
-  private
 
   def load_lines_item cart_details
     @line_items = cart_details.map do |detail|

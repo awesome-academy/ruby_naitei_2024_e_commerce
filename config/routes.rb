@@ -12,10 +12,12 @@ Rails.application.routes.draw do
     post "/check_remain_and_redirect", to: "cart#check_remain_and_redirect"
     root "static_pages#home"
     post "checkout/create", to: "checkout#create"
+    post "checkout/repayment", to: "checkout#repayment"
     resources :products
     resources :wishlists
     resources :checkout, only: :create
     resources :users
+    resources :comments
     resources :cart, only: [:show, :create, :update, :destroy]
     resources :bills do
       patch :update_total, on: :collection
