@@ -1,5 +1,5 @@
 class WishlistsController < ApplicationController
-  before_action :load_product, :logged_in_user, only: %i(create destroy)
+  before_action :load_product, :user_signed_in?, only: %i(create destroy)
   def index
     @wishlists = current_user.wishlists
   end
