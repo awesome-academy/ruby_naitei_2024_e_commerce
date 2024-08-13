@@ -104,6 +104,7 @@ group :development, :test do
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false
+  gem "shoulda-matchers", "~> 5.0"
 end
 
 group :development do
@@ -115,6 +116,5 @@ group :test do
   gem "database_cleaner", "~> 1.5"
   gem "rails-controller-testing"
   gem "selenium-webdriver"
-  gem "shoulda-matchers"
   gem "webdrivers"
 end

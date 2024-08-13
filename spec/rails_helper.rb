@@ -1,5 +1,6 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require "spec_helper"
+require "active_storage_validations/matchers"
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path("../config/environment", __dir__)
 # Prevent database truncation if the environment is production
@@ -87,6 +88,10 @@ RSpec.configure do |config|
   #
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
+
+  config.include FactoryBot::Syntax::Methods
+  config.include ActiveStorageValidations::Matchers
+
   config.infer_spec_type_from_file_location!
 
   # Filter lines from Rails gems in backtraces.
