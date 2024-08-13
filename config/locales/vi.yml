@@ -389,6 +389,10 @@ vi:
     choose_voucher: "Chọn phiếu giảm giá"
     quantity: "Số lượng"
     discount: "Giảm giá"
+    country: "Quốc gia"
+    state: "Tỉnh/Thành phố"
+    city: "Thành phố"
+    street: "Đường"
   wishlist:
     title: "Danh sách yêu thích"
     stocking: "Còn hàng"

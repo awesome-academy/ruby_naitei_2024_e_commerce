@@ -1,7 +1,7 @@
 <div class="body__menu">
   <div class="list">
     <div class="list__item">
-      <%= link_to edit_user_path(current_user), class: "list__item-a" do %>
+      <%= link_to edit_user_registration_path, class: "list__item-a" do %>
         <i class="list__icon fa-solid fa-address-card"></i>
         <span><%= t "profile.account" %></span>
       <% end %>
@@ -19,7 +19,7 @@
       <% end %>
     </div>
     <div class="list__item">
-      <%= link_to logout_path, class: "list__item-a" do %>
+      <%= link_to destroy_user_session_path, class: "list__item-a" do %>
         <i class="list__icon fa-solid fa-right-from-bracket"></i>
         <span><%= t "profile.logout" %></span>
       <% end %>

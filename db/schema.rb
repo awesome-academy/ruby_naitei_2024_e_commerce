@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_13_170601) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_14_012901) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,6 +39,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_13_170601) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "addresses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "country"
+    t.string "state"
+    t.string "city"
+    t.text "details"
+    t.integer "bill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "bill_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "bill_id"
     t.integer "product_id"
@@ -53,7 +63,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_13_170601) do
 
   create_table "bills", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id"
-    t.string "address"
     t.string "phone_number"
     t.integer "voucher_id"
     t.integer "status"

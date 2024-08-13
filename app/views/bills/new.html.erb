@@ -1,16 +1,15 @@
 <% provide :title, t("order.title") %>
 <%= render "layouts/header" %>
 <div class="check-out">
-  <%= form_with model: @bill, url: checkout_create_path, class: "check-out__body", data: {turbo: false} do |form| %>
-    <%= render "shared/error_messages", object: form.object %>
+  <%= form_with model: @bill, url: bills_path, class: "check-out__body", data: {turbo: false} do |form| %>
     <div class="check-out__body-left">
+      <%= render "shared/error_messages", object: form.object %>
       <h2><%= t "order.title" %></h2>
-      <%= form.hidden_field :user_id, value: current_user.id %>
-      <%= form.hidden_field :status, value: :wait_for_pay %>
       <div class="check-out__body-left__row">
         <div class="check-out__body-left__item">
-          <p><%= t "order.address" %></p>
-          <%= form.text_field :address, placeholder: t("order.your_address"), required: true %>
+          <div data-controller="address">
+            <%= render partial: "bill_address", locals: { form: form, address: @bill.address } %>
+          </div>
         </div>
       </div>
       <div class="check-out__body-left__row">

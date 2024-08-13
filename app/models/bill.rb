@@ -1,7 +1,7 @@
 class Bill < ApplicationRecord
   before_save :calculate_total_after_discount, :set_expired_at
-  PERMITTED_ATTRIBUTES = %i(user_id address phone_number note_content voucher_id
-                                                            total status).freeze
+  PERMITTED_ATTRIBUTES = %i(user_id phone_number note_content voucher_id
+                              total).freeze
 
   enum status: {
     wait_for_pay: 0,
@@ -9,7 +9,7 @@ class Bill < ApplicationRecord
     wait_for_delivery: 2,
     completed: 3,
     cancelled: 4
-  }
+  }, _default: :wait_for_pay
   STATUSES = statuses.keys.map do |status|
     [I18n.t("admin.view.statuses.#{status}"),
    status]
@@ -24,7 +24,8 @@ class Bill < ApplicationRecord
   belongs_to :voucher, optional: true
   has_many :bill_details, dependent: :destroy
   has_many :products, through: :bill_details
-
+  has_one :address, dependent: :destroy
+  accepts_nested_attributes_for :address
   validates :status, inclusion: {in: statuses.keys}
   validates :phone_number, presence: true,
             format: {with: Settings.phone_regex}
