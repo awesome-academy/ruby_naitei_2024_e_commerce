@@ -34,6 +34,12 @@ en:
     sales_count: ! "%{sales_count} purchases"
     remain_quantity: "Remaining %{remain_quantity}"
     is_nil: "Product does not exist"
+    filter:
+      title: "Filter"
+      category: "Categories"
+      price: "Price"
+      from: "From"
+      to: "To"
   cart:
     title: "Cart"
     product: "Product"

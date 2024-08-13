@@ -29,6 +29,16 @@ class Product < ApplicationRecord
     search&.squish! if search
     ransack(name_or_description_cont: search).result
   }
+  scope :filter_by_category_ids, lambda {|category_ids|
+    return if category_ids.blank?
+
+    ransack(category_id_in: category_ids).result
+  }
+  scope :filter_by_price, lambda {|from, to|
+    return if from.blank? && to.blank?
+
+    ransack(price_gteq: from).result.ransack(price_lteq: to).result
+  }
 
   def self.ransackable_attributes _auth_object = nil
     %w(category_id created_at deleted_at description id name

@@ -1,0 +1,26 @@
+<div class="product-filter">
+  <h3><%= t "product.filter.title" %></h3>
+  <hr>
+  <div class="product-filter-content">
+    <%= form_tag products_path, method: :get, data: {controller: "filter"} do %>
+      <h4><%= t "product.filter.category" %></h4>
+      <% @categories.each do |category| %>
+        <div class="form-check">
+          <%= check_box_tag "category_ids[]", category.id, params[:category_ids].present? && params[:category_ids].include?(category.id.to_s), class: "form-check-input", data: {action: "change->filter#submit"} %>
+          <%= label_tag "category_#{category.id}", category.name, class: "form-check-label" %>
+        </div>
+      <% end %>
+      <h4><%= t "product.filter.price" %></h4>
+      <div class="filter-price">
+        <div class="field">
+          <%= label_tag "from", t("product.filter.from") %>
+          <%= number_field_tag "from", params[:from], min: 0, data: {action: "change->filter#submit"} %>
+        </div>
+        <div class="field">
+          <%= label_tag "to", t("product.filter.to") %>
+          <%= number_field_tag "to", params[:to], min: 0, data: {action: "change->filter#submit"} %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

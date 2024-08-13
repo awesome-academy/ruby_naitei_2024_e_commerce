@@ -256,19 +256,45 @@
   }
 }
 
-.collage {
+.products-wrapper {
+  padding: 20px 160px 20px 160px;
   display: flex;
   justify-content: space-between;
+}
+
+.product-filter {
+  margin: 10px 5px 0 0;
+  width: 15%;
+  h3 {
+    margin-top: 0;
+  }
+  hr {
+    border-color: $navbar-border-color;
+    width: 80%;
+  }
+}
+
+.filter-price {
+  .field {
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+}
+
+.collage {
+  display: flex;
   flex-wrap: wrap;
   margin-top: 10px;
-  padding: 20px 160px 20px 160px;
+  width: 85%;
 }
 
 .collage-pic {
   width: 19%;
   position: relative;
   border: solid 1px $collage-pic-border;
-  margin-bottom: 10px;
+  margin: 0 0 10px 5px;
   border-radius: 5px;
   box-sizing: content-box;
   background-color: $background-color;
