@@ -16,6 +16,14 @@
           <span class="fa fa-star"></span>
         <% end %>
       <% end %>
+      <p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=<%= product_url(@product) %>"
+   onclick="javascript:window.open(this.href,'',
+   'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=240,width=600');return false;"
+   class="facebook-share-button">
+          <i class="fab fa-facebook-f"></i> <%= t("share_on_facebook") %>
+        </a>
+      </p>
       <p class="addinfo_info__starnote"><%= t("product.remain_quantity", remain_quantity: @product.remain_quantity) %></p>
       <p class="addinfo_info__starnote"><%= t("product.sales_count", sales_count: @product.sales_count) %></p>
       <p class="addinfo_info__starnote"><%= t("product.comment", comments: comment_users(@comments).size) %></p>
@@ -34,9 +42,9 @@
         </div>
       </div>
       <div class="addinfo_info__tag">
-          <p><%= t "category.title" %>:
-            <span class="addinfo_info__tag--grey"><%= @product.category_name %></span>
-          </p>
+        <p><%= t "category.title" %>:
+          <span class="addinfo_info__tag--grey"><%= @product.category_name %></span>
+        </p>
       </div>
     </div>
   </div>
