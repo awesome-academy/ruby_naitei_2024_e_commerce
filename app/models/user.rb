@@ -49,6 +49,29 @@ class User < ApplicationRecord
       .count
   }
 
+  ransacker :email_or_name do |parent|
+    Arel::Nodes::NamedFunction.new(
+      "concat",
+      [
+        Arel::Nodes::NamedFunction.new("LOWER", [parent.table[:email]]),
+        Arel::Nodes::NamedFunction.new("LOWER",
+                                       [Arel::Nodes::SqlLiteral.new("' '")]),
+        Arel::Nodes::NamedFunction.new("LOWER", [parent.table[:name]])
+      ]
+    )
+  end
+
+  ransacker :created_at do
+    Arel.sql("DATE(created_at)")
+  end
+
+  ransacker :gender do
+    Arel::Nodes::SqlLiteral.new("CASE WHEN gender = 0 THEN 'female' " \
+                                "WHEN gender = 1 THEN 'male' " \
+                                "WHEN gender = 2 THEN 'other' " \
+                                "END")
+  end
+
   def self.from_omniauth access_token
     data = access_token.info
     User.where(email: data["email"]).first_or_create do |user|
