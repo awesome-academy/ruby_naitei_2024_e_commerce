@@ -7,13 +7,12 @@ class CartController < ApplicationController
 
   def create
     quantity = params[:quantity].to_i
-    handle_add_failed and return unless check_quantity quantity
+    handle_add_failed and return unless check_quantity(quantity) &&
+                                        check_remain(@product
+                                          .remain_quantity, quantity)
 
     current_cart_detail = @cart_details.find_by(product_id: @product.id)
     if current_cart_detail
-      handle_add_failed and return unless
-      check_remain current_cart_detail.remain_quantity, quantity
-
       new_quantity = current_cart_detail.quantity + quantity
       current_cart_detail.update(quantity: new_quantity)
     else
@@ -29,8 +28,9 @@ class CartController < ApplicationController
 
   def update
     quantity = params[:quantity].to_i
-    handle_update_failed and return unless
-    check_remain @current_cart_detail.remain_quantity, quantity
+    handle_update_failed and return unless check_quantity_update(quantity) &&
+                                           check_remain(@current_cart_detail
+                                            .remain_quantity, quantity)
 
     handle_update_success @current_cart_detail, quantity
   end
@@ -76,6 +76,10 @@ class CartController < ApplicationController
     quantity > Settings.digit_0
   end
 
+  def check_quantity_update quantity
+    quantity >= Settings.digit_0
+  end
+
   def handle_add_success
     flash[:success] = t "cart.add_success"
     redirect_to cart_path(current_user)
@@ -93,7 +97,7 @@ class CartController < ApplicationController
   end
 
   def check_remain remain, quantity
-    quantity < remain
+    quantity <= remain
   end
 
   def handle_update_success current_cart_detail, quantity
