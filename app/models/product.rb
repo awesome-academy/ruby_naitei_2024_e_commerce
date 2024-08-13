@@ -25,6 +25,16 @@ class Product < ApplicationRecord
   validates :image,
             content_type: Settings.image_format,
             size: {less_than: Settings.max_image_data.megabytes}
+
+  ransacker :name_or_description do
+    Arel::Nodes::Grouping.new(
+      Arel::Nodes::Or.new(
+        Arel::Nodes::NamedFunction.new("CONCAT",
+                                       [table[:name], table[:description]])
+      )
+    )
+  end
+
   scope :search_product, lambda {|search|
     search&.squish! if search
     ransack(name_or_description_cont: search).result
@@ -39,6 +49,10 @@ class Product < ApplicationRecord
 
     ransack(price_gteq: from).result.ransack(price_lteq: to).result
   }
+
+  ransacker :created_at do
+    Arel.sql("DATE(created_at)")
+  end
 
   def self.ransackable_attributes _auth_object = nil
     %w(category_id created_at deleted_at description id name

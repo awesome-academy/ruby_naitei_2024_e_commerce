@@ -253,6 +253,10 @@ vi:
       price: "Giá"
       actions: "Hành động"
       id: "ID"
+      min_price: "Giá Tối Thiểu"
+      max_price: "Giá Tối Đa"
+      created_after: "Tạo Sau Ngày"
+      created_before: "Tạo Trước Ngày"
       bill_details:
         title: "Chi tiết hóa đơn #%{id}"
         bill_items: "Các mục trong hóa đơn"

@@ -170,6 +170,32 @@ header {
   opacity: 0.7;
 }
 
+.search-box-products {
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  overflow: hidden;
+}
+
+.search-box__input_products {
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  width: 500px;
+  overflow: hidden;
+  border: none;
+  height: 46px;
+}
+
+#search__input_products {
+  border: none;
+  outline: none;
+  padding: 12px 18px;
+  flex: 1;
+}
+
 .wishlist-cart {
   display: flex;
   align-items: center;
