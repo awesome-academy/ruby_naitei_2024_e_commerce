@@ -2,8 +2,15 @@ class Admin::CategoriesController < AdminController
   layout "admin"
   include ApplicationHelper
   before_action :load_category, only: %i(edit update destroy)
+
   def index
-    @pagy, @categories = pagy Category.oldest, limit: Settings.page_size
+    @search = Category.ransack params[:q]
+    if invalid_date_range?
+      flash.now[:danger] = t "flash.end_date_not_earlier"
+      @pagy, @categories = pagy(Category.none, items: Settings.digit_0)
+    else
+      @pagy, @categories = pagy(@search.result, items: Settings.digit_5)
+    end
   end
 
   def new
@@ -55,5 +62,15 @@ class Admin::CategoriesController < AdminController
 
     flash[:danger] = t "flash.not_found", model: t("category.title")
     redirect_to admin_categories_path
+  end
+
+  def parse_date date_str
+    date_str.blank? ? nil : Date.parse(date_str)
+  end
+
+  def invalid_date_range?
+    start_date = parse_date params.dig(:q, :created_at_gteq)
+    end_date = parse_date params.dig(:q, :created_at_lteq)
+    start_date && end_date && start_date > end_date
   end
 end

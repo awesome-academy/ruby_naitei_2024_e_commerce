@@ -1,20 +1,38 @@
 <% provide :title, t("category.list_category") %>
 <div class="admin_container">
   <%= link_to t("category.new_category"), new_admin_category_path, class: "btn btn-primary" %>
+  <%= search_form_for @search, url: admin_categories_path, method: :get,
+                  data: {controller: "debounce", action: "submit->debounce#search"} do |f| %>
+    <div class="form-group">
+      <%= f.label :name_cont, t("category.name") %>
+      <%= f.search_field :name_cont %>
+    </div>
+    <div class="form-group">
+      <%= f.label :created_at_gteq, t("created_from_date") %>
+      <%= f.date_field :created_at_gteq %>
+    </div>
+    <div class="form-group">
+      <%= f.label :created_at_lteq, t("created_to_date") %>
+      <%= f.date_field :created_at_lteq %>
+    </div>
+    <%= f.submit t("search"), class: "btn btn-primary" %>
+  <% end %>
   <table class="data-table">
-    <thead>
-      <tr>
-        <th class="table-header"><%= t "number" %></th>
-        <th class="table-header"><%= t "image.title" %></th>
-        <th class="table-header"><%= t "category.name" %></th>
-        <th class="table-header"><%= t "create_time" %></th>
-        <th class="table-header"><%= t "update_time" %></th>
-        <th class="table-header"><%= t "action" %></th>
-      </tr>
-    </thead>
-    <tbody id="categories_list">
-      <%= render partial: "category", collection: @categories, as: :category %>
-    </tbody>
+    <turbo-frame id="categories_frame">
+      <thead>
+        <tr>
+          <th class="table-header"><%= t "number" %></th>
+          <th class="table-header"><%= t "image.title" %></th>
+          <th class="table-header"><%= sort_link @search, :name, t("category.name"), { data: { turbo_frame: "categories_frame"} } %></th>
+          <th class="table-header"><%= sort_link @search, :created_at, t("create_time"), { data: { turbo_frame: "categories_frame"} } %></th>
+          <th class="table-header"><%= sort_link @search, :updated_at, t("update_time"), { data: { turbo_frame: "categories_frame"} } %></th>
+          <th class="table-header"><%= t "action" %></th>
+        </tr>
+      </thead>
+      <tbody id="categories">
+        <%= render partial: "category", collection: @categories, as: :category %>
+      </tbody>
+    </turbo-frame>
   </table>
   <div class="pagy--center">
     <%== pagy_bootstrap_nav @pagy %>
