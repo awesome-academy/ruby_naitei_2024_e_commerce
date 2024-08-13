@@ -3,6 +3,10 @@ module BillsHelper
     I18n.t("order_history.status.#{status}")
   end
 
+  def bill_cancellation_reason reason
+    I18n.t("order_history.cancellation_reason.#{reason}")
+  end
+
   def progress_bar_width status
     case status
     when "wait_for_pay"

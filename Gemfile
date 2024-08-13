@@ -1,6 +1,9 @@
 source "https://rubygems.org"
+
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
+
 ruby "3.2.2"
+
 gem "config"
 
 gem "rails", "~> 7.0.5"
@@ -81,6 +84,7 @@ end
 group :development do
   gem "web-console"
 end
+
 group :test do
   gem "capybara"
   gem "selenium-webdriver"

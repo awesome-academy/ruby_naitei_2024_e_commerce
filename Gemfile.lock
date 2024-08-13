@@ -111,6 +111,7 @@ GEM
     execjs (2.9.1)
     faker (2.21.0)
       i18n (>= 1.8.11, < 2)
+    ffi (1.17.0-x64-mingw-ucrt)
     ffi (1.17.0-x86_64-linux-gnu)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
@@ -178,6 +179,8 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
+    nokogiri (1.16.7-x64-mingw-ucrt)
+      racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
     pagy (9.0.2)
@@ -329,6 +332,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2024.1)
+      tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
     web-console (4.2.0)
       actionview (>= 6.0.0)
@@ -348,6 +353,7 @@ GEM
     zeitwerk (2.6.17)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_01_065435) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_13_170601) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_01_065435) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "total_after_discount", precision: 10
+    t.integer "cancellation_reason"
   end
 
   create_table "cart_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -129,6 +130,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_01_065435) do
     t.integer "category_id"
     t.timestamp "deleted_at"
     t.integer "sales_count", default: 0, null: false
+    t.integer "lock_version", default: 0, null: false
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

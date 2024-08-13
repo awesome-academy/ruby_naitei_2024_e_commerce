@@ -73,6 +73,10 @@ vi:
       wait_for_delivery: "Chờ vận chuyển"
       completed: "Hoàn tất"
       cancelled: "Đã hủy"
+    cancellation_reason:
+      out_of_stock: "Hết hàng"
+      wrong_quantity: "Số lượng sản phẩm không đúng"
+      wrong_product: "Sản phẩm không đúng"
     view_detail: "Xem chi tiết"
     detail:
       title: "Chi tiết hóa đơn"
