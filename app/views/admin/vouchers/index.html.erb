@@ -1,5 +1,17 @@
 <% provide :title, t("admin.voucher.index.title") %>
 <h1><%= t "admin.voucher.index.title" %></h1>
+<%= search_form_for @q, url: admin_vouchers_path, class: "search-box-products", method: :get do |f| %>
+  <%= f.text_field :name_cont, class: "search-box__input", placeholder: t("name_description") %>
+  <%= f.number_field :discount_gteq, class: "search-box__input_products", placeholder: t("admin.view.min_discount"), step: Settings.digist_step %>
+  <%= f.number_field :discount_lteq, class: "search-box__input_products", placeholder: t("admin.view.max_discount"), step: Settings.digist_step %>
+  <%= f.number_field :condition_gteq, class: "search-box__input_products", placeholder: t("admin.view.min_price") %>
+  <%= f.number_field :condition_lteq, class: "search-box__input_products", placeholder: t("admin.view.max_price") %>
+  <%= f.date_field :created_at_gteq, class: "search-box__input_products", placeholder: t("admin.view.created_after"), value: params.dig(:q, :created_at_gteq) %>
+  <%= f.date_field :created_at_lteq, class: "search-box__input_products", placeholder: t("admin.view.created_before"), value: params.dig(:q, :created_at_lteq) %>
+  <button class="search-box__btn" type= "submit">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+<% end %>
 <div class="voucher-table-wrapper">
   <%= link_to t("admin.voucher.index.addvoucher"), new_admin_voucher_path, class: "new-voucher-link btn btn-primary", role: "button" %>
   <table class="voucher-table">

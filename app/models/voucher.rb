@@ -21,6 +21,10 @@ class Voucher < ApplicationRecord
   end)
   scope :recent, ->{order created_at: :desc}
 
+  ransacker :created_at do
+    Arel.sql("DATE(created_at)")
+  end
+
   private
 
   def validate_date_order

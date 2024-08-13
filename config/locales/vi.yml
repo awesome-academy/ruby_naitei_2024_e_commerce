@@ -257,6 +257,8 @@ vi:
       max_price: "Giá Tối Đa"
       created_after: "Tạo Sau Ngày"
       created_before: "Tạo Trước Ngày"
+      max_discount: "Giảm Giá Tối Đa"
+      min_discount: "Giảm Giá Tối Thiểu"
       bill_details:
         title: "Chi tiết hóa đơn #%{id}"
         bill_items: "Các mục trong hóa đơn"
