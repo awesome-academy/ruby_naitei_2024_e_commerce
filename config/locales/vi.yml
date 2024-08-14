@@ -38,6 +38,12 @@ vi:
     sales_count: ! "%{sales_count} lượt mua"
     remain_quantity: "Còn lại %{remain_quantity}"
     is_nil: "Sản phẩm không tồn tại"
+    filter:
+      title: "Bộ lọc"
+      category: "Thể loại"
+      price: "Giá"
+      from: "Từ"
+      to: "Đến"
   cart:
     title: "Giỏ hàng"
     product: "Sản phẩm"

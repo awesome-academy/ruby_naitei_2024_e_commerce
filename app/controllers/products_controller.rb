@@ -1,8 +1,11 @@
 class ProductsController < ApplicationController
   def index
     search_query = search_params ? search_params[:name_or_description] : nil
-    @pagy, @products = pagy(Product.search_product(search_query).newest,
-                            items: Settings.page_size)
+    @pagy, @products = pagy(Product.newest
+      .search_product(search_query)
+      .filter_by_category_ids(params[:category_ids])
+      .filter_by_price(params[:from], params[:to]), items: Settings.page_size)
+    @categories = Category.all
   end
 
   def search_params
