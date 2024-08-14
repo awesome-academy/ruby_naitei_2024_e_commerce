@@ -13,6 +13,6 @@ module ApplicationHelper
   end
 
   def vi price
-    t("cart_detail.price", price:)
+    t("cart_detail.price", price: format_currency(price))
   end
 end

@@ -64,7 +64,7 @@ vi:
     update: "Cập nhật giỏ hàng"
     quantity_greater_than_remain: "Không thể tiến hành thanh toán. Số lượng sản phẩm trong giỏ hàng vượt quá số lượng trong kho."
   cart_detail:
-    price: "%{price}vnđ"
+    price: "%{price}"
     is_nil: "Chi tiết hóa đơn không tồn tại"
   order_history:
     title: "Lịch sử đặt hàng"
@@ -238,8 +238,10 @@ vi:
       phone_number: "Số điện thoại"
       voucher: "Voucher"
       status: "Trạng thái"
+      note: "Ghi chú"
       total: "Tổng cộng"
       total_after_discount: "Tổng cộng sau giảm giá"
+      cancel_reason: "Lý do hủy đơn"
       created_at: "Ngày tạo"
       updated_at: "Ngày cập nhật"
       product_name: "Tên sản phẩm"
@@ -266,10 +268,9 @@ vi:
         updated_at: "Ngày Cập Nhật"
         actions: "Hành Động"
         not_found: "Không tìm thấy hóa đơn"
+        search_for: "Tìm kiếm..."
+        search: "Tìm kiếm"
       update: "Cập nhật"
-      bill_details:
-        title: "Chi tiết hóa đơn #%{id}"
-        bill_items: "Các mục trong hóa đơn"
       statuses:
         wait_for_pay: "Đang Chờ Thanh Toán"
         wait_for_prepare: "Đang Chuẩn Bị"

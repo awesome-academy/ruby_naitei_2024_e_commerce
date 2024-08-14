@@ -16,19 +16,27 @@
     </tr>
     <tr>
       <th><%= t "admin.view.voucher" %></th>
-      <td><%= display_voucher_discount(@bill.voucher) %></td>
+      <td><%= display_voucher_discount @bill.voucher %></td>
     </tr>
     <tr>
       <th><%= t "admin.view.status" %></th>
       <td><%= @bill.status %></td>
     </tr>
     <tr>
+      <th><%= t "admin.view.note" %></th>
+      <td><%= @bill.note_content %></td>
+    </tr>
+    <tr>
       <th><%= t "admin.view.total" %></th>
-      <td><%= format_currency(@bill.total) %></td>
+      <td><%= public_send("#{I18n.locale}", @bill.total) %></td>
     </tr>
     <tr>
       <th><%= t "admin.view.total_after_discount" %></th>
-      <td><%= format_currency(@bill.total_after_discount) %></td>
+      <td><%= public_send("#{I18n.locale}", @bill.total_after_discount) %></td>
+    </tr>
+    <tr>
+      <th><%= t "admin.view.cancel_reason" %></th>
+      <td><%= @bill.cancellation_reason %></td>
     </tr>
     <tr>
       <th><%= t "admin.view.created_at" %></th>
