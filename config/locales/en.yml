@@ -69,6 +69,10 @@ en:
       wait_for_delivery: "Waiting for delivery"
       completed: "Completed"
       cancelled: "Cancelled"
+    cancellation_reason:
+      out_of_stock: "Out of stock"
+      wrong_quantity: "Wrong product quantity"
+      wrong_product: "Wrong product"
     view_detail: "View details"
     detail:
       title: "Bill details"

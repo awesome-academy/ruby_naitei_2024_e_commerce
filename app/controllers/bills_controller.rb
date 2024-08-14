@@ -5,7 +5,7 @@ class BillsController < ApplicationController
   include BillsHelper
 
   def index
-    @pagy, @bills = pagy(Bill.newest, items: Settings.page_size)
+    @pagy, @bills = pagy(current_user.bills.newest, items: Settings.page_size)
   end
 
   def show

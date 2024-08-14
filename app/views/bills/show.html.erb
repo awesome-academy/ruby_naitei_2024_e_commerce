@@ -68,6 +68,11 @@
                 <%= t "order_history.subtotal" %>
                 <span><%= send("#{I18n.locale}", @bill.total_after_discount) %></span>
               </div>
+              <% unless @bill.cancellation_reason.nil? %>
+                <div class="infor-price-total">
+                  <span><%= bill_cancellation_reason @bill.cancellation_reason %></span>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>

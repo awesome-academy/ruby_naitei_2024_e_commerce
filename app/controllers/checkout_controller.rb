@@ -2,7 +2,7 @@ class CheckoutController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :load_current_user_cart
   def create
-    @bill = Bill.new bill_params
+    @bill = current_user.bills.build bill_params
     if @bill.save
       create_stripe_session @cart_details
       transfer_data
@@ -14,7 +14,7 @@ class CheckoutController < ApplicationController
   end
 
   def repayment
-    @bill = Bill.find_by(id: params[:bill_id])
+    @bill = Bill.find_by id: params[:bill_id]
     if @bill
       create_stripe_session @bill.bill_details
     else
