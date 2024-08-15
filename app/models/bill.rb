@@ -29,7 +29,7 @@ class Bill < ApplicationRecord
   validates :phone_number, presence: true,
             format: {with: Settings.phone_regex}
   delegate :name, :email, to: :user, prefix: true
-  delegate :discount, to: :voucher, prefix: true, allow_nil: true
+  delegate :discount, :name, to: :voucher, prefix: true, allow_nil: true
 
   scope :newest, ->{order(created_at: :desc)}
   scope :search_by_attributes, lambda {|search|
@@ -42,6 +42,22 @@ class Bill < ApplicationRecord
     return if statuses.blank?
 
     ransack(status_in: statuses).result
+  }
+
+  scope :filter_by_voucher, lambda {|vouchers|
+    return if vouchers.blank?
+
+    ransack(voucher_id_in: vouchers).result
+  }
+
+  scope :filter_by_total_after_discount, lambda {|from, to|
+    return if from.blank? && to.blank?
+
+    ransack(total_after_discount_gteq: from).result
+                                            .ransack(
+                                              total_after_discount_lteq: to
+                                            )
+                                            .result
   }
 
   def self.ransackable_attributes _auth_object = nil

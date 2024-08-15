@@ -3,7 +3,7 @@
   <td><%= bill.user_name %></td>
   <td><%= bill.address %></td>
   <td><%= bill.phone_number %></td>
-  <td><%= discount_to_percentage(bill.voucher_discount) %></td>
+  <td><%= bill.voucher_name %></td>
   <% if bill.completed? || bill.cancelled? %>
     <td><%= bill_attribute_status bill.status %></td>
   <% else %>
