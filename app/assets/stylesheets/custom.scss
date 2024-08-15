@@ -963,6 +963,22 @@
   }
 }
 // CSS View All Bill Admin
+.search-filter-wrapper {
+  margin: 40px 40px 0;
+  display: flex;
+  justify-content: space-between;
+  .search-wrapper {
+    width: 70%;
+    .input-group {
+      display: flex;
+      .search-btn {
+        background-color: $primary-color;
+        color: $white;
+      }
+    }
+  }
+}
+
 .bill-list-wrapper {
   margin: 20px;
   padding: 20px;

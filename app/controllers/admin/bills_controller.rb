@@ -1,8 +1,11 @@
 class Admin::BillsController < AdminController
   before_action :find_bill, only: %i(show update_status)
   def index
-    @pagy, @bills = pagy(Bill.order(created_at: :desc),
-                         items: Settings.page_size)
+    @q = Bill.ransack(params[:q])
+    @pagy, @bills = pagy(@q.result(distinct: true)
+      .newest
+      .search_by_attributes(params[:search])
+      .filter_by_status(params[:statuses]), items: Settings.page_size)
   end
 
   def show; end

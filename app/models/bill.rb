@@ -32,6 +32,22 @@ class Bill < ApplicationRecord
   delegate :discount, to: :voucher, prefix: true, allow_nil: true
 
   scope :newest, ->{order(created_at: :desc)}
+  scope :search_by_attributes, lambda {|search|
+    return if search.blank?
+
+    ransack(user_name_or_phone_number_or_address_cont: search).result
+  }
+
+  scope :filter_by_status, lambda {|statuses|
+    return if statuses.blank?
+
+    ransack(status_in: statuses).result
+  }
+
+  def self.ransackable_attributes _auth_object = nil
+    %w(user_id address phone_number voucher_id status
+    total expired_at created_at updated_at total_after_discount)
+  end
 
   private
 

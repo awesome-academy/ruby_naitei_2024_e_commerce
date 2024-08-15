@@ -16,11 +16,7 @@ module Admin::BillsHelper
   end
 
   def format_product_total detail
-    number_to_currency(
-      detail.quantity * detail.product.price,
-      unit: Settings.money_unit_d,
-      format: Settings.currency_format
-    )
+    detail.quantity * detail.product.price
   end
 
   def display_voucher_discount voucher
