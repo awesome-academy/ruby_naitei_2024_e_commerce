@@ -11,16 +11,16 @@
           <%= t("static_pages.account") %><b class="caret"></b>
         <% end %>
         <ul id="dropdown-menu" class="dropdown-menu">
-          <li><%= link_to t("static_pages.personal_info"), edit_user_path(current_user) %></li>
+          <li><%= link_to t("static_pages.personal_info"), edit_user_registration_path %></li>
           <li class="divider"></li>
-          <li><%= link_to t("profile.logout"), logout_path, data: { "turbo-method": :delete } %></li>
+          <li><%= link_to t("profile.logout"), destroy_user_session_path, method: :delete %></li>
         </ul>
       </li>
     <% else %>
       <div class="validation">
-        <%= link_to t("sign_up.title"), signup_path, class: "validation__register" %>
+        <%= link_to t("sign_up.title"), new_user_registration_path, class: "validation__register" %>
         <hr>
-        <%= link_to t("sessions.new.title"), login_path, class: "validation__login" %>
+        <%= link_to t("sessions.new.title"), new_user_session_path, class: "validation__login" %>
       </div>
     <% end %>
   </div>
@@ -46,7 +46,7 @@
           <i class="fa-solid fa-cart-shopping"></i>
         <% end %>
       <% else %>
-        <%= link_to login_path do %>
+        <%= link_to new_user_session_path do %>
           <i class="fa-solid fa-cart-shopping"></i>
         <% end %>
       <% end %>

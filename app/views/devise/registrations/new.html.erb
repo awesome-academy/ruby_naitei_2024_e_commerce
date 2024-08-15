@@ -1,0 +1,12 @@
+<% provide :title, t("sign_up.title") %>
+<title><%= t "sign_up.title" %></title>
+<body class="background">
+  <div class="signup-page">
+    <div class="body-signup">
+      <div class="formdk">
+        <%= render "form" %>
+      </div>
+        <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</body>

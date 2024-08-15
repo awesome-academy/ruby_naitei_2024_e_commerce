@@ -1,0 +1,29 @@
+<% provide :title, t("sessions.new.title") %>
+<title><%= t "sessions.new.title" %></title>
+<body class="body-login login-page">
+  <div class="formdn">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <label for="" class="formdn__tieude--fontto"><%= t "sessions.new.title" %></label>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",  placeholder: t("sessions.new.email"), class: "formdn__email" %>
+      </div>
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: t("sessions.new.password"), class: "formdn__mk" %>
+      </div>
+      <div class="formdn__div3">
+        <div class="formdn__nhotoi">
+          <% if devise_mapping.rememberable? %>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <%= f.submit t("sessions.new.login"), class: "login-button" %>
+    <% end %>
+  </div>
+</body>
+<%= render "devise/shared/links" %>

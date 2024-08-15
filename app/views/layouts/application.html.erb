@@ -18,6 +18,7 @@
     <meta name="locale" content="<%= I18n.locale %>">
   </head>
   <body>
+    <%= render "shared/flash_devise" %>
     <%= render "shared/flash_messages" %>
     <%= yield %>
   </body>
