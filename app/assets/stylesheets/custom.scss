@@ -968,12 +968,23 @@
   display: flex;
   justify-content: space-between;
   .search-wrapper {
-    width: 70%;
+    width: 30%;
+    margin-top: 10px;
     .input-group {
       display: flex;
       .search-btn {
         background-color: $primary-color;
         color: $white;
+      }
+    }
+  }
+  .filter-wrapper {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    .total-after-discount-filter {
+      label {
+        display: block;
       }
     }
   }

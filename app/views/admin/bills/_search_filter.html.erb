@@ -4,13 +4,35 @@
       <%= text_field_tag :search, params[:search], class: "form-control", placeholder: t("admin.view.bills.search_for"), data: {action: "change->bill#submit"} %>
     </div>
     <div class="filter-wrapper">
-      <h4 class="title"><%= t "admin.view.bills.status" %></h4>
-      <% Bill.statuses.each do |key, value| %>
-        <div class="form-check">
-          <%= check_box_tag "statuses[]", value, params[:statuses].present? && params[:statuses].include?(value.to_s), class: "form-check-input", data: {action: "change->bill#submit"} %>
-          <%= label_tag "status_#{value}", t("admin.view.statuses.#{key}"), class: "form-check-label" %>
+      <div class="status-filter">
+        <h4 class="title"><%= t "admin.view.bills.status" %></h4>
+        <% Bill.statuses.each do |key, value| %>
+          <div class="form-check">
+            <%= check_box_tag "statuses[]", value, params[:statuses].present? && params[:statuses].include?(value.to_s), class: "form-check-input", data: {action: "change->bill#submit"} %>
+            <%= label_tag "status_#{value}", t("admin.view.statuses.#{key}"), class: "form-check-label" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="voucher-filter">
+        <h4 class="title"><%= t "admin.view.bills.voucher" %></h4>
+        <% @vouchers.each do |voucher| %>
+          <div class="form-check">
+            <%= check_box_tag "vouchers[]", voucher.id, params[:vouchers].present? && params[:vouchers].include?(voucher.id.to_s), class: "form-check-input", data: {action: "change->bill#submit"} %>
+            <%= label_tag "voucher_#{voucher}", voucher.name, class: "form-check-label" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="total-after-discount-filter">
+        <h4 class="title"><%= t "admin.view.bills.total_after_discount" %></h4>
+        <div class="field">
+          <%= label_tag "from", t("product.filter.from") %>
+          <%= number_field_tag "from", params[:from], min: 0, data: {action: "change->bill#submit"} %>
         </div>
-      <% end %>
+        <div class="field">
+          <%= label_tag "to", t("product.filter.to") %>
+          <%= number_field_tag "to", params[:to], min: 0, data: {action: "change->bill#submit"} %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
