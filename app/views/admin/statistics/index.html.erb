@@ -1,0 +1,19 @@
+<% provide :title, t("admin.statistic.title") %>
+<div class="statistic-wrapper">
+  <div class="statistic-filter">
+    <%= form_tag admin_statistics_path, method: :get do %>
+      <div class="col-md-3 mb-3">
+        <%= label_tag :datefrom, t("product.filter.from") %>
+        <%= date_field_tag :datefrom, params[:datefrom], class: "form-control" %>
+      </div>
+      <div class="col-md-3 mb-3">
+        <%= label_tag :dateto, t("product.filter.to") %>
+        <%= date_field_tag :dateto, params[:dateto], class: "form-control" %>
+      </div>
+      <div class="col-md-2 mb-3 d-flex align-items-center justify-content-center">
+        <%= submit_tag t("admin.view.bills.search"), class: "btn btn-primary btn-block" %>
+      </div>
+    <% end %>
+  </div>
+  <%= render "charts" %>
+</div>

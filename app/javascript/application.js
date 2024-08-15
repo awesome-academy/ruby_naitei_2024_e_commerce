@@ -10,6 +10,8 @@ import 'jquery'
 import 'jquery_ujs'
 import 'slider'
 import 'banner_countdown'
+import 'chartkick'
+import 'Chart.bundle'
 
 import { Turbo } from '@hotwired/turbo-rails'
 Turbo.session.drive = false
@@ -20,3 +22,9 @@ Turbo.session.drive = false
 //= require i18n/translations
 
 //= require register
+
+//= require Chart.bundle
+
+//= require chartkick
+
+//= require highcharts

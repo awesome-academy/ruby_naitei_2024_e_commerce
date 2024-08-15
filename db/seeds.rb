@@ -56,6 +56,7 @@ prod1 = Product.create!(name: "Iphone 15 promax",
                         price: 30000000,
                         remain_quantity: 20,
                         description: "Iphone 15 promax",
+                        sales_count: 20,
                         category_id: smartphone.id)
 prod1.image.attach(io: File.open(Rails.root.join("./app/assets/images", "iphone.jpg")), filename: "iphone.jpg")
 
@@ -70,6 +71,7 @@ prod3 = Product.create!(name: "Xiaomi Redmi Note 12 (8GB+128GB)",
                         price: 3890000,
                         remain_quantity: 354,
                         description: "Xiaomi Redmi Note 12 (8GB+128GB)",
+                        sales_count: 10,
                         category_id: smartphone.id)
 prod3.image.attach(io: File.open(Rails.root.join("./app/assets/images", "xiaomi.jpg")), filename: "xiaomi.jpg")
 
@@ -77,6 +79,7 @@ prod4 = Product.create!(name: "Laptop Dell Inspiron 15 3530 i7",
                         price: 23990000,
                         remain_quantity: 200,
                         description: "Laptop Dell Inspiron 15 3530 i7",
+                        sales_count: 200,
                         category_id: laptop.id)
 prod4.image.attach(io: File.open(Rails.root.join("./app/assets/images", "dell.jpg")), filename: "dell.jpg")
 
@@ -98,6 +101,7 @@ prod7 = Product.create!(name: "Nồi cơm điện Nagakawa NAG0146",
                         price: 1200000,
                         remain_quantity: 86,
                         description: "Nồi cơm điện Nagakawa NAG0146",
+                        sales_count: 10,
                         category_id: noi.id)
 prod7.image.attach(io: File.open(Rails.root.join("./app/assets/images", "noi-com.jpg")), filename: "noi-com.jpg")
 

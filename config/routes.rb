@@ -24,6 +24,11 @@ Rails.application.routes.draw do
     end
     resources :account_activations, only: :edit
     namespace :admin do
+      resources :statistics do
+        collection do
+          get "users_signup"
+        end
+      end
       resources :categories
       resources :products
       resources :cart_details

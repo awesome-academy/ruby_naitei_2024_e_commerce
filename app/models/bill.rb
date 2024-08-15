@@ -61,6 +61,20 @@ class Bill < ApplicationRecord
                                             .result
   }
 
+  scope :status_bills, lambda {|date_from, date_to|
+    where(created_at: date_from..date_to)
+      .group(:status)
+      .count
+  }
+
+  scope :incomes, lambda {|date_from, date_to|
+    where(status: :completed)
+      .group_by_day(:created_at,
+                    range: date_from..date_to,
+                    format: Settings.dd_mm_yyyy_fm)
+      .sum(:total_after_discount)
+  }
+
   def self.ransackable_attributes _auth_object = nil
     %w(user_id address phone_number voucher_id status
     total expired_at created_at updated_at total_after_discount)

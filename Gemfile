@@ -86,6 +86,10 @@ gem "dotenv-rails"
 
 gem "omniauth-rails_csrf_protection"
 
+gem "chartkick"
+
+gem "groupdate"
+
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "pry-rails"

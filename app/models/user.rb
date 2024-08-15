@@ -43,6 +43,12 @@ class User < ApplicationRecord
   has_one_attached :avatar
   scope :all_users, ->{all}
 
+  scope :users_signup, lambda {|date_from, date_to|
+    group_by_day(:created_at,
+                 range: date_from..date_to)
+      .count
+  }
+
   def self.from_omniauth access_token
     data = access_token.info
     User.where(email: data["email"]).first_or_create do |user|
