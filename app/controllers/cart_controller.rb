@@ -1,6 +1,7 @@
 class CartController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_product, only: %i(create update)
-  before_action :logged_in?, :load_current_user_cart
+  before_action :load_current_user_cart
   before_action :find_current_cart_detail, only: :update
   before_action :find_cart_detail, only: :destroy
 

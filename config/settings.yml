@@ -39,3 +39,4 @@ digit_5 : 5
 init_value_add_cart: 1
 init_min_add_cart: 1
 dicount_percentage_convert: 100
+image_size: 200

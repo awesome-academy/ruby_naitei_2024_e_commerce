@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :check, only: :new
-  before_action :logged_in_user
+  before_action :authenticate_user!
   def new
     @comment = Comment.new
     @comments = @product.comments

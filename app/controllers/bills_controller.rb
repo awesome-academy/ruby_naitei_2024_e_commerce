@@ -1,5 +1,5 @@
 class BillsController < ApplicationController
-  before_action :logged_in?, :load_current_user_cart
+  before_action :authenticate_user!, :load_current_user_cart
   before_action :find_bill, only: :show
   protect_from_forgery with: :exception
   include BillsHelper

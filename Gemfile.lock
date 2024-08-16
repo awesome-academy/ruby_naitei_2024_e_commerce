@@ -78,6 +78,7 @@ GEM
       execjs (~> 2)
     base64 (0.1.1)
     bcrypt (3.1.18)
+    bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -115,11 +116,19 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.1)
+    dotenv (3.1.2)
+    dotenv-rails (3.1.2)
+      dotenv (= 3.1.2)
+      railties (>= 6.1)
     erubi (1.13.0)
     execjs (2.9.1)
     faker (2.21.0)
       i18n (>= 1.8.11, < 2)
-    ffi (1.17.0-x64-mingw-ucrt)
+    faraday (2.10.1)
+      faraday-net_http (>= 2.0, < 3.2)
+      logger
+    faraday-net_http (3.1.1)
+      net-http
     ffi (1.17.0-x86_64-linux-gnu)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
@@ -129,6 +138,7 @@ GEM
       sass (~> 3.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hashie (5.0.0)
     hotwire-rails (0.1.3)
       rails (>= 6.0.0)
       stimulus-rails
@@ -156,6 +166,8 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (2.6.3)
+    jwt (2.8.2)
+      base64
     language_server-protocol (3.17.0.3)
     libv8-node (21.7.2.0)
     libv8-node (21.7.2.0-x86_64-linux)
@@ -177,7 +189,11 @@ GEM
       libv8-node (~> 21.7.2.0)
     minitest (5.24.1)
     msgpack (1.7.2)
+    multi_xml (0.7.1)
+      bigdecimal (~> 3.1)
     mysql2 (0.5.5)
+    net-http (0.4.1)
+      uri
     net-imap (0.3.7)
       date
       net-protocol
@@ -192,6 +208,28 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
+    oauth2 (2.0.9)
+      faraday (>= 0.17.3, < 3.0)
+      jwt (>= 1.0, < 3.0)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 4)
+      snaky_hash (~> 2.0)
+      version_gem (~> 1.1)
+    omniauth (2.1.2)
+      hashie (>= 3.4.6)
+      rack (>= 2.2.3)
+      rack-protection
+    omniauth-google-oauth2 (1.1.2)
+      jwt (>= 2.0)
+      oauth2 (~> 2.0)
+      omniauth (~> 2.0)
+      omniauth-oauth2 (~> 1.8)
+    omniauth-oauth2 (1.8.0)
+      oauth2 (>= 1.4, < 3)
+      omniauth (~> 2.0)
+    omniauth-rails_csrf_protection (1.0.2)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     orm_adapter (0.5.0)
     pagy (9.0.2)
     parallel (1.23.0)
@@ -212,6 +250,9 @@ GEM
     rack (2.2.9)
     rack-cors (2.0.2)
       rack (>= 2.0.0)
+    rack-protection (3.2.0)
+      base64 (>= 0.1.0)
+      rack (~> 2.2, >= 2.2.4)
     rack-test (2.1.0)
       rack (>= 1.3)
     rails (7.0.7)
@@ -328,6 +369,9 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    snaky_hash (2.0.1)
+      hashie
+      version_gem (~> 1.1, >= 1.1.1)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -350,6 +394,8 @@ GEM
     tzinfo-data (1.2024.1)
       tzinfo (>= 1.0.0)
     unicode-display_width (2.4.2)
+    uri (0.13.0)
+    version_gem (1.1.4)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -384,6 +430,7 @@ DEPENDENCIES
   config
   debug
   devise
+  dotenv-rails
   faker (= 2.21.0)
   figaro
   font-awesome-rails
@@ -397,6 +444,9 @@ DEPENDENCIES
   jquery-rails
   mini_racer
   mysql2 (~> 0.5)
+  omniauth
+  omniauth-google-oauth2
+  omniauth-rails_csrf_protection
   pagy
   paranoia
   pry-rails

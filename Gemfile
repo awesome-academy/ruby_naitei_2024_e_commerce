@@ -78,6 +78,14 @@ gem "city-state"
 
 gem "requestjs-rails"
 
+gem "omniauth"
+
+gem "omniauth-google-oauth2"
+
+gem "dotenv-rails"
+
+gem "omniauth-rails_csrf_protection"
+
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "pry-rails"
