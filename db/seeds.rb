@@ -334,7 +334,6 @@ voucher3 = Voucher.create!(name: "TETDENROI",
 
 #Seed bills
 bill1 = Bill.create!(user_id: 2,
-                     address: "TP.HCM",
                      phone_number: "0123456789",
                      voucher_id: 3,
                      status: 3,
@@ -344,7 +343,6 @@ bill1 = Bill.create!(user_id: 2,
                      expired_at: nil)
 
 bill2 = Bill.create!(user_id: 2,
-                     address: "TP.HCM",
                      phone_number: "0123456789",
                      voucher_id: 1,
                      status: 3,

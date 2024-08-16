@@ -382,6 +382,10 @@ en:
     choose_voucher: "Choose voucher"
     quantity: "Quantity"
     discount: "Discount"
+    country: "Country"
+    state: "State"
+    city: "City"
+    street: "Street"
   wishlist:
     title: "Wishlist"
     stocking: "Stocking"

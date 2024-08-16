@@ -11,3 +11,5 @@ pin "jquery", to: "jquery.min.js", preload: true
 pin "jquery_ujs", to: "jquery_ujs.js", preload: true
 pin "slider", to: "controllers/slider.js", preload: true
 pin "banner_countdown", to: "controllers/banner_countdown.js", preload: true
+pin "@rails/request.js", to: "https://ga.jspm.io/npm:@rails/request.js@0.0.6/src/index.js"
+pin "stripe_checkout", to: "controllers/stripe_checkout.js"

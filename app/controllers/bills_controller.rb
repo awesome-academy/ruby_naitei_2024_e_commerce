@@ -1,5 +1,5 @@
 class BillsController < ApplicationController
-  before_action :logged_in_user, :load_current_user_cart
+  before_action :logged_in?, :load_current_user_cart
   before_action :find_bill, only: :show
   protect_from_forgery with: :exception
   include BillsHelper
@@ -14,6 +14,28 @@ class BillsController < ApplicationController
 
   def new
     @bill = Bill.new
+    @bill.build_address
+  end
+
+  def create
+    @bill = current_user.bills.build bill_params
+    if @bill.save
+      create_stripe_session @cart_details
+      transfer_data
+      current_user.send_bill_info @bill
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def repayment
+    @bill = Bill.find_by id: params[:bill_id]
+    if @bill
+      create_stripe_session @bill.bill_details
+    else
+      flash[:danger] = t "not_found", model: t("order.id")
+      redirect_to bills_url
+    end
   end
 
   def update_total
@@ -36,6 +58,18 @@ class BillsController < ApplicationController
     end
   end
 
+  def states
+    @target = params[:target]
+    @states = CS.get(params[:country]).invert
+    respond_to :turbo_stream
+  end
+
+  def cities
+    @target = params[:target]
+    @cities = CS.cities(params[:state]) || []
+    respond_to :turbo_stream
+  end
+
   private
 
   def find_bill
@@ -44,5 +78,71 @@ class BillsController < ApplicationController
 
     flash[:alert] = t "errors.bill.not_found"
     redirect_to root_path and return
+  end
+
+  def create_stripe_session line_items
+    @line_items = load_lines_item(line_items)
+    @metadata = build_metadata(line_items)
+
+    @session = Stripe::Checkout::Session.create(
+      {
+        payment_method_types: %w(card),
+        line_items: @line_items,
+        metadata: @metadata,
+        payment_method_options: {card: {request_three_d_secure: "any"}},
+        mode: "payment",
+        success_url: bills_url,
+        cancel_url: bills_url
+      }
+    )
+    redirect_to @session.url, allow_other_host: true
+  end
+
+  def build_metadata line_item
+    {
+      bill_id: @bill.id,
+      user_id: @bill.user_id,
+      cart_details: line_item.map do |detail|
+                      {
+                        product_id: detail.product_id,
+                        quantity: detail.quantity,
+                        total: detail.total
+                      }
+                    end.to_json
+    }
+  end
+
+  def load_lines_item cart_details
+    amount = Settings.dollar_convert * Settings.digit_100
+    @line_items = cart_details.map do |detail|
+      {
+        quantity: detail.quantity,
+        price_data: {
+          currency: Settings.money_unit,
+          unit_amount:
+            (detail.product.price * amount).to_i,
+          product_data: {
+            name: detail.product.name
+          }
+        }
+      }
+    end
+  end
+
+  def transfer_data
+    @cart_details.each do |detail|
+      bill_detail = BillDetail.new bill_id: @bill.id,
+                                   product_id: detail.product_id,
+                                   quantity: detail.quantity,
+                                   total: detail.total
+      next unless bill_detail.save
+    end
+  end
+
+  def bill_params
+    params.require(:bill).permit(
+      Bill::PERMITTED_ATTRIBUTES,
+      address_attributes: Address::PERMITTED_ATTRIBUTES
+    )
   end
 end

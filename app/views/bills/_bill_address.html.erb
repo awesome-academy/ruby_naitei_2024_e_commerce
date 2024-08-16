@@ -1,0 +1,16 @@
+<%= form.fields_for :address, address do |address_form| %>
+  <%= address_form.label :country, t("order.country") %>
+  <%= address_form.select :country,address.countries.invert, {include_blank: true},
+                        { class: "form-select", data: { address_target: "countrySelect", action: "change->address#change"} } %>
+
+  <%= address_form.label :state, t("order.state") %>
+  <%= address_form.select :state, address.states.invert, {include_blank: true},
+                        { class: "form-select", data: { address_target: "stateSelect", action: "change->address#change_city"} } %>
+
+  <%= address_form.label :city, t("order.city") %>
+  <%= address_form.select :city, address.cities, {include_blank: true},
+                        { class: "form-select", data: { address_target: "citySelect"} } %>
+
+  <%= address_form.label :details, t("order.street") %>
+  <%= address_form.text_field :details %>
+<% end %>

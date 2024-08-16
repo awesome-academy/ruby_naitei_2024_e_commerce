@@ -3,14 +3,13 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     post "/check_remain_and_redirect", to: "cart#check_remain_and_redirect"
     root "static_pages#home"
-    post "checkout/create", to: "checkout#create"
-    post "checkout/repayment", to: "checkout#repayment"
     devise_for :users
     as :user do
       get "signin" => "devise/sessions#new"
       post "signin" => "devise/sessions#create"
       delete "signout" => "devise/sessions#destroy"
     end
+    post "bills/repayment", to: "bills#repayment"
     resources :products
     resources :wishlists
     resources :checkout, only: :create
@@ -18,6 +17,8 @@ Rails.application.routes.draw do
     resources :cart, only: [:show, :create, :update, :destroy]
     resources :bills do
       patch :update_total, on: :collection
+      get :states, on: :collection
+      get :cities, on: :collection
     end
     resources :account_activations, only: :edit
     namespace :admin do

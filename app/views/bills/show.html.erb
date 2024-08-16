@@ -6,7 +6,7 @@
       <i class="fa-solid fa-house"></i>
     <% end %>
     <i class="right fa-solid fa-chevron-right"></i>
-    <%= link_to t("profile.personal_info"), edit_user_path(current_user) %>
+    <%= link_to t("profile.personal_info"), edit_user_registration_path %>
     <i class="right fa-solid fa-chevron-right"></i>
     <%= link_to t("order_history.title"), bills_path %>
     <i class="right fa-solid fa-chevron-right"></i>
@@ -36,7 +36,7 @@
                 <p class="infor-content__name"><%= @bill.user_name %></p>
                 <p>
                   <div>
-                    <%= @bill.address %>
+                    <%= full_address @bill.address %>
                   </div>
                   <p class="infor-content__title"><%= t "order_history.detail.email" %></p>
                   <%= @bill.user_email %> <br><br>
@@ -117,7 +117,7 @@
         </div>
       </div>
       <% if @bill.status == "wait_for_pay" %>
-        <%= button_to t("order_history.repay"), checkout_repayment_path,
+        <%= button_to t("order_history.repay"), bills_repayment_path,
             method: :post, params: { bill_id: @bill.id }, class: "repay-btn" %>
       <% end %>
     </div>
