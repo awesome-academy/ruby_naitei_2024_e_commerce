@@ -13,6 +13,9 @@ vi:
   updated_at: ! "Cập nhật lúc %{date}"
   create_time: "Thời gian tạo"
   update_time: "Thời gian cập nhật"
+  created_to_date: "Tạo từ ngày"
+  created_from_date: "Đến ngày"
+  search: "Tìm kiếm"
   action: "Thao tác"
   number: "STT"
   static_pages:
@@ -32,6 +35,7 @@ vi:
     not_admin: "Bạn không phải quản trị viên"
     login_to_view_cart: "Vui lòng đăng nhập để xem giỏ hàng"
     syntax_error_phone: "Nhập sai định dạng số điện thoại"
+    end_date_not_earlier: "Ngày kết thúc không được sớm hơn ngày bắt đầu."
   product:
     price: ! "Giá: %{price}"
     comment: ! "%{comments} đánh giá"

@@ -8,6 +8,9 @@ en:
   updated_at: ! "Updated at %{date}"
   create_time: "Create time"
   update_time: "Update time"
+  created_to_date: "Created to date"
+  created_from_date: "Created from date"
+  search: "Search"
   action: "Action"
   udpate: "Update"
   delete: "Delete"
@@ -28,6 +31,7 @@ en:
     not_admin: "You are not admin"
     login_to_view_cart: "Please login to view cart"
     syntax_error_phone: "Wrong syntax phone number"
+    end_date_not_earlier: "The end date cannot be earlier than the start date."
   product:
     price: ! "Price: %{price}"
     comment: ! "%{comments} rate"
