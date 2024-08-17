@@ -105,6 +105,7 @@ GEM
       deep_merge (~> 1.2, >= 1.2.1)
     connection_pool (2.4.1)
     crass (1.0.6)
+    database_cleaner (1.99.0)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
@@ -123,6 +124,11 @@ GEM
       railties (>= 6.1)
     erubi (1.13.0)
     execjs (2.9.1)
+    factory_bot (6.4.6)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.4.3)
+      factory_bot (~> 6.4)
+      railties (>= 5.0.0)
     faker (2.21.0)
       i18n (>= 1.8.11, < 2)
     faraday (2.10.1)
@@ -373,6 +379,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    shoulda-matchers (6.4.0)
+      activesupport (>= 5.2.0)
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
@@ -435,9 +443,11 @@ DEPENDENCIES
   chartkick
   city-state
   config
+  database_cleaner (~> 1.5)
   debug
   devise
   dotenv-rails
+  factory_bot_rails
   faker (= 2.21.0)
   figaro
   font-awesome-rails
@@ -471,6 +481,7 @@ DEPENDENCIES
   rubocop-rails (~> 2.14.0)
   sass-rails
   selenium-webdriver
+  shoulda-matchers
   sprockets (= 3.7.2)
   sprockets-rails
   stimulus-rails
