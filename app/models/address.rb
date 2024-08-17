@@ -29,6 +29,8 @@ class Address < ApplicationRecord
   def convert_country_and_state
     country_id = country.to_sym
     self.country = CS.countries[country_id] || country
+    return if state.blank?
+
     self.state = CS.states(country_id)[state.to_sym] || state
   end
 end

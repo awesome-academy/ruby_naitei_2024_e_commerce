@@ -48,6 +48,17 @@ RSpec.configure do |config|
     # Cấu hình URL cho ActionMailer
     Rails.application.routes.default_url_options[:host] = 'localhost'
   end
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 

@@ -88,15 +88,16 @@ class Bill < ApplicationRecord
   end
 
   def calculate_subtotal
-    bill_details.sum{|detail| detail.product.price * detail.quantity}
+    self.total =
+      bill_details.sum{|detail| detail.product.price * detail.quantity}
   end
-
-  private
 
   def calculate_total_after_discount
     self.total_after_discount =
       voucher.nil? ? total : (total - voucher.discount * total)
   end
+
+  private
 
   def set_expired_at
     self.expired_at = 24.hours.from_now
