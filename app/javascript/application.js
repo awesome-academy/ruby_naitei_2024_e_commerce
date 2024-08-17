@@ -15,11 +15,17 @@ import 'Chart.bundle'
 
 import { Turbo } from '@hotwired/turbo-rails'
 Turbo.session.drive = false
+import 'toastr'
+
 //= require i18n
 
 //= require i18n.js
 
 //= require i18n/translations
+
+//= require jquerry
+
+//= require toastr
 
 //= require register
 

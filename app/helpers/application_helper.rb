@@ -21,4 +21,23 @@ module ApplicationHelper
     number_to_currency(amount, unit: Settings.money_unit_d,
                                format: Settings.currency_format)
   end
+
+  def custom_bootstrap_flash
+    flash_messages = []
+    flash.each do |type, message|
+      type = "success" if type == "notice"
+      type = "error"   if type == "alert"
+      next unless message
+
+      escaped_message = j(message)
+      flash_messages << <<~HTML
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            toastr.#{type}("#{escaped_message}");
+          });
+        </script>
+      HTML
+    end
+    flash_messages.join("\n")
+  end
 end

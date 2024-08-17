@@ -16,6 +16,8 @@ gem "mysql2", "~> 0.5"
 
 gem "jbuilder"
 
+gem "toastr-rails"
+
 gem "jquery-rails"
 
 gem "font-awesome-sass", "~> 4.2.0"

@@ -9,6 +9,8 @@ pin_all_from "app/javascript/custom", under: "custom"
 pin "@fortawesome/fontawesome-free", to: "https://ga.jspm.io/npm:@fortawesome/fontawesome-free@6.6.0/js/all.js"
 pin "jquery", to: "jquery.min.js", preload: true
 pin "jquery_ujs", to: "jquery_ujs.js", preload: true
+pin "toastr", to: "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js", preload: true
+pin "toastr-css", to: "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css", preload: true
 pin "slider", to: "controllers/slider.js", preload: true
 pin "banner_countdown", to: "controllers/banner_countdown.js", preload: true
 pin "@rails/request.js", to: "https://ga.jspm.io/npm:@rails/request.js@0.0.6/src/index.js"
