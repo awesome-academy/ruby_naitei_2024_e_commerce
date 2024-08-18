@@ -26,9 +26,11 @@
           <span class="info__price"><%= public_send("#{I18n.locale}", @cart.total) %></span>
         </div>
       </div>
-      <%= form_with(url: check_remain_and_redirect_path, method: :post) do |f| %>
-        <%= f.submit t "cart.checkout" %>
-      <% end %>
+      <button>
+        <%= link_to new_bill_path do %>
+          <%= t "cart.checkout" %>
+        <% end %>
+      </button>
     </div>
   </div>
 </div>
