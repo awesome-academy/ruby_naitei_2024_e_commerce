@@ -14,11 +14,12 @@
     <%= stylesheet_link_tag "wishlist", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "cart", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "bill", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" %>
     <%= javascript_importmap_tags %>
+    <%= custom_bootstrap_flash.html_safe %>
     <meta name="locale" content="<%= I18n.locale %>">
   </head>
   <body>
-    <%= render "shared/flash_messages" %>
     <%= yield %>
   </body>
 </html>

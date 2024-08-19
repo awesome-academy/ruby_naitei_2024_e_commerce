@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   include VouchersHelper
 
   protect_from_forgery with: :exception
-
+  add_flash_types :success, :danger, :warning
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
