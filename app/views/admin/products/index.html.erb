@@ -1,6 +1,16 @@
 <div class="product-list-wrapper">
   <% provide :title, t("admin.view.title") %>
   <h1><%= t "admin.view.title" %></h1>
+  <%= search_form_for @q, url: admin_products_path, class: "search-box-products", method: :get do |f| %>
+    <%= f.text_field :name_or_description_cont, class: "search-box__input", placeholder: t("name_description") %>
+    <%= f.number_field :price_gteq, class: "search-box__input_products", placeholder: t("admin.view.min_price") %>
+    <%= f.number_field :price_lteq, class: "search-box__input_products", placeholder: t("admin.view.max_price") %>
+    <%= f.date_field :created_at_gteq, class: "search-box__input_products", placeholder: t("admin.view.created_after"), value: params.dig(:q, :created_at_gteq) %>
+    <%= f.date_field :created_at_lteq, class: "search-box__input_products", placeholder: t("admin.view.created_before"), value: params.dig(:q, :created_at_lteq) %>
+    <button class="search-box__btn" type= "submit">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  <% end %>
   <table class="product-list">
     <%= link_to t("admin.view.new_product"), new_admin_product_path, class: "new-product-link btn btn-primary", role: "button" %>
     <thead>

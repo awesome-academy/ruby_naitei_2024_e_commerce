@@ -249,6 +249,10 @@ en:
       price: "Price"
       actions: "Actions"
       update: "Update"
+      min_price: "Minimum Price"
+      max_price: "Maximum Price"
+      created_after: "Created After"
+      created_before: "Created Before"
       id: "ID"
       bill_details:
         title: "Bill Details #%{id}"

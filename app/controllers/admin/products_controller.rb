@@ -3,7 +3,9 @@ class Admin::ProductsController < AdminController
   include Pagy::Backend
 
   def index
-    @pagy, @products = pagy(Product.newest, items: Settings.page_size)
+    @q = Product.ransack search_params
+    @pagy, @products = pagy(@q.result(distinct: true).newest,
+                            items: Settings.page_size)
   end
 
   def new
@@ -47,12 +49,31 @@ class Admin::ProductsController < AdminController
   private
 
   def find_product
-    @product = Product.find(params[:id])
+    @product = Product.find params[:id]
 
     redirect_to admin_products_path unless @product
   end
 
   def product_params
     params.require(:product).permit(Product::PERMITTED_ATTRIBUTES)
+  end
+
+  def search_params
+    q_params = params[:q] || {}
+    q_params[:price_gteq] = sanitize_price q_params[:price_gteq]
+    q_params[:price_lteq] = sanitize_price q_params[:price_lteq]
+    q_params[:created_at_gteq] = parse_date q_params[:created_at_gteq]
+    q_params[:created_at_lteq] = parse_date q_params[:created_at_lteq]
+    q_params
+  end
+
+  def parse_date date_string
+    Date.parse date_string
+  rescue StandardError
+    nil
+  end
+
+  def sanitize_price price
+    price.to_f >= 0 ? price : nil
   end
 end
