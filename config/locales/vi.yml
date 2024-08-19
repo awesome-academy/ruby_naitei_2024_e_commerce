@@ -318,6 +318,14 @@ vi:
       create:
         success: "Tạo Voucher thành công."
         fail: "Không thể tạo Voucher. Vui lòng kiểm tra form."
+    statistic:
+      title: "Thống kê"
+      date_error: "Ngày kết thúc phải lớn hơn ngày bắt đầu."
+      format_error: "Định dạng ngày không hợp lệ. Vui lòng nhập ngày hợp lệ."
+      new_user: "Người dùng mới"
+      hot_product: "Sản phẩm bán chạy"
+      status_bill: "Trạng thái đơn hàng"
+      income: "Doanh thu"
     sidebar:
       user: "Danh sách người dùng"
       product: "Sản phẩm"

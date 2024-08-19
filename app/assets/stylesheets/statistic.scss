@@ -1,0 +1,27 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'variable';
+
+.statistic-wrapper {
+  margin-top: 40px;
+  .statistic-filter {
+    height: 50px;
+  }
+  .btn {
+    margin-top: 25px;
+  }
+  .chart-label {
+    text-align: center;
+    h5 {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  }
+  .statistic-card {
+    box-shadow: 3px 3px 4px $statistic-card-box-shadow;
+    padding: 10px;
+    margin: 70px 13px;
+    border-radius: 10px;
+    background-color: $statistic-card-background;
+  }
+}

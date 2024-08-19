@@ -314,6 +314,14 @@ en:
       create:
         success: "Voucher created successfully."
         fail: "Failed to create voucher. Please check the form."
+    statistic:
+      title: "Statistic"
+      date_error: "End date must be greater than start date."
+      format_error: "Invalid date format. Please provide valid dates."
+      new_user: "New users"
+      hot_product: "Hot products"
+      status_bill: "Status of bills"
+      income: "Incomes"
     sidebar:
       user: "Users"
       product: "Products"

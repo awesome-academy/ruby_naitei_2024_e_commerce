@@ -1,0 +1,36 @@
+<div class="row">
+  <div>
+    <div class="statistic-card">
+      <div class="card-body mt-5">
+        <%= line_chart @users_signup %>
+        <div class="chart-label">
+          <h5><%= t("admin.statistic.new_user")%></h5>
+        </div>
+      </div>
+    </div>
+    <div class="statistic-card">
+      <div class="card-body mt-5">
+        <%= bar_chart @hot_products %>
+        <div class="chart-label">
+          <h5><%= t("admin.statistic.hot_product")%></h5>
+        </div>
+      </div>
+    </div>
+    <div class="statistic-card">
+      <div class="card-body mt-5">
+        <%= pie_chart @status_bills %>
+        <div class="chart-label">
+          <h5><%= t("admin.statistic.status_bill")%></h5>
+        </div>
+      </div>
+    </div>
+    <div class="statistic-card">
+      <div class="card-body mt-5">
+        <%= column_chart @incomes %>
+        <div class="chart-label">
+          <h5><%= t("admin.statistic.income")%></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

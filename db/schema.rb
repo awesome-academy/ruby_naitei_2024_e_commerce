@@ -63,7 +63,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_14_014036) do
 
   create_table "bills", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id"
-    t.string "address"
     t.string "phone_number"
     t.integer "voucher_id"
     t.integer "status"
