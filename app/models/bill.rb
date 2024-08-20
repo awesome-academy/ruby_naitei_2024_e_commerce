@@ -29,6 +29,7 @@ class Bill < ApplicationRecord
   validates :status, inclusion: {in: statuses.keys}
   validates :phone_number, presence: true,
             format: {with: Settings.phone_regex}
+  validates :total, :total_after_discount, presence: true
   delegate :name, :email, to: :user, prefix: true
   delegate :discount, :name, to: :voucher, prefix: true, allow_nil: true
 
@@ -80,12 +81,16 @@ class Bill < ApplicationRecord
     total expired_at created_at updated_at total_after_discount)
   end
 
-  private
+  def calculate_subtotal
+    bill_details.sum{|detail| detail.product.price * detail.quantity}
+  end
 
   def calculate_total_after_discount
     self.total_after_discount =
       voucher.nil? ? total : (total - voucher.discount * total)
   end
+
+  private
 
   def set_expired_at
     self.expired_at = 24.hours.from_now
