@@ -253,6 +253,8 @@ en:
       max_price: "Maximum Price"
       created_after: "Created After"
       created_before: "Created Before"
+      min_discount: "Minimum Discount"
+      max_discount: "Maximum Discount"
       id: "ID"
       bill_details:
         title: "Bill Details #%{id}"
