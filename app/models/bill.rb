@@ -76,6 +76,12 @@ class Bill < ApplicationRecord
       .sum(:total_after_discount)
   }
 
+  scope :monthly_incomes_report, lambda {|date_from, date_to|
+    where(status: :completed,
+          created_at: date_from..date_to)
+      .sum(:total_after_discount)
+  }
+
   def self.ransackable_attributes _auth_object = nil
     %w(user_id address phone_number voucher_id status
     total expired_at created_at updated_at total_after_discount)
@@ -85,12 +91,12 @@ class Bill < ApplicationRecord
     bill_details.sum{|detail| detail.product.price * detail.quantity}
   end
 
+  private
+
   def calculate_total_after_discount
     self.total_after_discount =
       voucher.nil? ? total : (total - voucher.discount * total)
   end
-
-  private
 
   def set_expired_at
     self.expired_at = 24.hours.from_now

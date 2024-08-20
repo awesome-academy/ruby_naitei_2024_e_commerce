@@ -328,6 +328,12 @@ en:
       hot_product: "Hot products"
       status_bill: "Status of bills"
       income: "Incomes"
+    cronjob:
+      subject: "Monthly Incomes Report"
+      dear_admin: "Dear Admin,"
+      here_incomes_report: "Here is the incomes report for the last month:"
+      footer: "This is an automated email. Please do not reply to this email."
+      price: ! "%{price}"
     sidebar:
       user: "Users"
       product: "Products"

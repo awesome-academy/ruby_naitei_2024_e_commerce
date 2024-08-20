@@ -332,6 +332,12 @@ vi:
       hot_product: "Sản phẩm bán chạy"
       status_bill: "Trạng thái đơn hàng"
       income: "Doanh thu"
+    cronjob:
+      subject: "Báo cáo doanh thu hàng tháng"
+      dear_admin: "Kính gửi quản trị viên,"
+      here_incomes_report: "Đây là báo cáo doanh thu của tháng vừa qua:"
+      footer: "Đây là email tự động. Vui lòng không trả lời lại mail này."
+      price: ! "%{price}"
     sidebar:
       user: "Danh sách người dùng"
       product: "Sản phẩm"
