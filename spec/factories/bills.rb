@@ -40,16 +40,6 @@ FactoryBot.define do
     end
   end
 
-
-  factory :category do
-    name { Faker::Commerce.department }
-    parent_category_id { nil }
-
-    after(:create) do |category|
-      category.image.attach(io: File.open(Rails.root.join('app/assets/images', 'do-gia-dung.png')), filename: 'do-gia-dung.png')
-    end
-  end
-
   factory :voucher do
     name { Faker::Commerce.product_name }
     condition { rand(1000..5000) }
