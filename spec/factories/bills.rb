@@ -13,6 +13,8 @@ FactoryBot.define do
         build(:bill_detail, product: create(:product)),
       ]
     end
+    created_at { Time.zone.now }
+    updated_at { Time.zone.now }
     after(:build) do |bill|
       bill.calculate_subtotal
       bill.calculate_total_after_discount
@@ -43,7 +45,7 @@ FactoryBot.define do
   factory :voucher do
     name { Faker::Commerce.product_name }
     condition { rand(1000..5000) }
-    discount { rand(0.05..0.2) }
+    discount { rand(0.05..0.2).round(2) }
     started_at { Time.zone.now }
     ended_at { started_at + 1.month }
   end
@@ -51,6 +53,24 @@ FactoryBot.define do
   factory :bill_detail do
     product { create(:product) }
     quantity { rand(1..5) }
+  end
+
+  factory :cart_detail do
+    product { create(:product) }
+    quantity { rand(1..5) }
+    total { product.price * quantity}
+  end
+
+  factory :cart do
+    cart_details do
+      [
+        build(:cart_detail),
+        build(:cart_detail),
+      ]
+    end
+    after(:build) do |cart|
+      cart.total
+    end
   end
 
   factory :address do
