@@ -306,8 +306,6 @@ comment_contents = [
   "Đóng gói sản phẩm rất cẩn thận."
 ]
 
-
-
 # Create 10 comments for each product by different users
 Product.all.each do |product|
   10.times do
@@ -336,7 +334,7 @@ voucher3 = Voucher.create!(name: "TETDENROI",
                            started_at: day_now,
                            ended_at: day_now + 1.month)
 
-#Seed bills
+# Seed bills
 bill1 = Bill.create!(user_id: 2,
                      phone_number: "0123456789",
                      voucher_id: 3,
@@ -368,9 +366,7 @@ BillDetail.create!(bill_id: 2,
                    product_id: 4,
                    quantity: 1)
 
-
 #Seed wishlist
-#
 Wishlist.create!(user_id: 2,
                 product_id: 4)
 
