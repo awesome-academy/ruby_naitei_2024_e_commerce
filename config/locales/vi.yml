@@ -433,3 +433,10 @@ vi:
           attributes:
             started_at:
               before_end_date: "Phải trước ngày kết thúc"
+  search:
+    name_email: "Tên hoặc Email"
+    gender: "Giới tính"
+    admin: "Quản trị viên"
+    activated: "Kích hoạt"
+    created_after: "Tạo sau"
+    created_before: "Tạo trước"

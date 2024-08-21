@@ -1,6 +1,17 @@
 <% provide :title, t("admin.view.users.title") %>
 <div class="admin-users">
   <h1><%= t "admin.view.users.title" %></h1>
+  <%= search_form_for @q, url: admin_users_path, class: "search-box-products", method: :get do |f| %>
+    <%= f.text_field :name_or_email_cont, class: "search-box__input", placeholder: t("search.name_email") %>
+    <%= f.select :gender_eq, User.genders.keys.map { |k| [k.titleize, k] }, include_blank: t("search.gender") %>
+    <%= f.select :admin_eq, [["Yes", true], ["No", false]], include_blank: t("search.admin") %>
+    <%= f.select :activated_eq, [["Yes", true], ["No", false]], include_blank: t("search.activated") %>
+    <%= f.date_field :created_at_gteq, class: "search-box__input_products", placeholder: t("search.created_after"), value: params.dig(:q, :created_at_gteq) %>
+    <%= f.date_field :created_at_lteq, class: "search-box__input_products", placeholder: t("search.created_before"), value: params.dig(:q, :created_at_lteq) %>
+    <button class="search-box__btn" type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  <% end %>
   <table>
     <thead>
       <tr>
