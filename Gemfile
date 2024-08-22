@@ -111,6 +111,7 @@ end
 group :test do
   gem "capybara"
   gem "database_cleaner", "~> 1.5"
+  gem "rails-controller-testing"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
   gem "webdrivers"

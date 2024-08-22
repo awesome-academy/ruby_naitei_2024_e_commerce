@@ -3,7 +3,6 @@ class BillsController < ApplicationController
   before_action :find_bill, only: :show
   protect_from_forgery with: :exception
   include BillsHelper
-
   def index
     @pagy, @bills = pagy(current_user.bills.newest, items: Settings.page_size)
   end
@@ -23,6 +22,7 @@ class BillsController < ApplicationController
       create_stripe_session @cart_details
       transfer_data
       current_user.send_bill_info @bill
+      redirect_to @session.url, allow_other_host: true
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,6 +32,7 @@ class BillsController < ApplicationController
     @bill = Bill.find_by id: params[:bill_id]
     if @bill
       create_stripe_session @bill.bill_details
+      redirect_to @session.url, allow_other_host: true
     else
       flash[:danger] = t "not_found", model: t("order.id")
       redirect_to bills_url
@@ -41,19 +42,19 @@ class BillsController < ApplicationController
   def update_total
     voucher = Voucher.find_by id: params[:voucher_id]
     if voucher
-      total_discount = @cart.total - @cart.total * voucher.discount
-      discount_voucher = voucher.discount * Settings.digit_100
+      @total_discount = @cart.total - @cart.total * voucher.discount
+      @discount_voucher = voucher.discount * Settings.digit_100
     else
-      total_discount = @cart.total
-      discount_voucher = nil
+      @total_discount = @cart.total
+      @discount_voucher = nil
     end
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream:
                 turbo_stream.replace("total-price",
                                      partial: "update_total",
-                                     locals: {total: total_discount,
-                                              discount: discount_voucher})
+                                     locals: {total: @total_discount,
+                                              discount: @discount_voucher})
       end
     end
   end
@@ -83,7 +84,6 @@ class BillsController < ApplicationController
   def create_stripe_session line_items
     @line_items = load_lines_item(line_items)
     @metadata = build_metadata(line_items)
-
     @session = Stripe::Checkout::Session.create(
       {
         payment_method_types: %w(card),
@@ -95,7 +95,6 @@ class BillsController < ApplicationController
         cancel_url: bills_url
       }
     )
-    redirect_to @session.url, allow_other_host: true
   end
 
   def build_metadata line_item

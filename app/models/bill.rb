@@ -29,7 +29,7 @@ class Bill < ApplicationRecord
   validates :status, inclusion: {in: statuses.keys}
   validates :phone_number, presence: true,
             format: {with: Settings.phone_regex}
-  validates :total, :total_after_discount, presence: true
+  validates :total, presence: true
   delegate :name, :email, to: :user, prefix: true
   delegate :discount, :name, to: :voucher, prefix: true, allow_nil: true
 
