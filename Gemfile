@@ -94,6 +94,8 @@ gem "groupdate"
 
 gem "whenever", require: false
 
+gem "social-share-button"
+
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "factory_bot_rails"
