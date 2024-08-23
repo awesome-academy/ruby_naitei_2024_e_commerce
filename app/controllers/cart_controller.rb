@@ -34,6 +34,13 @@ class CartController < ApplicationController
     handle_update_success @current_cart_detail, quantity
   end
 
+  def check_remain_and_redirect
+    redirect_to new_bill_path and return if check_remain_availability
+
+    flash[:danger] = t "cart.quantity_greater_than_remain"
+    redirect_to cart_path(current_user)
+  end
+
   private
 
   def find_product_cart
@@ -76,6 +83,12 @@ class CartController < ApplicationController
   def handle_add_failed
     flash[:danger] = t "cart.add_failed"
     redirect_to root_path
+  end
+
+  def check_remain_availability
+    @cart_details.none? do |cart_detail|
+      cart_detail.quantity > cart_detail.remain_quantity
+    end
   end
 
   def check_remain remain, quantity

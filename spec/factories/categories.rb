@@ -5,8 +5,8 @@ FactoryBot.define do
     name { Faker::Food.ethnic_category }
     after(:build) do |category|
       category.image.attach(
-        io: File.open(Rails.root.join("spec", "fixtures", "files", "test_image.png")),
-        filename: "test_image.png",
+        io: File.open(Rails.root.join("spec", "fixtures", "files", "category.png")),
+        filename: "category.png",
         content_type: "image/png"
       )
     end
