@@ -38,7 +38,7 @@ FactoryBot.define do
     remain_quantity { rand(1..100) }
     category { create(:category) }
     after(:create) do |product|
-      product.image.attach(io: File.open(Rails.root.join('app/assets/images', 'samsung.jpg')), filename: 'prod1.jpg')
+      product.image.attach(io: File.open(Rails.root.join('app/assets/images', 'samsung.jpg')), filename: 'samsung.jpg')
     end
   end
 

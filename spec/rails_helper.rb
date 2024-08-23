@@ -82,6 +82,9 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
   config.include ActiveStorageValidations::Matchers
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Rails::Controller::Testing::TemplateAssertions, type: :controller
+  config.include Rails::Controller::Testing::Integration
 
   config.infer_spec_type_from_file_location!
 
