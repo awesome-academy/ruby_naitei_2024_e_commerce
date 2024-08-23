@@ -212,11 +212,8 @@ RSpec.describe CartController, type: :controller do
       end
 
       context "when cart detail is valid" do
-        before do
-          delete :destroy, params: { id: cart.id, cart_detail_id: cart_details.first.id }
-        end
-
         it "return cart detail" do
+          delete :destroy, params: { id: cart.id, cart_detail_id: cart_details.first.id }
           cart_detail_test = cart_details.first
           expect(assigns(:cart_detail)).to eq cart_detail_test
         end
@@ -224,8 +221,11 @@ RSpec.describe CartController, type: :controller do
         context "when delete cart detail" do
           it "deletess successfully" do
             expect{
-              delete :destroy, params: { id: cart.id, cart_detail_id: cart_details.first.id }
-            }.to change(CartDetail, :count).by(0)
+              delete :destroy, params: { id: cart.id, cart_detail_id: cart_details.last.id }
+            }.to change(CartDetail, :count).by(-1)
+          end
+          before do
+            delete :destroy, params: { id: cart.id, cart_detail_id: cart_details.first.id }
           end
           it_behaves_like "flash success message", "cart.delete_success"
           it_behaves_like "redirect to path", "cart_path"
@@ -237,6 +237,41 @@ RSpec.describe CartController, type: :controller do
       include_context "signed out user"
       it "redirects to sign-in page" do
         delete :destroy, params: { id: cart.id, cart_detail_id: 1 }
+        expect(response).to redirect_to(new_user_session_path(locale: nil))
+      end
+    end
+  end
+
+  describe "POST #check_remain_and_redirect" do
+    context "when user is signed in" do
+      include_context "signed in user"
+      context "when quantity is less than or equal to remain quantity" do
+        before do
+          post :check_remain_and_redirect
+        end
+        it "checks successfully" do
+          cart_details.each do |cart_detail|
+            expect(cart_detail.product.remain_quantity >= cart_detail.quantity)
+          end
+        end
+        it_behaves_like "redirect to path", "new_bill_path"
+      end
+      context "when quantity is greater than remain quantity" do
+        before do
+          allow(cart_details.first).to receive(:remain_quantity).and_return(cart_details.first.quantity - 1)
+          post :check_remain_and_redirect
+        end
+        it_behaves_like "flash danger message", "cart.quantity_greater_than_remain"
+        it "redirect to cart path" do
+          expect(response).to redirect_to(cart_path(user))
+        end
+      end
+    end
+
+    context "when user is not signed in" do
+      include_context "signed out user"
+      it "redirects to sign-in page" do
+        post :check_remain_and_redirect
         expect(response).to redirect_to(new_user_session_path(locale: nil))
       end
     end
