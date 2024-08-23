@@ -32,6 +32,12 @@ en:
     login_to_view_cart: "Please login to view cart"
     syntax_error_phone: "Wrong syntax phone number"
     end_date_not_earlier: "The end date cannot be earlier than the start date."
+    dont_have_permission: "You dont have permission"
+    you_are_not_admin: "You are not admin"
+    invalid_or_expired_token: "Invalid or expired token"
+    missing_token: "Missing token"
+    invalid_email_or_password: "Invalid email or password"
+    log_out_successfully: "Log out successfully"
   product:
     price: ! "Price: %{price}"
     comment: ! "%{comments} rate"
