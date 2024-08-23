@@ -1,6 +1,6 @@
 class CartController < ApplicationController
-  before_action :find_product, only: %i(create update)
   before_action :authenticate_user!, :load_current_user_cart
+  before_action :find_product_cart, only: %i(create update)
   before_action :find_current_cart_detail, only: :update
   before_action :find_cart_detail, only: :destroy
 
@@ -34,20 +34,9 @@ class CartController < ApplicationController
     handle_update_success @current_cart_detail, quantity
   end
 
-  def check_remain_and_redirect
-    if check_remain_availability
-      redirect_to new_bill_path
-    else
-      flash[:danger] = t "cart.quantity_greater_than_remain"
-      redirect_to cart_path(current_user)
-    end
-  end
-
-  def show; end
-
   private
 
-  def find_product
+  def find_product_cart
     @product = Product.find_by id: params[:product_id]
     return if @product
 
@@ -56,7 +45,7 @@ class CartController < ApplicationController
   end
 
   def find_current_cart_detail
-    @current_cart_detail = @cart_details.find_by(product_id: @product.id)
+    @current_cart_detail = @cart_details.find_by product_id: params[:product_id]
     return if @current_cart_detail
 
     flash[:danger] = t "cart_detail.is_nil"
@@ -87,12 +76,6 @@ class CartController < ApplicationController
   def handle_add_failed
     flash[:danger] = t "cart.add_failed"
     redirect_to root_path
-  end
-
-  def check_remain_availability
-    @cart_details.none? do |cart_detail|
-      cart_detail.quantity > cart_detail.remain_quantity
-    end
   end
 
   def check_remain remain, quantity

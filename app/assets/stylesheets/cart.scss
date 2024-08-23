@@ -207,7 +207,7 @@
   color: $slide-interaction;
 }
 
-.my-cart__body__up-right input {
+.my-cart__body__up-right button {
   padding: 14px 50px;
   border: none;
   background-color: $primary-color;
@@ -216,6 +216,13 @@
   font-size: 15px;
   width: 100%;
   margin-top: 20%;
+  a {
+    color: $white;
+  }
+  a:hover {
+    color: $white;
+    text-decoration: none;
+  }
 }
 
 .my-cart__body__up-right a:hover {

@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :webhooks, only: :create
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   scope "(:locale)", locale: /en|vi/ do
-    post "/check_remain_and_redirect", to: "cart#check_remain_and_redirect"
     root "static_pages#home"
     post "checkout/create", to: "checkout#create"
     post "checkout/repayment", to: "checkout#repayment"

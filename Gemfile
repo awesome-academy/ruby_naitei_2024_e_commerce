@@ -100,6 +100,7 @@ group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "factory_bot_rails"
   gem "pry-rails"
+  gem "rails-controller-testing"
   gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
@@ -114,7 +115,6 @@ end
 group :test do
   gem "capybara"
   gem "database_cleaner", "~> 1.5"
-  gem "rails-controller-testing"
   gem "selenium-webdriver"
   gem "webdrivers"
 end
