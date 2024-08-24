@@ -20,4 +20,28 @@ module SessionsHelper
     @cart = current_user.cart
     @cart_details = @cart.cart_details
   end
+
+  def authenticate_request_api
+    token = request.headers["Authorization"]&.split(" ")&.last
+    if token
+      begin
+        decoded_token =
+          JWT.decode(token, Rails.application.secrets.secret_key_base).first
+        @current_user = User.find(decoded_token["user_id"])
+      rescue JWT::DecodeError, JWT::ExpiredSignature,
+                ActiveRecord::RecordNotFound
+        render json: {error: t("flash.invalid_or_expired_token")},
+               status: :unauthorized
+      end
+    else
+      render json: {error: t("flash.missing_token")}, status: :unauthorized
+    end
+  end
+
+  def authenticate_request_api_admin
+    authenticate_request_api
+    return if @current_user.admin
+
+    render json: {error: t("flash.you_are_not_admin")}, status: :forbidden
+  end
 end

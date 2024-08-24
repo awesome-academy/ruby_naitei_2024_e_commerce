@@ -41,5 +41,24 @@ Rails.application.routes.draw do
       end
       resources :vouchers
     end
+    namespace :api do
+      namespace :v1 do
+        resources :bills do
+          patch :repayment, on: :collection
+          patch :update_total, on: :collection
+          get :states, on: :collection
+          get :cities, on: :collection
+        end
+        post "login", to: "sessions#create"
+        delete "logout", to: "sessions#destroy"
+        namespace :admin do
+          resources :bills, only: [:index, :show, :update] do
+            member do
+              patch :update_status
+            end
+          end
+        end
+      end
+    end
   end
 end

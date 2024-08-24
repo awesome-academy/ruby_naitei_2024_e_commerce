@@ -1,7 +1,7 @@
 <tr>
   <td><%= bill_counter + Settings.counter_index %></td>
   <td><%= bill.user_name %></td>
-  <td><%= bill.address %></td>
+  <td><%= full_address bill.address %></td>
   <td><%= bill.phone_number %></td>
   <td><%= bill.voucher_name %></td>
   <% if bill.completed? || bill.cancelled? %>

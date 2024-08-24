@@ -36,6 +36,12 @@ vi:
     login_to_view_cart: "Vui lòng đăng nhập để xem giỏ hàng"
     syntax_error_phone: "Nhập sai định dạng số điện thoại"
     end_date_not_earlier: "Ngày kết thúc không được sớm hơn ngày bắt đầu."
+    dont_have_permission: "Bạn không có quyền"
+    you_are_not_admin: "Bạn không phải là quản trị viên"
+    invalid_or_expired_token: "Mã token không hợp lệ hoặc đã hết hạn"
+    missing_token: "Thiếu mã token"
+    invalid_email_or_password: "Email hoặc mật khẩu không hợp lệ"
+    log_out_successfully: "Đăng xuất thành công"
   product:
     price: ! "Giá: %{price}"
     comment: ! "%{comments} đánh giá"

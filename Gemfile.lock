@@ -476,6 +476,7 @@ DEPENDENCIES
   impressionist
   jbuilder
   jquery-rails
+  jwt
   mini_racer
   mysql2 (~> 0.5)
   omniauth
