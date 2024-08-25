@@ -10,16 +10,13 @@ class Bill < ApplicationRecord
     completed: 3,
     cancelled: 4
   }, _default: :wait_for_pay
-  STATUSES = statuses.keys.map do |status|
-    [I18n.t("admin.view.statuses.#{status}"),
-   status]
-  end
 
   enum cancellation_reason: {
     out_of_stock: 0,
     wrong_quantity: 1,
     wrong_product: 2
   }
+
   belongs_to :user
   belongs_to :voucher, optional: true
   has_many :bill_details, dependent: :destroy

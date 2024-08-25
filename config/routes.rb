@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       resources :bills, only: [:index, :show, :update] do
         member do
           patch :update_status
+          patch :update_reason
         end
       end
       resources :vouchers

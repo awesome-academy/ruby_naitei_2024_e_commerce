@@ -1,5 +1,5 @@
 class Admin::BillsController < AdminController
-  before_action :find_bill, only: %i(show update_status)
+  before_action :find_bill, only: %i(show update_status update_reason)
   def index
     @q = Bill.ransack(params[:q])
     @bills = filter_bills @q
@@ -16,6 +16,16 @@ class Admin::BillsController < AdminController
         format.turbo_stream
         format.html{redirect_to @bill}
       end
+    else
+      flash.now[:danger] = t "admin.view.bill_update_failed"
+      render :show, status: :unprocessable_entity
+    end
+  end
+
+  def update_reason
+    if @bill.update bill_params
+      flash.now[:success] = t "admin.view.bill_updated_successfully"
+      redirect_to admin_bills_path
     else
       flash.now[:danger] = t "admin.view.bill_update_failed"
       render :show, status: :unprocessable_entity
@@ -44,6 +54,6 @@ class Admin::BillsController < AdminController
   end
 
   def bill_params
-    params.require(:bill).permit(:status)
+    params.require(:bill).permit(:cancellation_reason, :status)
   end
 end

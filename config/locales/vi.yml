@@ -259,12 +259,15 @@ vi:
       price: "Giá"
       actions: "Hành động"
       id: "ID"
+      update: "Cập nhật"
       min_price: "Giá Tối Thiểu"
       max_price: "Giá Tối Đa"
       created_after: "Tạo Sau Ngày"
       created_before: "Tạo Trước Ngày"
       max_discount: "Giảm Giá Tối Đa"
       min_discount: "Giảm Giá Tối Thiểu"
+      none: "Không có"
+      select: "Lựa chọn"
       bill_details:
         title: "Chi tiết hóa đơn #%{id}"
         bill_items: "Các mục trong hóa đơn"
@@ -293,6 +296,10 @@ vi:
         wait_for_delivery: "Đang Giao Hàng"
         completed: "Hoàn Thành"
         cancelled: "Đã Hủy"
+      cancellation_reasons:
+        out_of_stock: "Hết hàng"
+        wrong_quantity: "Sai số lượng"
+        wrong_product: "Sai sản phẩm"
       users:
         title: "Danh sách người dùng"
         email: "Email"

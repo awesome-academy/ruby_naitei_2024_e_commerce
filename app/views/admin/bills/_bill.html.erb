@@ -10,11 +10,21 @@
     <td>
       <%= turbo_frame_tag dom_id(bill, :status) do %>
         <%= form_with(model: bill, url: update_status_admin_bill_path(bill), method: :patch, data: { turbo_frame: dom_id(bill, :status) }) do |form| %>
-          <%= form.select :status, Bill::STATUSES, { include_blank: "Select Status" }, class: 'form-control' %>
-          <%= form.submit 'Update Status', class: 'btn btn-primary mt-2' %>
+          <%= form.select :status, status_options_for_select, { include_blank: t("admin.view.select") }, class: "form-control" %>
+          <%= form.submit t("admin.view.update"), class: "btn btn-primary mt-2" %>
         <% end %>
       <% end %>
     </td>
+  <% end %>
+  <% if bill.cancelled? %>
+    <td>
+      <%= form_with(model: bill, url: update_reason_admin_bill_path(bill), method: :patch) do |form| %>
+        <%= form.select :cancellation_reason, cancellation_reason_options_for_select, { include_blank: t("admin.view.select") }, class: "form-control" %>
+        <%= form.submit t("admin.view.update"), class: "btn btn-primary mt-2" %>
+      <% end %>
+    </td>
+  <% else %>
+    <td><%= t "admin.view.none" %></td>
   <% end %>
   <td><%= public_send("#{I18n.locale}", bill.total) %></td>
   <td><%= public_send("#{I18n.locale}", bill.total_after_discount) %></td>
