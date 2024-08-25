@@ -2,6 +2,7 @@ class Bill < ApplicationRecord
   before_save :calculate_total_after_discount, :set_expired_at
   PERMITTED_ATTRIBUTES = %i(user_id phone_number note_content voucher_id
                               total).freeze
+  USER_CANCEL_REASONS = %i(change_of_mind found_cheaper_elsewhere other).freeze
 
   enum status: {
     wait_for_pay: 0,
@@ -14,7 +15,10 @@ class Bill < ApplicationRecord
   enum cancellation_reason: {
     out_of_stock: 0,
     wrong_quantity: 1,
-    wrong_product: 2
+    wrong_product: 2,
+    change_of_mind: 3,
+    found_cheaper_elsewhere: 4,
+    other: 5
   }
 
   belongs_to :user

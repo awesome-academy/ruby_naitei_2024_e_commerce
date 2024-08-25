@@ -21,6 +21,9 @@ Rails.application.routes.draw do
       patch :update_total, on: :collection
       get :states, on: :collection
       get :cities, on: :collection
+      member do
+        patch :cancel
+      end
     end
     resources :account_activations, only: :edit
     namespace :admin do

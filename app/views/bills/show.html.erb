@@ -22,7 +22,7 @@
           <h1><%= t "order_history.detail.title" %></h1>
           <p>
             <span class="dot">・</span>
-            <%= @bill.created_at %>
+            <%= l @bill.created_at, format: :long %>
           </p>
           <%= link_to bills_path do %>
             <%= t "order_history.return_to_list" %>
@@ -119,6 +119,22 @@
       <% if @bill.status == "wait_for_pay" %>
         <%= button_to t("order_history.repay"), bills_repayment_path,
             method: :post, params: { bill_id: @bill.id }, class: "repay-btn" %>
+        <div class= "cancel_bill_user">
+          <h3><%= t "order_history.cancel_bill" %></h3>
+          <%= form_with model: @bill, url: cancel_bill_path(@bill), method: :patch, local: true do |f| %>
+            <div class="form-group">
+              <% @user_cancellation_reason.each do |reason| %>
+                <div>
+                  <%= f.radio_button :cancellation_reason, reason, class: "form-check-input", id: "cancellation_reason_#{reason}" %>
+                  <%= f.label "cancellation_reason_#{reason}", bill_cancellation_reason(reason), class: "form-check-label" %>
+                </div>
+              <% end %>
+            </div>
+            <div class="cancel-btn">
+              <%= f.submit t("order_history.cancel_bill"), class: "btn btn-danger" %>
+            </div>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
