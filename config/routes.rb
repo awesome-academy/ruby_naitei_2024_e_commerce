@@ -44,19 +44,23 @@ Rails.application.routes.draw do
     namespace :api do
       namespace :v1 do
         resources :bills do
-          patch :repayment, on: :collection
-          patch :update_total, on: :collection
-          get :states, on: :collection
-          get :cities, on: :collection
+          collection do
+            patch :repayment
+            patch :update_total
+            get :states
+            get :cities
+          end
         end
+        resources :products, only: [:index, :show]
+
         post "login", to: "sessions#create"
         delete "logout", to: "sessions#destroy"
+
         namespace :admin do
           resources :bills, only: [:index, :show, :update] do
-            member do
-              patch :update_status
-            end
+            patch :update_status, on: :member
           end
+          resources :products, only: [:index, :show, :create, :update, :destroy]
         end
       end
     end
