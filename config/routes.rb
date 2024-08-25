@@ -54,6 +54,7 @@ Rails.application.routes.draw do
             get :states
             get :cities
           end
+          resources :products, only: [:index, :show, :create, :update, :destroy]
         end
         resources :products, only: [:index, :show]
 

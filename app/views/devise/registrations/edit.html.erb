@@ -1,43 +1,51 @@
-<h2><%= t "devise.registrations.edit.title", resource: resource_name.to_s.humanize %></h2>
-
-<%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put } do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email, t("devise.registrations.edit.email_label") %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div><%= t "devise.registrations.edit.waiting_confirmation", unconfirmed_email: resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password, t("devise.registrations.edit.password_label") %> <i><%= t "devise.registrations.edit.password_hint" %></i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= t "devise.registrations.edit.minimum_password_length", count: @minimum_password_length %></em>
+<% provide :title, t("edit.title") %>
+<%= render "layouts/header" %>
+<div class="nav-link">
+  <div class="nav-link-text">
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-house"></i>
     <% end %>
+    <i class="right fa-solid fa-chevron-right"></i>
+    <%= link_to t("profile.personal_info"), edit_user_registration_path, class: "nav-link--selected" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, t("devise.registrations.edit.password_confirmation_label") %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+</div>
+<div class="edit-page">
+  <h1><%= t "edit.title" %></h1>
+  <div class="body">
+    <%= render "layouts/sidebar" %>
+    <div class="formedit">
+      <label for="" class="formedit__title"><%= t "profile.personal_info" %></label>
+      <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "js-RegisterModal" do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="auth-form__group">
+          <%= f.label :email, t("devise.registrations.edit.email_label") %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "formdk__lienlac" %>
+        </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div><%= t "devise.registrations.edit.waiting_confirmation", unconfirmed_email: resource.unconfirmed_email %></div>
+        <% end %>
+        <div class="hoten-container auth-form__group">
+          <%= f.label :password, t("devise.registrations.edit.password_label") %> <i><%= t "devise.registrations.edit.password_hint" %></i><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: "formdk__inputhoten" %>
+          <% if @minimum_password_length %>
+            <br />
+            <em><%= t "devise.registrations.edit.minimum_password_length", count: @minimum_password_length %></em>
+          <% end %>
+        </div>
+        <div class="auth-form__group">
+          <%= f.label :password_confirmation, t("devise.registrations.edit.password_confirmation_label") %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "formdk__taikhoan" %>
+        </div>
+        <div class="auth-form__group">
+          <%= f.label :current_password, t("devise.registrations.edit.current_password_label") %> <i><%= t "devise.registrations.edit.current_password_hint" %></i><br />
+          <%= f.password_field :current_password, autocomplete: "current-password", class: "formdk__taikhoan" %>
+        </div>
+        <%= f.submit t("devise.registrations.edit.update_button"), class: "btn btn-primary" %>
+      <% end %>
+      <h3><%= t "devise.registrations.edit.cancel_account_title" %></h3>
+      <div><%= t "devise.registrations.edit.cancel_account_hint" %> <%= button_to t("devise.registrations.edit.cancel_account_button"), registration_path(resource_name), data: { confirm: t("devise.registrations.edit.back_confirmation"), turbo_confirm: t("devise.registrations.edit.back_confirmation") }, method: :delete, class: "btn btn-primary" %></div>
+      <%= link_to t("devise.registrations.edit.back_link"), :back %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :current_password, t("devise.registrations.edit.current_password_label") %> <i><%= t "devise.registrations.edit.current_password_hint" %></i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit t("devise.registrations.edit.update_button") %>
-  </div>
-<% end %>
-
-<h3><%= t "devise.registrations.edit.cancel_account_title" %></h3>
-
-<div><%= t "devise.registrations.edit.cancel_account_hint" %> <%= button_to t("devise.registrations.edit.cancel_account_button"), registration_path(resource_name), data: { confirm: t("devise.registrations.edit.back_confirmation"), turbo_confirm: t("devise.registrations.edit.back_confirmation") }, method: :delete %></div>
-
-<%= link_to t("devise.registrations.edit.back_link"), :back %>
+</div>
+<%= render "layouts/footer" %>
