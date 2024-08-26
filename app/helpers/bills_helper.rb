@@ -11,6 +11,18 @@ module BillsHelper
     "#{address.details}, #{address.city}, #{address.state}, #{address.country}"
   end
 
+  def cancellation_reason_options_for_select
+    Bill.cancellation_reasons.keys.map do |reason|
+      [t("admin.view.cancellation_reasons.#{reason}"), reason]
+    end
+  end
+
+  def status_options_for_select
+    Bill.statuses.keys.map do |status|
+      [t("admin.view.statuses.#{status}"), status]
+    end
+  end
+
   def progress_bar_width status
     case status
     when "wait_for_pay"

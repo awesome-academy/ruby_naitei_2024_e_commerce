@@ -262,6 +262,8 @@ en:
       min_discount: "Minimum Discount"
       max_discount: "Maximum Discount"
       id: "ID"
+      none: "None"
+      select: "Select"
       bill_details:
         title: "Bill Details #%{id}"
         bill_items: "Bill Items"
@@ -289,6 +291,10 @@ en:
         wait_for_delivery: "Waiting for Delivery"
         completed: "Completed"
         cancelled: "Cancelled"
+      cancellation_reasons:
+        out_of_stock: "Out of stock"
+        wrong_quantity: "Wrong quantity"
+        wrong_product: "Wrong product"
       users:
         title: "User List"
         email: "Email"
