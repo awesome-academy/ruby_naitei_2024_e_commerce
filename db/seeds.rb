@@ -337,7 +337,7 @@ voucher3 = Voucher.create!(name: "TETDENROI",
 bill1 = Bill.create!(user_id: 2,
                      phone_number: "0123456789",
                      voucher_id: 3,
-                     status: 3,
+                     status: 1,
                      note_content: "abc",
                      total: 30000000,
                      total_after_discount: 21000000,
@@ -346,15 +346,88 @@ bill1 = Bill.create!(user_id: 2,
 bill2 = Bill.create!(user_id: 2,
                      phone_number: "0123456789",
                      voucher_id: 1,
+                     status: 1,
+                     note_content: "abc",
+                     total: 27880000,
+                     total_after_discount: 25092000,
+                     expired_at: nil)
+
+bill3 = Bill.create!(user_id: 3,
+                     phone_number: "0123456789",
+                     voucher_id: 3,
                      status: 3,
                      note_content: "abc",
                      total: 60000000,
-                     total_after_discount: 54000000,
-                     expired_at: nil)
+                     total_after_discount: 42000000,
+                     expired_at: nil,
+                     created_at: day_now - 1.month)
+
+bill4 = Bill.create!(user_id: 3,
+                     phone_number: "0123456789",
+                     voucher_id: 1,
+                     status: 2,
+                     note_content: "abc",
+                     total: 51870000,
+                     total_after_discount: 46683000,
+                     expired_at: nil,
+                     created_at: day_now - 1.month)
+
+bill5 = Bill.create!(user_id: 4,
+                     phone_number: "0123456789",
+                     voucher_id: 3,
+                     status: 3,
+                     note_content: "abc",
+                     total: 30000000,
+                     total_after_discount: 21000000,
+                     expired_at: nil,
+                     created_at: day_now - 2.months)
+
+bill6 = Bill.create!(user_id: 4,
+                     phone_number: "0123456789",
+                     voucher_id: 1,
+                     status: 3,
+                     note_content: "abc",
+                     total: 27880000,
+                     total_after_discount: 25092000,
+                     expired_at: nil,
+                     created_at: day_now - 2.months)
+
+bill7 = Bill.create!(user_id: 5,
+                     phone_number: "0123456789",
+                     voucher_id: 3,
+                     status: 3,
+                     note_content: "abc",
+                     total: 60000000,
+                     total_after_discount: 42000000,
+                     expired_at: nil,
+                     created_at: day_now - 3.months)
+
+bill8 = Bill.create!(user_id: 5,
+                     phone_number: "0123456789",
+                     voucher_id: 1,
+                     status: 2,
+                     note_content: "abc",
+                     total: 51870000,
+                     total_after_discount: 46683000,
+                     expired_at: nil,
+                     created_at: day_now - 3.months)
+
 
 address = Address.create!(bill_id: 1, country: "AF", state: "GHA", city: "Ghazni", details: "123 Landmark")
 
 address1 = Address.create!(bill_id: 2, country: "AF", state: "GHA", city: "Ghazni", details: "123 London")
+
+address2 = Address.create!(bill_id: 3, country: "AF", state: "GHA", city: "Ghazni", details: "123 Landmark")
+
+address3 = Address.create!(bill_id: 4, country: "AF", state: "GHA", city: "Ghazni", details: "123 London")
+
+address4 = Address.create!(bill_id: 5, country: "AF", state: "GHA", city: "Ghazni", details: "123 Landmark")
+
+address5 = Address.create!(bill_id: 6, country: "AF", state: "GHA", city: "Ghazni", details: "123 London")
+
+address6 = Address.create!(bill_id: 7, country: "AF", state: "GHA", city: "Ghazni", details: "123 Landmark")
+
+address7 = Address.create!(bill_id: 8, country: "AF", state: "GHA", city: "Ghazni", details: "123 London")
 
 #Seed bill details
 BillDetail.create!(bill_id: 1,
@@ -368,6 +441,42 @@ BillDetail.create!(bill_id: 2,
 BillDetail.create!(bill_id: 2,
                    product_id: 4,
                    quantity: 1)
+
+BillDetail.create!(bill_id: 3,
+                   product_id: 1,
+                   quantity: 2)
+
+BillDetail.create!(bill_id: 4,
+                   product_id: 3,
+                   quantity: 1)
+
+BillDetail.create!(bill_id: 4,
+                   product_id: 4,
+                   quantity: 2)
+
+BillDetail.create!(bill_id: 5,
+                   product_id: 1,
+                   quantity: 1)
+
+BillDetail.create!(bill_id: 6,
+                   product_id: 3,
+                   quantity: 1)
+
+BillDetail.create!(bill_id: 6,
+                   product_id: 4,
+                   quantity: 1)
+
+BillDetail.create!(bill_id: 7,
+                   product_id: 1,
+                   quantity: 2)
+
+BillDetail.create!(bill_id: 8,
+                   product_id: 3,
+                   quantity: 1)
+
+BillDetail.create!(bill_id: 8,
+                   product_id: 4,
+                   quantity: 2)
 
 #Seed wishlist
 Wishlist.create!(user_id: 2,

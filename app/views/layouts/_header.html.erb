@@ -42,8 +42,11 @@
       <% end %>
       <hr>
       <% if logged_in? %>
-        <%= link_to cart_path(current_user) do %>
+        <%= link_to cart_path(current_user), class: "cart-icon" do %>
           <i class="fa-solid fa-cart-shopping"></i>
+          <% if @cart_details.length > 0 %>
+            <p class="cart-icon-number"><%= @cart_details.length %></p>
+          <% end %>
         <% end %>
       <% else %>
         <%= link_to new_user_session_path do %>

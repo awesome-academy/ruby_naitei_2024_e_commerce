@@ -43,7 +43,8 @@ class Admin::StatisticsController < AdminController
   end
 
   def hot_products
-    Product.order(sales_count: :desc)
+    Product.positive_sales_count
+           .order(sales_count: :desc)
            .limit(Settings.page_size)
            .pluck(:name, :sales_count).to_h
   end

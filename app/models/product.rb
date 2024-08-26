@@ -50,6 +50,7 @@ class Product < ApplicationRecord
 
     ransack(price_gteq: from).result.ransack(price_lteq: to).result
   }
+  scope :positive_sales_count, ->{where("sales_count > ?", 0)}
 
   ransacker :created_at do
     Arel.sql("DATE(created_at)")

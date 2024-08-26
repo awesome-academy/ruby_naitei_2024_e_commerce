@@ -16,7 +16,7 @@
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
 # end
-
+# whenever --update-crontab --set environment='development'
 # Learn more: http://github.com/javan/whenever
 set :output, "log/cron_log.log"
 every "0 0 1 * *" do

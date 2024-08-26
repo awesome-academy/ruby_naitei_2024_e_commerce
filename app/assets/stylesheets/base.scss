@@ -213,6 +213,21 @@ header {
   height: 26px;
 }
 
+.cart-icon {
+  position: relative;
+}
+
+.cart-icon-number {
+  position: absolute;
+  right: -70%;
+  top: -40%;
+  background-color: $primary-color;
+  color: $white;
+  border-radius: 50%;
+  font-size: 15px;
+  padding: 1px 7px;
+}
+
 .navbar-new {
   display: flex;
   justify-content: space-between;
