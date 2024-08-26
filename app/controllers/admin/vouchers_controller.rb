@@ -28,8 +28,8 @@ class Admin::VouchersController < AdminController
 
   def search_params
     q_params = params[:q] || {}
-    q_params = sanitize_quantity_params q_params, :remain_quantity_gteq,
-                                        :remain_quantity_lteq
+    q_params = sanitize_quantity_params q_params, :discount_gteq,
+                                        :discount_lteq
     q_params = sanitize_quantity_params q_params, :condition_gteq,
                                         :condition_lteq
     parse_date_params q_params, :created_at_gteq, :created_at_lteq
@@ -56,6 +56,9 @@ class Admin::VouchersController < AdminController
   end
 
   def sanitize number
-    number.to_f >= 0 ? number : nil
+    return unless number.to_f.negative?
+
+    flash.now[:danger] = t "admin.search.negative_value"
+    nil
   end
 end

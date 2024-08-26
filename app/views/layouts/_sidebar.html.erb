@@ -19,7 +19,7 @@
       <% end %>
     </div>
     <div class="list__item">
-      <%= link_to destroy_user_session_path, class: "list__item-a" do %>
+      <%= link_to destroy_user_session_path, method: :delete, class: "list__item-a" do %>
         <i class="list__icon fa-solid fa-right-from-bracket"></i>
         <span><%= t "profile.logout" %></span>
       <% end %>
