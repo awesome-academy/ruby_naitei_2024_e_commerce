@@ -58,6 +58,8 @@ Rails.application.routes.draw do
             end
           end
         end
+        resources :cart, only: [:show, :create, :update, :destroy]
+        post "/check_remain_and_redirect", to: "cart#check_remain_and_redirect"
       end
     end
   end
