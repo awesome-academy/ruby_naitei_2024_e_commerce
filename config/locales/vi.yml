@@ -93,6 +93,9 @@ vi:
       out_of_stock: "Hết hàng"
       wrong_quantity: "Số lượng sản phẩm không đúng"
       wrong_product: "Sản phẩm không đúng"
+      change_of_mind: "Thay đổi ý định"
+      found_cheaper_elsewhere: "Tìm thấy sản phẩm rẻ hơn ở nơi khác"
+      other: "Lý do khác"
     view_detail: "Xem chi tiết"
     detail:
       title: "Chi tiết hóa đơn"
@@ -104,6 +107,9 @@ vi:
     review: "Đánh giá"
     leave_review: "Để lại đánh giá"
     repay: "Thanh toán lại"
+    cancel_success: "Đơn hàng đã được hủy thành công."
+    cancel_fail: "Không thể hủy đơn hàng."
+    cancel_bill: "Hủy đơn hàng"
   category:
     title: "Phân loại"
     new_category: "Thêm danh mục sản phẩm mới"

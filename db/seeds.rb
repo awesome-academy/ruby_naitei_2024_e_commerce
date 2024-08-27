@@ -352,7 +352,6 @@ bill2 = Bill.create!(user_id: 2,
                      total_after_discount: 54000000,
                      expired_at: nil)
 
-
 address = Address.create!(bill_id: 1, country: "AF", state: "GHA", city: "Ghazni", details: "123 Landmark")
 
 address1 = Address.create!(bill_id: 2, country: "AF", state: "GHA", city: "Ghazni", details: "123 London")

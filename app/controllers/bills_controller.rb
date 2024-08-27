@@ -1,6 +1,6 @@
 class BillsController < ApplicationController
   before_action :authenticate_user!, :load_current_user_cart
-  before_action :find_bill, only: :show
+  before_action :find_bill, only: %i(show cancel)
   protect_from_forgery with: :exception
   include BillsHelper
   def index
@@ -8,6 +8,7 @@ class BillsController < ApplicationController
   end
 
   def show
+    @user_cancellation_reason = Bill::USER_CANCEL_REASONS
     @bill_details = @bill.bill_details
   end
 
@@ -69,6 +70,15 @@ class BillsController < ApplicationController
     @target = params[:target]
     @cities = CS.cities(params[:state]) || []
     respond_to :turbo_stream
+  end
+
+  def cancel
+    if @bill.update(bill_cancel_params.merge(status: :cancelled))
+      flash[:success] = t "order_history.cancel_success"
+    else
+      flash[:alert] = t "order_history.cancel_fail"
+    end
+    redirect_to @bill
   end
 
   private
@@ -143,5 +153,9 @@ class BillsController < ApplicationController
       Bill::PERMITTED_ATTRIBUTES,
       address_attributes: Address::PERMITTED_ATTRIBUTES
     )
+  end
+
+  def bill_cancel_params
+    params.require(:bill).permit(:cancellation_reason)
   end
 end

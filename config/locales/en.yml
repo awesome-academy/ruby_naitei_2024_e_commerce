@@ -89,6 +89,9 @@ en:
       out_of_stock: "Out of stock"
       wrong_quantity: "Wrong product quantity"
       wrong_product: "Wrong product"
+      change_of_mind: "Change of mind"
+      found_cheaper_elsewhere: "Found cheaper products elsewhere"
+      other: "Other"
     view_detail: "View details"
     detail:
       title: "Bill details"
@@ -100,6 +103,9 @@ en:
     review: "Review"
     leave_review: "Leave a review"
     repay: "Repayment"
+    cancel_success: "Bill is cancelled successfully."
+    cancel_fail: "Bill is cancelled failed."
+    cancel_bill: "Cancel bill"
   category:
     title: "Category"
     new_category: "Add new product category"
