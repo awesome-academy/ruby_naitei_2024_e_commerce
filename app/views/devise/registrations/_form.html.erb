@@ -3,12 +3,12 @@
 
   <div class="auth-form__group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t("devise.sign_up.email"), class: "formdk__lienlac" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t("sign_up.email"), class: "formdk__lienlac" %>
   </div>
 
   <div class="auth-form__group">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, placeholder: t("devise.sign_up.name"), class: "formdk__inputhoten" %>
+    <%= f.text_field :name, autofocus: true, placeholder: t("sign_up.name"), class: "formdk__inputhoten" %>
   </div>
 
   <div class="auth-form__group">
@@ -16,12 +16,12 @@
     <% if @minimum_password_length %>
       <em><%= t "devise.sign_up.minimum_password_length", count: @minimum_password_length %></em>
     <% end %><br />
-    <%= f.password_field :password, placeholder: t("devise.sign_up.password"), class: "formdk__taikhoan", autocomplete: "new-password" %>
+    <%= f.password_field :password, placeholder: t("sign_up.password"), class: "formdk__taikhoan", autocomplete: "new-password" %>
   </div>
 
   <div class="auth-form__group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, placeholder: t("devise.sign_up.password_confirmation"), class: "formdk__taikhoan", autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, placeholder: t("sign_up.password_confirmation"), class: "formdk__taikhoan", autocomplete: "new-password" %>
   </div>
 
   <%= f.submit yield(:title), class: "btn btn-primary" %>

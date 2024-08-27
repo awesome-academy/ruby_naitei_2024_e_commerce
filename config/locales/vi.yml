@@ -311,6 +311,8 @@ vi:
         updated_at: "Ngày cập nhật"
         yes: "Có"
         no: "Không"
+    search:
+      negative_value: "Phải là số dương!!"
     voucher:
       index:
         title: "Danh sách Voucher"

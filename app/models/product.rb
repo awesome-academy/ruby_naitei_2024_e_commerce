@@ -42,7 +42,8 @@ class Product < ApplicationRecord
   scope :filter_by_category_ids, lambda {|category_ids|
     return if category_ids.blank?
 
-    ransack(category_id_in: category_ids).result
+    all_categories = Category.with_children(category_ids).pluck(:id)
+    ransack(category_id_in: all_categories).result
   }
   scope :filter_by_price, lambda {|from, to|
     return if from.blank? && to.blank?

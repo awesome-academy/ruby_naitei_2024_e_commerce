@@ -3,7 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :omniauthable, omniauth_providers: [:google_oauth2]
 
-  before_save :downcase_email
+  before_save :downcase_email, :create_cart
 
   has_one :cart, dependent: :destroy
 
@@ -115,5 +115,9 @@ class User < ApplicationRecord
 
   def downcase_email
     email.downcase!
+  end
+
+  def create_cart
+    Cart.create(user_id: id)
   end
 end

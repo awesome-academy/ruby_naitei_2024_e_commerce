@@ -156,19 +156,18 @@ end
 # end
 
 
-1.times do
-  parent_cate = Category.create!(name: "Thời Trang Nam", parent_category_id: nil)
-  parent_cate.image.attach(io: File.open(Rails.root.join("./app/assets/images", "parent-quan-ao-nam.png")), filename: "parent-cate.png")
-end
 
-category_names = ["Áo Khoác", "Áo Vest và Blazer", "Áo Hoodie"]
+parent_cate = Category.create!(name: "Thời Trang Nam", parent_category_id: nil)
+parent_cate.image.attach(io: File.open(Rails.root.join("./app/assets/images", "thoitrangnam.jpg")), filename: "thoitrangnam.jpg")
 
-category_names.each_with_index do |name, index|
-  child_cate = Category.create!(name: name, parent_category_id: Category.find(index + 1).id)
-  file_name = name.downcase.gsub(' ', '').gsub('&', '').tr('áàảãạâấầẩẫậăắằẳẵặéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵđ', 'aaaaaaaaaaaaaaaaeeeeeeeeeeiiiiioooooooooooooooouuuuuuuuuuuyyyyyd') + ".png"
-  child_cate.image.attach(io: File.open(Rails.root.join("./app/assets/images", file_name)), filename: file_name)
-end
+ao_khoac = Category.create!(name: "Áo Khoác", parent_category_id: 7)
+ao_khoac.image.attach(io: File.open(Rails.root.join("./app/assets/images", "ao-khoac-gio-nam-den-chinh-hang.jpg")), filename: "ao-khoac-gio-nam-den-chinh-hang.jpg")
 
+ao_vest = Category.create!(name: "Áo Vest và Blazer", parent_category_id: 7)
+ao_vest.image.attach(io: File.open(Rails.root.join("./app/assets/images", "aovestvablazer.png")), filename: "aovestvablazer.png")
+
+hoodie = Category.create!(name: "Áo Hoodie", parent_category_id: 7)
+hoodie.image.attach(io: File.open(Rails.root.join("./app/assets/images", "aohoodie.png")), filename: "aohoodie.png")
 
 names = [
   "Áo phông nam nữ Premium Cotton phối vải bò xanh nắp túi in vạch chữ Dsq2 cam sau lưng rẻ hot trend 2024",
@@ -182,7 +181,7 @@ descriptions = [
   "Thiết kế tinh tế nam tính, tay dài sành điệu, cá tính, form dáng khỏe khoắn cho bạn phong cách trẻ trung, chỉnh chu và không kém phần lịch lãm."
 ]
 
-category_id = 2
+category_id = 8
 
 names.each_with_index do |name, index|
   prod = Product.create!(
@@ -219,7 +218,7 @@ descriptions = [
   "Blazer nam / vest form nam nhưng các bạn nữ mặc oversize khoác ngoài siêu xinh lunn ý"
 ]
 
-category_id = 3
+category_id = 9
 
 names.each_with_index do |name, index|
   prod = Product.create!(
@@ -267,7 +266,7 @@ Freesize",
 - Chất liệu nỉ Bông   Cotton 100%  mềm mại dày dặn  , ấm áp"
 ]
 
-category_id = 4
+category_id = 10
 
 names.each_with_index do |name, index|
   prod = Product.create!(
@@ -352,6 +351,11 @@ bill2 = Bill.create!(user_id: 2,
                      total: 60000000,
                      total_after_discount: 54000000,
                      expired_at: nil)
+
+
+address = Address.create!(bill_id: 1, country: "AF", state: "GHA", city: "Ghazni", details: "123 Landmark")
+
+address1 = Address.create!(bill_id: 2, country: "AF", state: "GHA", city: "Ghazni", details: "123 London")
 
 #Seed bill details
 BillDetail.create!(bill_id: 1,
