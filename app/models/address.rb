@@ -6,7 +6,9 @@ class Address < ApplicationRecord
   validates :state, inclusion: {in: ->(record){record.states.keys},
                                 allow_blank: true}
   validates :state, presence: {if: ->(record){record.states.present?}}
-  validates :city, inclusion: {in: ->(record){record.cities}, allow_blank: true}
+  validates :city, inclusion: {in: lambda {|record|
+                                     record.cities.call
+                                   }, allow_blank: true}
   validates :city, presence: {if: ->(record){record.cities.present?}}
   validates :details, presence: true
 
