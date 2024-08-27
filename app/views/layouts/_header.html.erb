@@ -44,8 +44,8 @@
       <% if logged_in? %>
         <%= link_to cart_path(current_user), class: "cart-icon" do %>
           <i class="fa-solid fa-cart-shopping"></i>
-          <% if @cart_details.length > 0 %>
-            <p class="cart-icon-number"><%= @cart_details.length %></p>
+          <% if get_cart_detail_length? > Settings.digit_0 %>
+            <p class="cart-icon-number"><%= get_cart_detail_length? %></p>
           <% end %>
         <% end %>
       <% else %>

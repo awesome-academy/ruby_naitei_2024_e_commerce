@@ -38,7 +38,7 @@ class Bill < ApplicationRecord
   scope :search_by_attributes, lambda {|search|
     return if search.blank?
 
-    ransack(user_name_or_phone_number_or_address_cont: search).result
+    ransack(user_name_or_phone_number_cont: search).result
   }
 
   scope :filter_by_status, lambda {|statuses|
