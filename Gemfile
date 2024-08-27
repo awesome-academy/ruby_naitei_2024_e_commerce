@@ -100,6 +100,10 @@ gem "jwt"
 
 gem "active_model_serializers"
 
+gem "simplecov-rcov"
+
+gem "simplecov"
+
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "factory_bot_rails"
