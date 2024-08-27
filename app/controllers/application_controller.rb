@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :set_locale
+  before_action :set_locale, :get_cart_detail_length
   include Pagy::Backend
   include ProductsHelper
   include CategoriesHelper
@@ -27,5 +27,9 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def get_cart_detail_length
+    @cart_details = current_user.cart.cart_details if logged_in?
   end
 end
