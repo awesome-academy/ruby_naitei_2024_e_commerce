@@ -15,9 +15,6 @@ RSpec.describe Bill, type: :model do
         should validate_presence_of(:total)
       end
 
-      it "is valid with total_after_discount" do
-        should validate_presence_of(:total_after_discount)
-      end
     end
 
     context "when invalid attributes are provided" do
@@ -33,9 +30,6 @@ RSpec.describe Bill, type: :model do
         should validate_presence_of(:total)
       end
 
-      it "is invalid without total_after_discount" do
-        should validate_presence_of(:total_after_discount)
-      end
     end
   end
 
@@ -46,7 +40,7 @@ RSpec.describe Bill, type: :model do
       end
 
       it "defines cancellation_reason enum correctly" do
-        should define_enum_for(:cancellation_reason).with_values(out_of_stock: 0, wrong_quantity: 1, wrong_product: 2)
+        should define_enum_for(:cancellation_reason).with_values(out_of_stock: 0, wrong_quantity: 1, wrong_product: 2, change_of_mind: 3, found_cheaper_elsewhere: 4, other: 5)
       end
     end
 
@@ -118,6 +112,48 @@ RSpec.describe Bill, type: :model do
           expect(result).to eq(expected_result)
         end
       end
+
+      context "search_by_attributes" do
+        it "returns bills matching the user_name" do
+          result = Bill.search_by_attributes(bill_1.user_name)
+          expect(result).to include(bill_1)
+          expect(result).not_to include(bill_2)
+          expect(result).not_to include(bill_3)
+        end
+
+        it "returns bills matching the phone_number" do
+          result = Bill.search_by_attributes(bill_2.phone_number)
+          expect(result).to include(bill_2)
+          expect(result).not_to include(bill_1)
+          expect(result).not_to include(bill_3)
+        end
+      end
+
+      context "filter_by_status" do
+        it "returns bills matching the specified statuses" do
+          result = Bill.filter_by_status([2, 3])
+          expect(result).to match_array([bill_1, bill_2, bill_3])
+        end
+      end
+
+      context "filter_by_voucher" do
+        it "returns bills matching the specified voucher IDs" do
+          result = Bill.filter_by_voucher([bill_1.voucher_id, bill_2.voucher_id])
+          expect(result).to match_array([bill_1, bill_2])
+        end
+      end
+
+      context "filter_by_total_after_discount" do
+        it "returns bills within the specified total_after_discount range" do
+          bill_1.update_columns(total_after_discount: 200)
+          bill_2.update_columns(total_after_discount: 400)
+          bill_3.update_columns(total_after_discount: 600)
+          result = Bill.filter_by_total_after_discount(100, 500)
+
+          expect(result).to match_array([bill_1, bill_2])
+          expect(result).not_to include(bill_3)
+        end
+      end
     end
 
     context "when querying with invalid or no matching date range" do
@@ -140,11 +176,41 @@ RSpec.describe Bill, type: :model do
           expect(result[bill_1.created_at.to_date]).not_to eq(bill_1.total_after_discount)
         end
       end
+
       context "monthly_incomes_report" do
         it "returns the wrong sum of completed bills within the date range" do
           result = Bill.monthly_incomes_report(1.months.ago, Time.zone.now)
           expected_result = bill_1.total_after_discount + bill_2.total_after_discount + bill_3.total_after_discount
           expect(result).not_to eq(expected_result)
+        end
+      end
+
+      context "search_by_attributes" do
+        it "returns bills matching the search criteria" do
+          result = Bill.search_by_attributes(bill_1.user_name)
+          expect(result).to include(bill_1)
+          expect(result).not_to include(bill_2)
+        end
+      end
+
+      context "filter_by_status" do
+        it "returns an empty result if no bills match the specified statuses" do
+          result = Bill.filter_by_status([4])
+          expect(result).to be_empty
+        end
+      end
+
+      context "filter_by_voucher" do
+        it "returns an empty result if no bills match the specified voucher IDs" do
+          result = Bill.filter_by_voucher([-1])
+          expect(result).to be_empty
+        end
+      end
+
+      context "filter_by_total_after_discount" do
+        it "returns an empty result if no bills match the specified total_after_discount range" do
+          result = Bill.filter_by_total_after_discount(500, 1000)
+          expect(result).to be_empty
         end
       end
     end

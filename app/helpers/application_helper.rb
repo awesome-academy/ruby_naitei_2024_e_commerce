@@ -40,4 +40,9 @@ module ApplicationHelper
     end
     flash_messages.join("\n")
   end
+
+  def get_cart_detail_length?
+    @cart_details = current_user.cart.cart_details if logged_in?
+    @cart_details.length
+  end
 end
