@@ -85,6 +85,16 @@ RSpec.describe Category, type: :model do
           expect(result).to eq([category_with_most_comments, category_with_comments, category_with_comments1, category_with_few_comments])
         end
       end
+
+      context "with children" do
+        let!(:parent_category) { FactoryBot.create(:category) }
+        let!(:child_category_1) { FactoryBot.create(:category, parent_category_id: parent_category.id) }
+        let!(:child_category_2) { FactoryBot.create(:category, parent_category_id: parent_category.id) }
+        it "returns categories with children" do
+          result = Category.with_children(parent_category.id)
+          expect(result).to contain_exactly(parent_category, child_category_1, child_category_2)
+        end
+      end
     end
 
     context "when querying with invalid or no matching date range" do
@@ -106,6 +116,16 @@ RSpec.describe Category, type: :model do
         it "does not order categories by the number of comments in descending order" do
           result = Category.category_by_comments.order_by_comment
           expect(result).not_to eq([category_with_most_comments, category_with_few_comments])
+        end
+      end
+
+      context "with children" do
+        let!(:parent_category) { FactoryBot.create(:category) }
+        let!(:child_category_1) { FactoryBot.create(:category, parent_category_id: parent_category.id) }
+        let!(:child_category_2) { FactoryBot.create(:category, parent_category_id: parent_category.id) }
+        it "returns categories without children" do
+          result = Category.with_children(parent_category.id)
+          expect(result).not_to contain_exactly(parent_category)
         end
       end
     end
