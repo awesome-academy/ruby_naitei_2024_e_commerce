@@ -49,7 +49,7 @@ class Admin::BillsController < AdminController
     @bill = Bill.find_by(id: params[:id])
     return if @bill
 
-    flash[:danger] = t "bills.not_found"
+    flash[:danger] = t "admin.view.bills.not_found"
     redirect_to admin_bills_path
   end
 
