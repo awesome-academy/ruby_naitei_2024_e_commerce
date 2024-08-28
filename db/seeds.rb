@@ -11,7 +11,6 @@
                       password: password,
                       password_confirmation: password,
                       activated_at: Time.zone.now)
-  user.skip_confirmation!
   user.save!
   user.avatar.attach(io: File.open(Rails.root.join("./app/assets/images", "user.png")), filename: "user.png")
 end
@@ -28,7 +27,6 @@ admin = User.new(email: "admin@ecommerce.org",
                      password: "admin1234",
                      password_confirmation: "admin1234",
                      activated_at: Time.zone.now)
-admin.skip_confirmation!
 admin.save!
 admin.avatar.attach(io: File.open(Rails.root.join("./app/assets/images", "admin.png")), filename: "admin.png")
 

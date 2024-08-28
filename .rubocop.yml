@@ -282,7 +282,7 @@ Style/LambdaCall:
     - call
     - braces
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 80
   AllowURI: true
   Exclude:
@@ -347,9 +347,10 @@ Style/PercentLiteralDelimiters:
     '%x': ()
 
 Naming/PredicateName:
-  ForbiddenPrefixes:
+  NamePrefix:
     - get_
-
+  ForbiddenPrefixes: []
+  
 Style/RaiseArgs:
   EnforcedStyle: exploded
   SupportedStyles:

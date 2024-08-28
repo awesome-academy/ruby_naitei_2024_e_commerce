@@ -29,6 +29,10 @@ FactoryBot.define do
     password { Faker::Internet.password(min_length: 9) }
     password_confirmation { password }
     activated_at { Time.zone.now }
+
+    trait :admin do
+      admin { true }
+    end
   end
 
   factory :product do

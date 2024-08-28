@@ -74,9 +74,6 @@ class Admin::ProductsController < AdminController
   end
 
   def sanitize_price price
-    return unless price.to_f.negative?
-
-    flash.now[:danger] = t "admin.search.negative_value"
-    nil
+    price.to_f >= 0 ? price : nil
   end
 end

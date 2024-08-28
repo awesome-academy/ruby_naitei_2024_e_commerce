@@ -34,3 +34,5 @@ import 'toastr'
 //= require chartkick
 
 //= require highcharts
+
+//= require social-share-button
